@@ -18,7 +18,8 @@ library
   exposed-modules:     WarmUp,
                        WarmUpProps,
                        StackCalc,
-                       StackCalcProps
+                       StackCalcProps,
+                       MyList
   build-depends:       base >= 4.7 && < 5,
                        QuickCheck
   default-language:    Haskell2010
