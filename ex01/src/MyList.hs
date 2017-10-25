@@ -42,7 +42,6 @@ length' (x:xs) = (length' xs) + 1
 
 reverse' :: [a] -> [a]
 reverse' []     = []
-reverse' (x:[]) = [x]
 reverse' (x:xs) = (reverse' xs) ++- [x]
 
 (++-) :: [a] -> [a] -> [a]
@@ -55,7 +54,6 @@ iterate' f x = x:(iterate' f (f x))
 
 map' :: (a -> b) -> [a] -> [b]
 map' f [] = []
-map' f (x:[]) = [(f x)]
 map' f (x:xs) = (f x):(map' f xs)
 
 filter' :: (a -> Bool) -> [a] -> [a]
