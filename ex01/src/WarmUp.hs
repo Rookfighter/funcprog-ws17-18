@@ -7,13 +7,13 @@ module WarmUp (
 
 -- compute minimum of 2 ints
 mini :: Int -> Int -> Int
-mini a b | a <= b = a
-         | a >  b = b
+mini a b | a <= b    = a
+         | otherwise = b
 
 -- compute maximum of 2 ints
 maxi :: Int -> Int -> Int
-maxi a b | a >= b = a
-         | a <  b = b
+maxi a b | a >= b    = a
+         | otherwise = b
 
 -- compute maximum of 3 ints
 max3 :: Int -> Int -> Int -> Int
