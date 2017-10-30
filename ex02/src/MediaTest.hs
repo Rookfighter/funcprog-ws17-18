@@ -4,27 +4,38 @@ module MediaTest (
 
 import Media
 
+-- goodAlbums "Jens" testLib -- should return "Bar" album
+-- goodAlbums "Stefan" testLib -- should return "Foo" album
+-- albumDurations testLib -- should return "Foo":315 and "Bar":430
+
 testLib = MediaLib [
     Album "Foo" [
-        Track "A" "B" 100,
-        Track "C" "D" 150,
-        Track "E" "F" 65
-    ],
+        Track "A" "B" 100 [
+            Rating "Stefan" VeryGood,
+            Rating "Jens"   Bad
+            ],
+        Track "C" "D" 150 [
+            Rating "Stefan" Good],
+        Track "E" "F" 65 [
+            Rating "Stefan" Medium,
+            Rating "Jens"   Medium
+            ]
+        ],
     Album "Bar" [
-        Track "G" "H" 120,
-        Track "I" "J" 80,
-        Track "K" "L" 200,
-        Track "M" "N" 30
+        Track "G" "H" 120 [
+            Rating "Stefan" Good,
+            Rating "Jens"   Bad
+        ],
+        Track "I" "J" 80 [
+            Rating "Stefan" Bad,
+            Rating "Jens"   Good
+            ],
+        Track "K" "L" 200 [
+            Rating "Stefan" VeryBad
+            ],
+        Track "M" "N" 30 [
+            Rating "Stefan" Medium,
+            Rating "Jens"   Good
+            ]
         ]
-    ]
-
-    [
-    Rating (Track "A" "B" 100) "Stefan" VeryGood,
-    Rating (Track "A" "B" 100) "Jens"   Bad,
-    Rating (Track "E" "F" 100) "Jens"   Medium,
-    Rating (Track "C" "D" 150) "Stefan" Good,
-    Rating (Track "E" "F" 65)  "Stefan" Medium,
-    Rating (Track "I" "J" 80)  "Stefan" Bad,
-    Rating (Track "K" "L" 200) "Stefan" VeryBad,
-    Rating (Track "M" "N" 30)  "Stefan" Medium
     ]

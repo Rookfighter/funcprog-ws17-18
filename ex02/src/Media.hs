@@ -9,6 +9,7 @@ module Media (
     addAlbum,
     rateTrack,
     albumDurations,
+    goodAlbums
 
 ) where
 
@@ -113,5 +114,6 @@ goodRatingsByUser u t = length (filter (\r -> value r > Medium) (rbu (ratings t)
 goodAlbumRatioByUser :: User -> Album -> Double
 goodAlbumRatioByUser u a = fromIntegral (length (filter (\t -> (goodRatingsByUser u t) == 0) (tracks a))) / fromIntegral (length (tracks a))
 
+-- return all albums that have at least 50% good tracks
 goodAlbums :: User -> MediaLib -> [Album]
-goodAlbums u m = filter (\a -> (goodAlbumRatioByUser u a) < 0.5) (albums m)
+goodAlbums u m = filter (\a -> (goodAlbumRatioByUser u a) <= 0.5) (albums m)
