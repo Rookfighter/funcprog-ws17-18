@@ -51,8 +51,8 @@ state b | hor   Cross  0 = CrossesWon
         | diag2 Circle   = CirclesWon
         | (length . filter (== Empty) $ b) > 0 = InProgress
         | otherwise = Tied
-        where lenSame v l = length . takeWhile (==v) l
-              hor v n = (lenSame . drop (n*3) $ b) >= 3
-              ver v n = (lenSame . each 3 . drop n $ b) >= 3
-              diag1 v = (lenSame . each 4 $ b) >= 3
-              diag2 v = (lenSame . each 2 . take 6 . drop 2 $ b) >= 3
+        where lenSame v xs = length . takeWhile (==v) $ xs
+              hor v n = (lenSame v . drop (n*3) $ b) >= 3
+              ver v n = (lenSame v . each 3 . drop n $ b) >= 3
+              diag1 v = (lenSame v . each 4 $ b) >= 3
+              diag2 v = (lenSame v . each 2 . take 6 . drop 2 $ b) >= 3
