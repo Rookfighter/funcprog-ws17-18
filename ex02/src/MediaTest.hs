@@ -3,6 +3,7 @@ module MediaTest (
 ) where
 
 import Media
+import Test.QuickCheck
 
 -- goodAlbums "Jens" testLib -- should return "Bar" album
 -- goodAlbums "Stefan" testLib -- should return "Foo" album

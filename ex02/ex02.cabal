@@ -15,8 +15,8 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Fib, Undup, SmallFac, Media, MediaTest, TicTacToe, TicTacToeTest
-  build-depends:       base >= 4.7 && < 5, primes
+  exposed-modules:     Fib, FibTest, Undup, UndupTest, SmallFac, Media, MediaTest, TicTacToe, TicTacToeTest
+  build-depends:       base >= 4.7 && < 5, primes, QuickCheck
   default-language:    Haskell2010
 
 executable ex02-exe
@@ -31,8 +31,6 @@ test-suite ex02-test
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
   main-is:             Spec.hs
-  other-modules:       FibTest,
-                       UndupTest
   build-depends:       base,
                        ex02,
                        QuickCheck
