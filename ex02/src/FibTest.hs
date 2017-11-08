@@ -5,5 +5,6 @@ module FibTest (
 import Fib
 import Test.QuickCheck
 
-prop_Fib n | n > 0 && n < 25 = fib n == fib' n
-           | otherwise = True
+prop_Fib n = fib n == fib' n
+
+test_Fib = forAll (choose (0,25)) prop_Fib
