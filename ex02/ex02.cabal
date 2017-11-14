@@ -15,7 +15,11 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Fib, FibTest, Undup, UndupTest, SmallFac, Media, MediaTest, TicTacToe, TicTacToeTest
+  exposed-modules:     Fib, FibTest,
+                       Undup, UndupTest,
+                       SmallFac,
+                       MediaLib, MediaAlbum, MediaTrack, MediaTest, Tracks
+                       TicTacToe, TicTacToeTest
   build-depends:       base >= 4.7 && < 5, primes, QuickCheck
   default-language:    Haskell2010
 
