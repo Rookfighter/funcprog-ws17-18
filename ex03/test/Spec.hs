@@ -9,4 +9,4 @@ import TestVec2
 main :: IO ()
 
 main = do
-    quickCheck prop_Vec2_signum
+    test_Vec2
