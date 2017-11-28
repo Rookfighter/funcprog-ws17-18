@@ -25,3 +25,6 @@ instance Eq a => Eq (Vec2 a) where
 instance Monoid a => Monoid (Vec2 a) where
     mappend (Vec2 x1 y1) (Vec2 x2 y2) = Vec2 (mappend x1 x2) (mappend y1 y2)
     mempty = Vec2 mempty mempty
+
+scale :: Num a => a -> Vec2 a -> Vec2 a
+scale fac (Vec2 x y) = Vec2 (fac*x) (fac*y)
