@@ -48,6 +48,27 @@ move v (Circle c r) = Circle (c + v) (r)
 -- move nested Pictures
 move v (Comp p1 p2) = Comp (move v p1) (move v p2)
 
+-- rotates point around given center
+-- first translate point into coord of c (rel vaector)
+-- then apply rotation matrix and translate back
+rotatep :: Point -> Double -> Point -> Point
+rotatep c a p = c + (rmat (p - c))
+    where rmat (V.Vec2 x y) = V.Vec2 (x * (cos a) - y * (sin a))
+                                     (x * (sin a) + y * (cos a))
+
+-- rotate Picture around given center with given angle
+rotate :: Point -> Double -> Picture -> Picture
+-- rotating Blank does nothing
+rotate _ _ Blank = Blank
+-- rotate Line
+rotate c a (Line ps) = Line . map (rotatep c a) $ ps
+-- rotatet Polygon
+rotate c a (Pol ps) = Pol . map (rotatep c a) $ ps
+-- rotate Circle
+rotate c a (Circle c1 r) = Circle (rotatep c a c1) r
+-- rotate nested Pictures
+rotate c a (Comp p1 p2) = Comp (rotate c a p1) (rotate c a p2)
+
 -- define sqare triangle picture from ex sheet
 square_tri = mappend (Pol [V.Vec2 0 0, V.Vec2 1 0, V.Vec2 1 1, V.Vec2 0 1])
              (Line [V.Vec2 0 1, V.Vec2 0.5 0, V.Vec2 1 1])

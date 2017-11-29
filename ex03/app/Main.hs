@@ -24,4 +24,4 @@ svg content = doctype <>
 main :: IO ()
 main = do
     g <- getStdGen
-    renderToFile "foobar.svg" (svg . contents $ g)
+    renderToFile "foobar.svg" (svg . Ps.draw_picture . P.rotate (V.Vec2 50 50) (pi) . P.move (V.Vec2 40 0) . P.scale 20 $ P.square_house)
