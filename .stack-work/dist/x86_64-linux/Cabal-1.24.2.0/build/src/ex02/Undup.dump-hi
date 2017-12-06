@@ -1,0 +1,51 @@
+
+==================== FINAL INTERFACE ====================
+2017-12-06 15:30:28.087241 UTC
+
+interface funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x:Undup 8002
+  interface hash: 0790c1d63971b22f3e4addcdbd150d76
+  ABI hash: 481ed7953b1f967006afcba8fee698ad
+  export-list hash: 832ab3a71c2eb616213681fa0f0f8da7
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 9818348ff1ae0de586a67810f347de33
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Undup.undup
+module dependencies:
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+8a99a2d2114ae7b6f6cba88383903dbb
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Undup.$trModule2 Undup.$trModule1) -}
+9c9494e78e6759869092dae57cf0a6ad
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Undup"#) -}
+a69afe3f6caa65419a973aec9bba3371
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x"#) -}
+acfcf172ab85493302fa259b8ac5405c
+  undup :: GHC.Classes.Eq a => [a] -> [a]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U(A,C(C1(U)))><S,1*U> -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

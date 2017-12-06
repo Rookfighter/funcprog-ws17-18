@@ -1,0 +1,460 @@
+
+==================== FINAL INTERFACE ====================
+2017-12-06 15:30:28.130445 UTC
+
+interface funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x:Tracks 8002
+  interface hash: 67cacc78f08e5b056fc140e2860ded77
+  ABI hash: 655ffbfcec1977c20ea23273d2b5056d
+  export-list hash: 522da48c0d5cdc81e0e0d393ebdf3086
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 9818348ff1ae0de586a67810f347de33
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Tracks.collective
+  Tracks.electronic
+  Tracks.noAlbum
+  Tracks.shifted
+  Tracks.tracklist
+  Tracks.TrackList
+module dependencies:
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+8128654d64f52e5ef838ff7cfafb38f5
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Tracks.$trModule2
+                   Tracks.$trModule1) -}
+b832270ecd1046ba72ba4424e78c2d64
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Tracks"#) -}
+c2efc4e2a778bd9b346507f1b800f66e
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x"#) -}
+587e0954c617cf4866e9741a04505f2f
+  type TrackList =
+    [(GHC.Base.Maybe GHC.Base.String, GHC.Base.String, GHC.Base.String,
+      GHC.Types.Int)]
+085e39364148aedf45d46b76ddb7e925
+  collective :: Tracks.TrackList
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                      GHC.Base.String, GHC.Types.Int)
+                   Tracks.collective12
+                   Tracks.collective1) -}
+c9dbc5b47e094b6c910d03185a859c81
+  collective1 ::
+    [(GHC.Base.Maybe GHC.Base.String, GHC.Base.String, GHC.Base.String,
+      GHC.Types.Int)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                      GHC.Base.String, GHC.Types.Int)
+                   Tracks.collective9
+                   Tracks.collective2) -}
+bdad10e832a62b36b71d3745d56a8fbc
+  collective10 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 286#) -}
+73f6304586db76bd093ae76d5017dbf8
+  collective11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Meridian"#) -}
+8068142852400264479cc1966c27ac37
+  collective12 ::
+    (GHC.Base.Maybe [GHC.Types.Char], [GHC.Types.Char],
+     [GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((Tracks.collective7, Tracks.collective14,
+                  Tracks.collective5, Tracks.collective13)) -}
+2e20b6aabd92bf1e4d39e42406036f68
+  collective13 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 445#) -}
+ee273c70833275d8493e913da196cdac
+  collective14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Point Blank"#) -}
+08818aee7284b713069c73e4e86ce96e
+  collective2 ::
+    [(GHC.Base.Maybe GHC.Base.String, GHC.Base.String, GHC.Base.String,
+      GHC.Types.Int)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                      GHC.Base.String, GHC.Types.Int)
+                   Tracks.collective3
+                   (GHC.Types.[]
+                      @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                         GHC.Base.String, GHC.Types.Int))) -}
+70f93ac3abf187c67c6d84fd0718f97a
+  collective3 ::
+    (GHC.Base.Maybe [GHC.Types.Char], [GHC.Types.Char],
+     [GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((Tracks.collective7, Tracks.collective6,
+                  Tracks.collective5, Tracks.collective4)) -}
+993e3f271fa68019a605c5aacdd8fd56
+  collective4 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 273#) -}
+7d130fed18287cbb12737b1736b08010
+  collective5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "OCTAVE ONE"#) -}
+60adde82129a881207a905f8f22113e3
+  collective6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Nicolette"#) -}
+317ec5de2ae34967be85ab8f42c6cf2f
+  collective7 :: GHC.Base.Maybe [GHC.Types.Char]
+  {- Strictness: m2,
+     Unfolding: (GHC.Base.Just @ [GHC.Types.Char] Tracks.collective8) -}
+bc00950709ee5ee4a705384f3c727b3f
+  collective8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "The Collective"#) -}
+965e8c480bf43c2843f9321d53b09c34
+  collective9 ::
+    (GHC.Base.Maybe [GHC.Types.Char], [GHC.Types.Char],
+     [GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((Tracks.collective7, Tracks.collective11,
+                  Tracks.collective5, Tracks.collective10)) -}
+148db4a5f9c7c9345d6330f41f76de2d
+  electronic :: Tracks.TrackList
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                      GHC.Base.String, GHC.Types.Int)
+                   Tracks.electronic12
+                   Tracks.electronic1) -}
+599b35acb8246e7ecef35406d2890aaf
+  electronic1 ::
+    [(GHC.Base.Maybe GHC.Base.String, GHC.Base.String, GHC.Base.String,
+      GHC.Types.Int)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                      GHC.Base.String, GHC.Types.Int)
+                   Tracks.electronic9
+                   Tracks.electronic2) -}
+ba0447da1e176fc3ff8dc51a9462dfe2
+  electronic10 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 275#) -}
+7af8be5ab02241b8d736a4dcd532458d
+  electronic11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Technology Gap"#) -}
+7820e121a70aed601edd8070d1877351
+  electronic12 ::
+    (GHC.Base.Maybe [GHC.Types.Char], [GHC.Types.Char],
+     [GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((Tracks.electronic7, Tracks.electronic14,
+                  Tracks.electronic5, Tracks.electronic13)) -}
+b550aec0639bafe3cd83c60ceabd367b
+  electronic13 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 299#) -}
+791ee602e46ce6999da53e21ff73d670
+  electronic14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Kut"#) -}
+4e7dec4b2a583a0eb82361988eb3bfdc
+  electronic2 ::
+    [(GHC.Base.Maybe GHC.Base.String, GHC.Base.String, GHC.Base.String,
+      GHC.Types.Int)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                      GHC.Base.String, GHC.Types.Int)
+                   Tracks.electronic3
+                   (GHC.Types.[]
+                      @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                         GHC.Base.String, GHC.Types.Int))) -}
+64806d0844987915fcc61821beedf637
+  electronic3 ::
+    (GHC.Base.Maybe [GHC.Types.Char], [GHC.Types.Char],
+     [GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((Tracks.electronic7, Tracks.electronic6,
+                  Tracks.electronic5, Tracks.electronic4)) -}
+c6ff01ffdf5100fdc0e40568bd2a383f
+  electronic4 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 265#) -}
+d9133503c299a3451f9935512e1e9058
+  electronic5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "UNDERGROUND RESISTANCE"#) -}
+23d27172cd86811de145ea501edc8f09
+  electronic6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Kill My Radio Station"#) -}
+8c9ac92a4e2e7800e80cf8cf9aa22e4f
+  electronic7 :: GHC.Base.Maybe [GHC.Types.Char]
+  {- Strictness: m2,
+     Unfolding: (GHC.Base.Just @ [GHC.Types.Char] Tracks.electronic8) -}
+4ecff65ba942e3c391dd2b3ef2431615
+  electronic8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Electronic Warfare 2.0"#) -}
+3eee1a116a4b6bb241aba2078f7dabec
+  electronic9 ::
+    (GHC.Base.Maybe [GHC.Types.Char], [GHC.Types.Char],
+     [GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((Tracks.electronic7, Tracks.electronic11,
+                  Tracks.electronic5, Tracks.electronic10)) -}
+e9822d07c7ad6f566fcbe2021f3b0b9e
+  noAlbum :: Tracks.TrackList
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                      GHC.Base.String, GHC.Types.Int)
+                   Tracks.noAlbum26
+                   Tracks.noAlbum1) -}
+e374d57c260ef8cda7bc3b0c74846c3c
+  noAlbum1 ::
+    [(GHC.Base.Maybe GHC.Base.String, GHC.Base.String, GHC.Base.String,
+      GHC.Types.Int)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                      GHC.Base.String, GHC.Types.Int)
+                   Tracks.noAlbum22
+                   Tracks.noAlbum2) -}
+7a6e2075a1b3d489fce5cf60635fba35
+  noAlbum10 ::
+    (GHC.Base.Maybe GHC.Base.String, [GHC.Types.Char],
+     [GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((GHC.Base.Nothing @ GHC.Base.String, Tracks.noAlbum13,
+                  Tracks.noAlbum12, Tracks.noAlbum11)) -}
+4bd61b11fae1fd7b1cf6e8298683e179
+  noAlbum11 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 373#) -}
+65887af476972b1cc91a296fcaa7a90d
+  noAlbum12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "A GUY CALLED GERALD"#) -}
+0d134e34c3de31d5ed2c481c64b01924
+  noAlbum13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Groove Of The Ghetto"#) -}
+202b44ae1060ce2eee61dd332aae33e4
+  noAlbum14 ::
+    (GHC.Base.Maybe GHC.Base.String, [GHC.Types.Char],
+     [GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((GHC.Base.Nothing @ GHC.Base.String, Tracks.noAlbum17,
+                  Tracks.noAlbum16, Tracks.noAlbum15)) -}
+c41feaf1c53f6974c7214b74b1187465
+  noAlbum15 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 411#) -}
+d7f652ead8128dc195f1056babe96be4
+  noAlbum16 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Braiden"#) -}
+1ce73ce01a3a9a338020d1f71af1b773
+  noAlbum17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "The Alps"#) -}
+6fcf6fb79d564b7f8f8d74ad7681653e
+  noAlbum18 ::
+    (GHC.Base.Maybe GHC.Base.String, [GHC.Types.Char],
+     [GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((GHC.Base.Nothing @ GHC.Base.String, Tracks.noAlbum21,
+                  Tracks.noAlbum20, Tracks.noAlbum19)) -}
+9744f53edef3ec1a73152c90bf4d1c23
+  noAlbum19 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 352#) -}
+0ade0ff7ddc75d7b1604bdb4bfcd1e39
+  noAlbum2 ::
+    [(GHC.Base.Maybe GHC.Base.String, GHC.Base.String, GHC.Base.String,
+      GHC.Types.Int)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                      GHC.Base.String, GHC.Types.Int)
+                   Tracks.noAlbum18
+                   Tracks.noAlbum3) -}
+7f27da52d392d2b4c5605e8d56cbe11a
+  noAlbum20 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "BODDIKA"#) -}
+f2c9173d1bf97ffbeebf0143ae890e41
+  noAlbum21 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Boddika's House"#) -}
+0f007408fe084c1f038bc802424b2543
+  noAlbum22 ::
+    (GHC.Base.Maybe GHC.Base.String, [GHC.Types.Char],
+     [GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((GHC.Base.Nothing @ GHC.Base.String, Tracks.noAlbum25,
+                  Tracks.noAlbum24, Tracks.noAlbum23)) -}
+f046d178479475cb60ac8fd6fa02b789
+  noAlbum23 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 528#) -}
+4f5502cf07bd95956d53ca3efa024cee
+  noAlbum24 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "VARIOUS"#) -}
+326da2800d2305927370ce629d8c5ae1
+  noAlbum25 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Dream Girl"#) -}
+1682957017b36a495dff2971be7e80eb
+  noAlbum26 ::
+    (GHC.Base.Maybe GHC.Base.String, [GHC.Types.Char],
+     [GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((GHC.Base.Nothing @ GHC.Base.String, Tracks.noAlbum29,
+                  Tracks.noAlbum28, Tracks.noAlbum27)) -}
+fabc355269cce5fdc50803fc8d15299b
+  noAlbum27 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 267#) -}
+129cacbadec16bc1b8cde864e98aef88
+  noAlbum28 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Cybotron"#) -}
+b3b4b3727a6da664464534e40a4de362
+  noAlbum29 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Cosmic Cars (Detroit Style)"#) -}
+06e3ad4e46ca9234616e15436d18658b
+  noAlbum3 ::
+    [(GHC.Base.Maybe GHC.Base.String, GHC.Base.String, GHC.Base.String,
+      GHC.Types.Int)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                      GHC.Base.String, GHC.Types.Int)
+                   Tracks.noAlbum14
+                   Tracks.noAlbum4) -}
+a87c060f731e8238d9fc15f47417a93b
+  noAlbum4 ::
+    [(GHC.Base.Maybe GHC.Base.String, GHC.Base.String, GHC.Base.String,
+      GHC.Types.Int)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                      GHC.Base.String, GHC.Types.Int)
+                   Tracks.noAlbum10
+                   Tracks.noAlbum5) -}
+fc8404020cebe5b4c0cf7c6c3672f21c
+  noAlbum5 ::
+    [(GHC.Base.Maybe GHC.Base.String, GHC.Base.String, GHC.Base.String,
+      GHC.Types.Int)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                      GHC.Base.String, GHC.Types.Int)
+                   Tracks.noAlbum6
+                   (GHC.Types.[]
+                      @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                         GHC.Base.String, GHC.Types.Int))) -}
+5cd399eb452c7515e42e0c4b096ced1e
+  noAlbum6 ::
+    (GHC.Base.Maybe GHC.Base.String, [GHC.Types.Char],
+     [GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((GHC.Base.Nothing @ GHC.Base.String, Tracks.noAlbum9,
+                  Tracks.noAlbum8, Tracks.noAlbum7)) -}
+f32168912384f9b50196918779263512
+  noAlbum7 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 497#) -}
+4f6780be1d9bec7e663443cd69c6368c
+  noAlbum8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "UR"#) -}
+54e3116ac68169d1c3d89383036df517
+  noAlbum9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "A1 - The Final Frontier"#) -}
+6afe735b3bb6c66feec7e2c9f67001c4
+  shifted :: Tracks.TrackList
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                      GHC.Base.String, GHC.Types.Int)
+                   Tracks.shifted8
+                   Tracks.shifted1) -}
+c82116e31b39bb7b365e2a0c77bb2cc5
+  shifted1 ::
+    [(GHC.Base.Maybe GHC.Base.String, GHC.Base.String, GHC.Base.String,
+      GHC.Types.Int)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                      GHC.Base.String, GHC.Types.Int)
+                   Tracks.shifted2
+                   (GHC.Types.[]
+                      @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                         GHC.Base.String, GHC.Types.Int))) -}
+0a9fce42f8660700b8183bb5d142d62c
+  shifted10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Implosive Regions"#) -}
+264ee542f3a8261d7bf9e225db64ebe8
+  shifted2 ::
+    (GHC.Base.Maybe [GHC.Types.Char], [GHC.Types.Char],
+     [GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((Tracks.shifted6, Tracks.shifted5, Tracks.shifted4,
+                  Tracks.shifted3)) -}
+69894ed006bd5ffb7c6d780f97d311ed
+  shifted3 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 308#) -}
+285d0f6422479352088506e8550fc14d
+  shifted4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Drexciya"#) -}
+b331246e41081cca329e178fb542c949
+  shifted5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Scattering Pulsars"#) -}
+a8ebc37470fe0c17d3479b7b5c383f3b
+  shifted6 :: GHC.Base.Maybe [GHC.Types.Char]
+  {- Strictness: m2,
+     Unfolding: (GHC.Base.Just @ [GHC.Types.Char] Tracks.shifted7) -}
+3552e02b94421fe054f709d6af8ffd48
+  shifted7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Shifted Phases"#) -}
+8cc879097b7026cbee9b07b1321b03b7
+  shifted8 ::
+    (GHC.Base.Maybe [GHC.Types.Char], [GHC.Types.Char],
+     [GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((Tracks.shifted6, Tracks.shifted10, Tracks.shifted4,
+                  Tracks.shifted9)) -}
+062532e6ad8d045b00f688934a2c76d8
+  shifted9 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 298#) -}
+3fbf6aff860d7514203eabb4a2985dd6
+  tracklist :: Tracks.TrackList
+  {- Unfolding: (GHC.Base.++
+                   @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                      GHC.Base.String, GHC.Types.Int)
+                   Tracks.noAlbum
+                   Tracks.tracklist1) -}
+4b2c5979565f1e00a2ec2192d7a3f23b
+  tracklist1 ::
+    [(GHC.Base.Maybe GHC.Base.String, GHC.Base.String, GHC.Base.String,
+      GHC.Types.Int)]
+  {- Unfolding: (GHC.Base.++
+                   @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                      GHC.Base.String, GHC.Types.Int)
+                   Tracks.electronic
+                   Tracks.tracklist2) -}
+aa78193fdd6651dfee66a43528b2e5fa
+  tracklist2 ::
+    [(GHC.Base.Maybe GHC.Base.String, GHC.Base.String, GHC.Base.String,
+      GHC.Types.Int)]
+  {- Unfolding: (GHC.Base.++
+                   @ (GHC.Base.Maybe GHC.Base.String, GHC.Base.String,
+                      GHC.Base.String, GHC.Types.Int)
+                   Tracks.shifted
+                   Tracks.collective) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

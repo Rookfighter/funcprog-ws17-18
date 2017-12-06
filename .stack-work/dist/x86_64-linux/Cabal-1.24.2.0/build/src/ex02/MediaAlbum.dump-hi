@@ -1,0 +1,436 @@
+
+==================== FINAL INTERFACE ====================
+2017-12-06 15:30:29.519093 UTC
+
+interface funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x:MediaAlbum 8002
+  interface hash: 46075bb62740bb852ea2a2efe80e2e5e
+  ABI hash: 7406a785b08c06b5e2775a47dd78515a
+  export-list hash: c3ee8a23581c2e8bafcdd2d5becc9dea
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 9818348ff1ae0de586a67810f347de33
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  MediaAlbum.addTrack
+  MediaAlbum.duration
+  MediaAlbum.findTrack
+  MediaAlbum.goodRatingRatio
+  MediaAlbum.goodRatings
+  MediaAlbum.removeTrack
+  MediaAlbum.updateTrack
+  MediaAlbum.Album{MediaAlbum.Album title tracks}
+module dependencies: MediaTrack
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Real 82e4e59051a13dba1da63e1e970a69e6
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  MediaTrack 32d3d8772738dfa19864eca154e9f152
+  exports: edd65b1ff76a75c01801f29e54edb7de
+  Track 72247435e5389bb32b3651d70f2501f4
+  User 4e5e44ea7a7abad47d00d28f87f87b0b
+  duration 297215954cfc6a8af10d2618f3b2a67b
+  goodRatings 7af263b8ab23e299387f844b3ce4a588
+  title 51791d31aec94a49029780bdadf2f489
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+aac38a21e03c2487d27115ea8f13066b
+  $fEqAlbum :: GHC.Classes.Eq MediaAlbum.Album
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ MediaAlbum.Album
+                  MediaAlbum.$fEqAlbum_$c==
+                  MediaAlbum.$fEqAlbum_$c/= -}
+aac38a21e03c2487d27115ea8f13066b
+  $fEqAlbum_$c/= ::
+    MediaAlbum.Album -> MediaAlbum.Album -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>,
+     Inline: INLINE (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: MediaAlbum.Album) (y :: MediaAlbum.Album) ->
+                 GHC.Classes.not (MediaAlbum.$fEqAlbum_$c== x y)) -}
+aac38a21e03c2487d27115ea8f13066b
+  $fEqAlbum_$c== ::
+    MediaAlbum.Album -> MediaAlbum.Album -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SL),1*U(1*U,A)><S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a1 :: MediaAlbum.Album) (a2 :: MediaAlbum.Album) ->
+                 case a1 of wild { MediaAlbum.Album ds ds1 ->
+                 case a2 of wild1 { MediaAlbum.Album ds2 ds3 ->
+                 GHC.Base.eqString ds ds2 } }) -}
+aac38a21e03c2487d27115ea8f13066b
+  $fShowAlbum :: GHC.Show.Show MediaAlbum.Album
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ MediaAlbum.Album
+                  MediaAlbum.$fShowAlbum_$cshowsPrec
+                  MediaAlbum.$fShowAlbum_$cshow
+                  MediaAlbum.$fShowAlbum_$cshowList -}
+aac38a21e03c2487d27115ea8f13066b
+  $fShowAlbum1 :: MediaAlbum.Album -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ (w :: MediaAlbum.Album) (w1 :: GHC.Base.String) ->
+                 case w of ww { MediaAlbum.Album ww1 ww2 ->
+                 MediaAlbum.$w$cshowsPrec 0# ww1 ww2 w1 }) -}
+d318123ce5cc7bacc5d3522447755493
+  $fShowAlbum2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "}"#) -}
+3a78273ee0c6673e26593ece93346aa4
+  $fShowAlbum3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "tracks = "#) -}
+a483734859dbb5f48644047bb70795d7
+  $fShowAlbum4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ", "#) -}
+0168c32fcfc8fed8a93a39d9c4d4262f
+  $fShowAlbum5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "title = "#) -}
+082179c09bb491d899a73d05f4f79a91
+  $fShowAlbum6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Album {"#) -}
+aac38a21e03c2487d27115ea8f13066b
+  $fShowAlbum_$cshow :: MediaAlbum.Album -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: MediaAlbum.Album) ->
+                 MediaAlbum.$fShowAlbum_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+aac38a21e03c2487d27115ea8f13066b
+  $fShowAlbum_$cshowList :: [MediaAlbum.Album] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ MediaAlbum.Album
+                   MediaAlbum.$fShowAlbum1) -}
+aac38a21e03c2487d27115ea8f13066b
+  $fShowAlbum_$cshowsPrec ::
+    GHC.Types.Int -> MediaAlbum.Album -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S(S),1*U(U)><S,1*U(1*U,1*U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: MediaAlbum.Album)
+                   (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { MediaAlbum.Album ww3 ww4 ->
+                 MediaAlbum.$w$cshowsPrec ww1 ww3 ww4 w2 } }) -}
+194e443109bb1e9d4d1b594d0dc9c14b
+  $tc'Album :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   42576400452717117##
+                   13382627824514702590##
+                   MediaAlbum.$trModule
+                   MediaAlbum.$tc'Album1) -}
+c825d38f6082d37e4af0fcf08f2e1f89
+  $tc'Album1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Album"#) -}
+e279e62d69446cb2e967f2ad8aaf5736
+  $tcAlbum :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2656979658698139464##
+                   8147151177321002055##
+                   MediaAlbum.$trModule
+                   MediaAlbum.$tcAlbum1) -}
+3f75db23a3964ce9607f663d1d7e99e1
+  $tcAlbum1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Album"#) -}
+24ff8fa8ad7719f61385f2bf96c359a8
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   MediaAlbum.$trModule2
+                   MediaAlbum.$trModule1) -}
+c3a23f7042afad5949bc907bd12b0a96
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "MediaAlbum"#) -}
+131536108312d33130503ad00a11c4ae
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x"#) -}
+483177c59d95baa5161d8a1a39773f14
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> GHC.Base.String
+    -> [MediaTrack.Track]
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 4, Strictness: <S,U><L,1*U><L,1*U><L,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: GHC.Base.String)
+                   (ww2 :: [MediaTrack.Track])
+                   (w :: GHC.Base.String) ->
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ (x :: GHC.Base.String)[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       MediaAlbum.$fShowAlbum6
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          MediaAlbum.$fShowAlbum5
+                          (GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows6
+                             (GHC.Show.showLitString
+                                ww1
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.shows6
+                                   (GHC.Base.++
+                                      @ GHC.Types.Char
+                                      MediaAlbum.$fShowAlbum4
+                                      (GHC.Base.++
+                                         @ GHC.Types.Char
+                                         MediaAlbum.$fShowAlbum3
+                                         (let {
+                                            s :: GHC.Base.String
+                                            = GHC.Base.++ @ GHC.Types.Char MediaAlbum.$fShowAlbum2 x
+                                          } in
+                                          case ww2 of wild {
+                                            [] -> GHC.CString.unpackAppendCString# "[]"# s
+                                            : x1 xs
+                                            -> GHC.Types.:
+                                                 @ GHC.Types.Char
+                                                 GHC.Show.showList__2
+                                                 (case x1 of ww3 { MediaTrack.Track ww4 ww5 ww6 ww7 ->
+                                                  MediaTrack.$w$cshowsPrec2
+                                                    0#
+                                                    ww4
+                                                    ww5
+                                                    ww6
+                                                    ww7
+                                                    (let {
+                                                       lvl27 :: [GHC.Types.Char]
+                                                       = GHC.Types.:
+                                                           @ GHC.Types.Char
+                                                           GHC.Show.showList__1
+                                                           s
+                                                     } in
+                                                     letrec {
+                                                       showl :: [MediaTrack.Track]
+                                                                -> GHC.Base.String
+                                                         {- Arity: 1, Strictness: <S,1*U> -}
+                                                       = \ (ds2 :: [MediaTrack.Track]) ->
+                                                         case ds2 of wild1 {
+                                                           [] -> lvl27
+                                                           : y ys
+                                                           -> GHC.Types.:
+                                                                @ GHC.Types.Char
+                                                                GHC.Show.shows5
+                                                                (case y of ww8 { MediaTrack.Track ww9 ww10 ww11 ww12 ->
+                                                                 MediaTrack.$w$cshowsPrec2
+                                                                   0#
+                                                                   ww9
+                                                                   ww10
+                                                                   ww11
+                                                                   ww12
+                                                                   (showl ys) }) }
+                                                     } in
+                                                     showl xs) }) })))))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False -> p w
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows7
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 w)) }) -}
+a4de89f853ee7187ff0799eb683c1ead
+  $wfindTrack ::
+    GHC.Base.String
+    -> [MediaTrack.Track] -> GHC.Base.Maybe MediaTrack.Track
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>, Inline: [0],
+     Unfolding: (\ (w :: GHC.Base.String) (ww :: [MediaTrack.Track]) ->
+                 case GHC.List.filter
+                        @ MediaTrack.Track
+                        (\ (x :: MediaTrack.Track) ->
+                         case x of wild { MediaTrack.Track ds1 ds2 ds3 ds4 ->
+                         GHC.Base.eqString w ds1 })
+                        ww of wild {
+                   [] -> GHC.Base.Nothing @ MediaTrack.Track
+                   : ipv ipv1 -> GHC.Base.Just @ MediaTrack.Track ipv }) -}
+511497310b3cb7b002bbf4781ab3a5d8
+  $wgo :: [MediaTrack.Track] -> GHC.Prim.Int# -> GHC.Prim.Int#
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U>, Inline: [0] -}
+15c70a38e06b49475c6ff20904b12628
+  $wgoodRatings ::
+    MediaTrack.User -> [MediaTrack.Track] -> GHC.Prim.Int#
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>, Inline: [0],
+     Unfolding: (\ (w :: MediaTrack.User) (ww :: [MediaTrack.Track]) ->
+                 letrec {
+                   $wgo1 :: [MediaTrack.Track] -> GHC.Prim.Int# -> GHC.Prim.Int#
+                     {- Arity: 2, Strictness: <S,1*U><L,U>, Inline: [0] -}
+                   = \ (w1 :: [MediaTrack.Track]) (ww1 :: GHC.Prim.Int#) ->
+                     case w1 of wild {
+                       [] -> ww1
+                       : y ys
+                       -> case y of ww2 { MediaTrack.Track ww3 ww4 ww5 ww6 ->
+                          case MediaTrack.$wgoodRatings w ww6 of ww7 {
+                            DEFAULT -> $wgo1 ys (GHC.Prim.+# ww1 1#) 0# -> $wgo1 ys ww1 } } }
+                 } in
+                 $wgo1 ww 0#) -}
+3de9fd76f93aed2746a4bc44ce9e2a91
+  $wupdateTrack ::
+    MediaTrack.Track
+    -> MediaAlbum.Album -> (# GHC.Base.String, [MediaTrack.Track] #)
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(U,U,U,U)><L,U(1*U,1*U)>, Inline: [0],
+     Unfolding: (\ (w :: MediaTrack.Track) (w1 :: MediaAlbum.Album) ->
+                 (# case w1 of wild { MediaAlbum.Album ds ds1 -> ds },
+                    case w1 of wild { MediaAlbum.Album ds ds1 ->
+                    let {
+                      tit :: GHC.Base.String
+                      = case w of wild1 { MediaTrack.Track ds2 ds3 ds4 ds5 -> ds2 }
+                    } in
+                    GHC.Base.++
+                      @ MediaTrack.Track
+                      (GHC.List.filter
+                         @ MediaTrack.Track
+                         (\ (x :: MediaTrack.Track) ->
+                          case GHC.Classes.$fEq[]_$s$c==1 tit (MediaTrack.title x) of wild1 {
+                            GHC.Types.False -> GHC.Types.True
+                            GHC.Types.True -> GHC.Types.False })
+                         ds1)
+                      (GHC.Types.:
+                         @ MediaTrack.Track
+                         w
+                         (GHC.Types.[] @ MediaTrack.Track)) } #)) -}
+aac38a21e03c2487d27115ea8f13066b
+  data Album
+    = Album {title :: GHC.Base.String, tracks :: [MediaTrack.Track]}
+31260112036b310a8103a3d01627dd31
+  addTrack ::
+    MediaTrack.Track -> MediaAlbum.Album -> MediaAlbum.Album
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U(1*U,1*U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (t :: MediaTrack.Track) (a :: MediaAlbum.Album) ->
+                 MediaAlbum.Album
+                   (case a of wild { MediaAlbum.Album ds ds1 -> ds })
+                   (case a of wild { MediaAlbum.Album ds ds1 ->
+                    GHC.Base.augment
+                      @ MediaTrack.Track
+                      (\ @ b
+                         (c :: MediaTrack.Track -> b -> b)[OneShot]
+                         (n :: b)[OneShot] ->
+                       GHC.Base.foldr @ MediaTrack.Track @ b c n ds1)
+                      (GHC.Types.:
+                         @ MediaTrack.Track
+                         t
+                         (GHC.Types.[] @ MediaTrack.Track)) })) -}
+4d546b2e50a63bb3a2ece1ce003e01f7
+  duration :: MediaAlbum.Album -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: MediaAlbum.Album) ->
+                 case w of ww { MediaAlbum.Album ww1 ww2 ->
+                 case MediaAlbum.$wgo ww2 0# of ww3 { DEFAULT ->
+                 GHC.Types.I# ww3 } }) -}
+68a90071031d382b6cd9a07a2b61d515
+  findTrack ::
+    GHC.Base.String
+    -> MediaAlbum.Album -> GHC.Base.Maybe MediaTrack.Track
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S(LS),1*U(A,1*U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Base.String) (w1 :: MediaAlbum.Album) ->
+                 case w1 of ww { MediaAlbum.Album ww1 ww2 ->
+                 MediaAlbum.$wfindTrack w ww2 }) -}
+593fce8b0894d12aa7538064d741eba1
+  goodRatingRatio ::
+    MediaTrack.User -> MediaAlbum.Album -> GHC.Types.Double
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S(LS),U(A,U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: MediaTrack.User) (w1 :: MediaAlbum.Album) ->
+                 case w1 of ww { MediaAlbum.Album ww1 ww2 ->
+                 case MediaAlbum.$wgoodRatings w ww2 of ww3 { DEFAULT ->
+                 case GHC.List.$wlenAcc
+                        @ MediaTrack.Track
+                        ww2
+                        0# of ww4 { DEFAULT ->
+                 case GHC.Prim./##
+                        (GHC.Prim.int2Double# ww3)
+                        (GHC.Prim.int2Double# ww4) of ww5 { DEFAULT ->
+                 GHC.Types.D# ww5 } } } }) -}
+aa89fc644f89009257a0a1cd6dfcc5c7
+  goodRatings :: MediaTrack.User -> MediaAlbum.Album -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S(LS),1*U(A,1*U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: MediaTrack.User) (w1 :: MediaAlbum.Album) ->
+                 case w1 of ww { MediaAlbum.Album ww1 ww2 ->
+                 case MediaAlbum.$wgoodRatings w ww2 of ww3 { DEFAULT ->
+                 GHC.Types.I# ww3 } }) -}
+4a05dea51eab0272d6df1dfd5ba3ec0a
+  removeTrack ::
+    GHC.Base.String -> MediaAlbum.Album -> MediaAlbum.Album
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U(1*U,1*U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Base.String) (w1 :: MediaAlbum.Album) ->
+                 MediaAlbum.Album
+                   (case w1 of wild { MediaAlbum.Album ds ds1 -> ds })
+                   (case w1 of wild { MediaAlbum.Album ds ds1 ->
+                    GHC.List.filter
+                      @ MediaTrack.Track
+                      (\ (x :: MediaTrack.Track) ->
+                       case GHC.Classes.$fEq[]_$s$c==1 w (MediaTrack.title x) of wild1 {
+                         GHC.Types.False -> GHC.Types.True
+                         GHC.Types.True -> GHC.Types.False })
+                      ds1 })) -}
+93db4ab94d143fb66c48fd0ec9800a38
+  title :: MediaAlbum.Album -> GHC.Base.String
+  RecSel Left MediaAlbum.Album
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: MediaAlbum.Album) ->
+                 case ds of wild { MediaAlbum.Album ds1 ds2 -> ds1 }) -}
+bc422523adaba982394ddfba637a9085
+  tracks :: MediaAlbum.Album -> [MediaTrack.Track]
+  RecSel Left MediaAlbum.Album
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: MediaAlbum.Album) ->
+                 case ds of wild { MediaAlbum.Album ds1 ds2 -> ds2 }) -}
+7fc87cb4d3f862ef12bb9aa6cae2b19e
+  updateTrack ::
+    MediaTrack.Track -> MediaAlbum.Album -> MediaAlbum.Album
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(U,U,U,U)><L,U(1*U,1*U)>m, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: MediaTrack.Track) (w1 :: MediaAlbum.Album) ->
+                 case MediaAlbum.$wupdateTrack w w1 of ww { (#,#) ww1 ww2 ->
+                 MediaAlbum.Album ww1 ww2 }) -}
+instance [safe] GHC.Classes.Eq [MediaAlbum.Album]
+  = MediaAlbum.$fEqAlbum
+instance [safe] GHC.Show.Show [MediaAlbum.Album]
+  = MediaAlbum.$fShowAlbum
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

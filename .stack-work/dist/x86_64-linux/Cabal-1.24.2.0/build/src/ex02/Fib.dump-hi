@@ -1,0 +1,89 @@
+
+==================== FINAL INTERFACE ====================
+2017-12-06 15:30:29.827849 UTC
+
+interface funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x:Fib 8002
+  interface hash: 8a790f4e8c67823a98e148e5d28e9d15
+  ABI hash: 92965ddfe5a479c19cc72e4a66ea0e0c
+  export-list hash: adc241ff112a40a651fec76ba69d2041
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 9818348ff1ae0de586a67810f347de33
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Fib.fib
+  Fib.fib'
+  Fib.fibs'
+module dependencies:
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  integer-gmp-1.0.0.1:GHC.Integer.Type 318df275d77dcdb18e0006d8d7870c2a
+f3b45418f28f85a3a20b1f09f987c1b2
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Fib.$trModule2 Fib.$trModule1) -}
+2fd00c798e7096e47b4d840c51f860ba
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Fib"#) -}
+f7b7aff35b50973c7d6c08bb2edeb666
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x"#) -}
+43e8d22ab12449860967d8684817c903
+  $wfib :: GHC.Prim.Int# -> GHC.Integer.Type.Integer
+  {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+a9357bd89ab6ba4022c02442f903d039
+  fib :: GHC.Types.Int -> GHC.Integer.Type.Integer
+  {- Arity: 1, Strictness: <S(S),1*U(1*U)>, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: GHC.Types.Int) ->
+                 case w of ww { GHC.Types.I# ww1 -> Fib.$wfib ww1 }) -}
+518ed4920ea759c08af039492aa18df4
+  fib' :: GHC.Types.Int -> GHC.Integer.Type.Integer
+  {- Arity: 1, Strictness: <S(S),1*U(U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (n :: GHC.Types.Int) ->
+                 case n of ww { GHC.Types.I# ww1 ->
+                 GHC.List.$w!! @ GHC.Integer.Type.Integer Fib.fibs' ww1 }) -}
+e158ddeb35c2b9e776b975fa1b7632cb
+  fibs' :: [GHC.Integer.Type.Integer]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Fib.fibs'4
+                   Fib.fibs'1) -}
+259f740fd883f98304205888ecb9a882
+  fibs'1 :: [GHC.Integer.Type.Integer]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Integer.Type.Integer
+                   Fib.fibs'3
+                   Fib.fibs'2) -}
+913534c21ec58402748ed1fd4fa8960b
+  fibs'2 :: [GHC.Integer.Type.Integer]
+8009f2efa699631bc55a26ca2720e243
+  fibs'3 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (1) -}
+b3048fa871b46bc39bc288bb706470c4
+  fibs'4 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (0) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

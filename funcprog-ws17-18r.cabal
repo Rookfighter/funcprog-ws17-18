@@ -1,0 +1,85 @@
+name:                funcprog-ws17-18r
+version:             0.1.0.0
+synopsis:            Functional Programming Exercises WS 17 18
+homepage:            https://github.com/rookfighter/funcprog-ws17-18#readme
+license:             MIT
+license-file:        LICENSE
+author:              Fabian Meyer
+maintainer:          example@example.com
+copyright:           2017 Fabian Meyer
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+-- To avoid duplicated efforts in documentation and dealing with the
+-- complications of embedding Haddock markup inside cabal files, it is
+-- common to point users to the README.md file.
+description:         Please see the README on Github at <https://github.com/rookfighter/funcprog-ws17-18tmp#readme>
+
+library
+  hs-source-dirs:      src,
+                       src/ex01,
+                       src/ex02,
+                       src/ex03
+  exposed-modules:     Lib,
+                       -- ex01
+                       MyList,
+                       StackCalc,
+                       WarmUp,
+                       -- ex02
+                       Fib,
+                       MediaAlbum,
+                       MediaLib,
+                       MediaTrack,
+                       SmallFac,
+                       TicTacToe,
+                       Tracks,
+                       Undup,
+                       -- ex03
+                       DragonCurve,
+                       Picture,
+                       PictureSvg,
+                       Vec2
+  build-depends:       base >= 4.7 && < 5,
+                       primes,
+                       svg-builder,
+                       random,
+                       text
+  default-language:    Haskell2010
+
+executable funcprog-ws17-18r-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base,
+                       funcprog-ws17-18r
+  default-language:    Haskell2010
+
+test-suite funcprog-ws17-18r-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test,
+                       test/ex01,
+                       test/ex02,
+                       test/ex03
+  main-is:             Spec.hs
+  other-modules:       TestEx01,
+                       TestStackCalc,
+                       TestWarmUp,
+                       -- ex02,
+                       TestEx02,
+                       TestFib,
+                       TestTicTacToe,
+                       TestUndup,
+                       -- ex03,
+                       TestEx03,
+                       TestVec2
+  build-depends:       base,
+                       funcprog-ws17-18r,
+                       QuickCheck
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/rookfighter/funcprog-ws17-18

@@ -1,0 +1,106 @@
+
+==================== FINAL INTERFACE ====================
+2017-12-06 15:30:29.862905 UTC
+
+interface funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x:DragonCurve 8002
+  interface hash: 2395336b85b78302026d54abcd7c3409
+  ABI hash: b5053087f4d2bdc13822e70bab5b7cf0
+  export-list hash: 94732901bd29b3f626c501d66067b062
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 27fd2797caa278c1bce07b59f758d146
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  DragonCurve.dragon
+  DragonCurve.dragons
+module dependencies: Picture Vec2
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Float 33e2b9ffe427edd6a5c2fd6a3b26703c
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Real 82e4e59051a13dba1da63e1e970a69e6
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  Picture 033659f2e6b6bf9b3a2a0969c7a79681
+  exports: 62f36af240ed6e8507a29401b274b8d5
+  Line 580156fff2c672bf9b13e085942c8ce0
+  Picture e6202663b96ffc6ff16bf13b722ea2a4
+  Point 2d0f94c1ef90c7d48302e9f00b8e78d3
+  rotatep 107bf0471c8a835e7e3d8572c2d61d66
+import  -/  Vec2 37b490f7ec76ba4ee5550726c13edbdc
+  exports: 9e08028cc826ce90947c2f1d6aef8cb0
+  Vec2 57f74c45a1cf2e7d40e48ef687525fe3
+50dce0075200a1f00d66da3197f297b8
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   DragonCurve.$trModule2
+                   DragonCurve.$trModule1) -}
+cd753f64694ac26fb93ca7ccd321730e
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "DragonCurve"#) -}
+d84e8217d84839c747a5c87c8191b861
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x"#) -}
+32093b645567c6c007128974731b3b9a
+  dragon :: GHC.Types.Int -> Picture.Picture
+  {- Arity: 1, Strictness: <L,1*U(1*U)>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ (n :: GHC.Types.Int) ->
+                 Picture.Line (DragonCurve.dragons n DragonCurve.dragon1)) -}
+8a6ddc12f93772ca564f41567c4365ae
+  dragon1 :: [Picture.Point]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Picture.Point
+                   DragonCurve.dragon6
+                   DragonCurve.dragon2) -}
+fd54f01497ee3494e1af02d10e4fbef7
+  dragon2 :: [Picture.Point]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Picture.Point
+                   DragonCurve.dragon3
+                   (GHC.Types.[] @ Picture.Point)) -}
+5ba70f964a6bf25b4ccd516bc9013fe0
+  dragon3 :: Vec2.Vec2 GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Vec2.Vec2
+                   @ GHC.Types.Double
+                   DragonCurve.dragon5
+                   DragonCurve.dragon4) -}
+692c8c90dbb8931befc81c060981861a
+  dragon4 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 0.0##) -}
+f5b879214a65972032b511da453926cb
+  dragon5 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 1.0##) -}
+08fb679520188497d81923b56706fe5d
+  dragon6 :: Vec2.Vec2 GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Vec2.Vec2
+                   @ GHC.Types.Double
+                   DragonCurve.dragon4
+                   DragonCurve.dragon4) -}
+7c67f7d39e3037062c77878498bfdb94
+  dragons :: GHC.Types.Int -> [Picture.Point] -> [Picture.Point]
+  {- Arity: 2, Strictness: <L,1*U(1*U)><S,1*U> -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

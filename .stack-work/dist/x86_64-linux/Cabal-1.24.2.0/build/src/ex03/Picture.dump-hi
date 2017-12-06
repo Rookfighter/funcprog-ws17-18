@@ -1,0 +1,513 @@
+
+==================== FINAL INTERFACE ====================
+2017-12-06 15:30:28.718966 UTC
+
+interface funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x:Picture 8002
+  interface hash: 875e488a045a34e7f1b68ecb8de6b332
+  ABI hash: 033659f2e6b6bf9b3a2a0969c7a79681
+  export-list hash: 62f36af240ed6e8507a29401b274b8d5
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 27fd2797caa278c1bce07b59f758d146
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Picture.move
+  Picture.rotate
+  Picture.rotatep
+  Picture.scale
+  Picture.square_house
+  Picture.square_tri
+  Picture.Picture{Picture.Blank Picture.Circle Picture.Comp Picture.Line Picture.Pol}
+  Picture.Point
+module dependencies: Vec2
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Float 33e2b9ffe427edd6a5c2fd6a3b26703c
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  Vec2 37b490f7ec76ba4ee5550726c13edbdc
+  exports: 9e08028cc826ce90947c2f1d6aef8cb0
+  Vec2 57f74c45a1cf2e7d40e48ef687525fe3
+  Vec2 a6d5f75e025ab159265c8bccb9e6454a
+  scale 0a019e1c977bbd04469a1e2e0280bdf4
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+e6202663b96ffc6ff16bf13b722ea2a4
+  $fMonoidPicture :: GHC.Base.Monoid Picture.Picture
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Picture.Picture
+                  Picture.Blank
+                  Picture.$fMonoidPicture_$cmappend
+                  Picture.$fMonoidPicture_$cmconcat -}
+e6202663b96ffc6ff16bf13b722ea2a4
+  $fMonoidPicture_$cmappend ::
+    Picture.Picture -> Picture.Picture -> Picture.Picture
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (p :: Picture.Picture) (ds :: Picture.Picture) ->
+                 case ds of wild {
+                   DEFAULT
+                   -> case p of wild1 {
+                        DEFAULT -> Picture.Comp wild1 wild Picture.Blank -> wild }
+                   Picture.Blank -> p }) -}
+e6202663b96ffc6ff16bf13b722ea2a4
+  $fMonoidPicture_$cmconcat :: [Picture.Picture] -> Picture.Picture
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: (\ (eta :: [Picture.Picture]) ->
+                 Picture.$fMonoidPicture_go eta) -}
+e6202663b96ffc6ff16bf13b722ea2a4
+  $fMonoidPicture_go :: [Picture.Picture] -> Picture.Picture
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+e6202663b96ffc6ff16bf13b722ea2a4
+  $fShowPicture :: GHC.Show.Show Picture.Picture
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Picture.Picture
+                  Picture.$fShowPicture_$cshowsPrec
+                  Picture.$fShowPicture_$cshow
+                  Picture.$fShowPicture_$cshowList -}
+e6202663b96ffc6ff16bf13b722ea2a4
+  $fShowPicture1 :: Picture.Picture -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (Picture.$fShowPicture_$cshowsPrec
+                   Picture.$fShowPicture2) -}
+b51948e2a33b153cc797b54679469404
+  $fShowPicture2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+e6202663b96ffc6ff16bf13b722ea2a4
+  $fShowPicture_$cshow :: Picture.Picture -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Picture.Picture) ->
+                 Picture.$fShowPicture_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+e6202663b96ffc6ff16bf13b722ea2a4
+  $fShowPicture_$cshowList :: [Picture.Picture] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Picture.Picture
+                   Picture.$fShowPicture1) -}
+e6202663b96ffc6ff16bf13b722ea2a4
+  $fShowPicture_$cshowsPrec ::
+    GHC.Types.Int -> Picture.Picture -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <L,1*U(U)><S,1*U> -}
+7a660ca3a470ac131b2de0a11716be45
+  $tc'Blank :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6088442350443271117##
+                   3559898863698065669##
+                   Picture.$trModule
+                   Picture.$tc'Blank1) -}
+5254d585c23bb03ac37b4919bca74b27
+  $tc'Blank1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Blank"#) -}
+7a6a6976a54f1010752ec5bcdf29367a
+  $tc'Circle :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11755077353584783989##
+                   4235781013891288396##
+                   Picture.$trModule
+                   Picture.$tc'Circle1) -}
+4676e46d34572181810ed4c85cee891c
+  $tc'Circle1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Circle"#) -}
+f29df8a993a0c6dbf308cdeda49e8cb6
+  $tc'Comp :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   94551091197173419##
+                   600878523000359182##
+                   Picture.$trModule
+                   Picture.$tc'Comp1) -}
+5c74105dd789be4c46bd6a555586d74f
+  $tc'Comp1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Comp"#) -}
+8270e3faee349f152fd63952cb28f1d0
+  $tc'Line :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2082810528365153988##
+                   6963124834737809152##
+                   Picture.$trModule
+                   Picture.$tc'Line1) -}
+54fcc4a7ccf9e9cbe19962a3bad63e26
+  $tc'Line1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Line"#) -}
+0c58251b0707ed3c9364c0e084ce57d6
+  $tc'Pol :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16901290475880512065##
+                   16338815513791848967##
+                   Picture.$trModule
+                   Picture.$tc'Pol1) -}
+d2b7e1b0cebdcefb47500b9e8b689013
+  $tc'Pol1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Pol"#) -}
+bd3c63f9e98cb590a23cf91dd13bb210
+  $tcPicture :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10791131924193433692##
+                   9773914364405951812##
+                   Picture.$trModule
+                   Picture.$trModule1) -}
+6c86e441dcd6bd81efb238df94e6bf62
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Picture.$trModule2
+                   Picture.$trModule1) -}
+80fcc2b28f2f5c68970a5781aa3157b4
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Picture"#) -}
+70133a6228026a5562dd5b6a52d74820
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x"#) -}
+201b61c36968020105ecb30724afc6df
+  $wrotatep ::
+    GHC.Types.Double
+    -> GHC.Types.Double
+    -> GHC.Types.Double
+    -> GHC.Types.Double
+    -> GHC.Types.Double
+    -> (# GHC.Types.Double, GHC.Types.Double #)
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <L,U(U)><L,U(U)><L,U(U)><L,1*U(U)><L,1*U(U)>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Types.Double)
+                   (ww1 :: GHC.Types.Double)
+                   (w :: GHC.Types.Double)
+                   (ww2 :: GHC.Types.Double)
+                   (ww3 :: GHC.Types.Double) ->
+                 let {
+                   x :: GHC.Types.Double
+                   = case ww2 of wild { GHC.Types.D# x1 ->
+                     case ww of wild1 { GHC.Types.D# y ->
+                     GHC.Types.D# (GHC.Prim.-## x1 y) } }
+                 } in
+                 let {
+                   y :: GHC.Types.Double
+                   = case ww3 of wild { GHC.Types.D# x1 ->
+                     case ww1 of wild1 { GHC.Types.D# y1 ->
+                     GHC.Types.D# (GHC.Prim.-## x1 y1) } }
+                 } in
+                 (# case ww of wild { GHC.Types.D# x1 ->
+                    case x of wild1 { GHC.Types.D# x2 ->
+                    case w of wild2 { GHC.Types.D# x3 ->
+                    case y of wild3 { GHC.Types.D# x4 ->
+                    GHC.Types.D#
+                      (GHC.Prim.+##
+                         x1
+                         (GHC.Prim.-##
+                            (GHC.Prim.*## x2 (GHC.Prim.cosDouble# x3))
+                            (GHC.Prim.*## x4 (GHC.Prim.sinDouble# x3)))) } } } },
+                    case ww1 of wild { GHC.Types.D# x1 ->
+                    case x of wild1 { GHC.Types.D# x2 ->
+                    case w of wild2 { GHC.Types.D# x3 ->
+                    case y of wild3 { GHC.Types.D# x4 ->
+                    GHC.Types.D#
+                      (GHC.Prim.+##
+                         x1
+                         (GHC.Prim.+##
+                            (GHC.Prim.*## x2 (GHC.Prim.sinDouble# x3))
+                            (GHC.Prim.*## x4 (GHC.Prim.cosDouble# x3)))) } } } } #)) -}
+e6202663b96ffc6ff16bf13b722ea2a4
+  data Picture
+    = Blank
+    | Line [Picture.Point]
+    | Pol [Picture.Point]
+    | Circle Picture.Point GHC.Types.Double
+    | Comp Picture.Picture Picture.Picture
+2d0f94c1ef90c7d48302e9f00b8e78d3
+  type Point = Vec2.Vec2 GHC.Types.Double
+7f4813e8531e7db864bc09d1aa31acd4
+  move ::
+    Vec2.Vec2 GHC.Types.Double -> Picture.Picture -> Picture.Picture
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U(U(U),U(U))><S,1*U> -}
+123b42f8c5e0f4f2025974d0dd3c996f
+  rotate ::
+    Picture.Point
+    -> GHC.Types.Double -> Picture.Picture -> Picture.Picture
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(U(U),U(U))><L,U(U)><S,1*U> -}
+107bf0471c8a835e7e3d8572c2d61d66
+  rotatep ::
+    Picture.Point -> GHC.Types.Double -> Picture.Point -> Picture.Point
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S,1*U(U(U),U(U))><L,U(U)><S,1*U(1*U(U),1*U(U))>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: Picture.Point)
+                   (w1 :: GHC.Types.Double)
+                   (w2 :: Picture.Point) ->
+                 case w of ww { Vec2.Vec2 ww1 ww2 ->
+                 case w2 of ww3 { Vec2.Vec2 ww4 ww5 ->
+                 case Picture.$wrotatep ww1 ww2 w1 ww4 ww5 of ww6 { (#,#) ww7 ww8 ->
+                 Vec2.Vec2 @ GHC.Types.Double ww7 ww8 } } }) -}
+99745beaa610d2e7db9d51042f562615
+  scale :: GHC.Types.Double -> Picture.Picture -> Picture.Picture
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U(U)><S,1*U> -}
+71e350be52d9ad7611614d9cd06ba578
+  square_house :: Picture.Picture
+  {- HasNoCafRefs, Strictness: m5,
+     Unfolding: (Picture.Comp
+                   Picture.square_house27
+                   Picture.square_house1) -}
+406e252f427757018de835a600d0ad59
+  square_house1 :: Picture.Picture
+  {- HasNoCafRefs, Strictness: m5,
+     Unfolding: (Picture.Comp
+                   Picture.square_house22
+                   Picture.square_house2) -}
+a6a522b1de59b25f684cd529c9b3f621
+  square_house10 :: [Picture.Point]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Picture.Point
+                   Picture.square_house15
+                   Picture.square_house11) -}
+556a46281b06e7e8ac0f40cd9b29e26c
+  square_house11 :: [Picture.Point]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Picture.Point
+                   Picture.square_house12
+                   (GHC.Types.[] @ Picture.Point)) -}
+fef000b144141a693a1154424f824967
+  square_house12 :: Vec2.Vec2 GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Vec2.Vec2
+                   @ GHC.Types.Double
+                   Picture.square_house14
+                   Picture.square_house13) -}
+9279675278540d67def639240630ae88
+  square_house13 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 2.0##) -}
+689c84878bfe72d9ac4f09b064c09a93
+  square_house14 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 1.0##) -}
+1ca83d72e51d1752fbba09596b4d829f
+  square_house15 :: Vec2.Vec2 GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Vec2.Vec2
+                   @ GHC.Types.Double
+                   Picture.square_house16
+                   Picture.square_house14) -}
+4a0f18e9c160dcd8fa067b26d45cd8f7
+  square_house16 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 0.0##) -}
+f9ca381ca6ec34d9442e8fb3f2ad2246
+  square_house17 :: Picture.Picture
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (Picture.Line Picture.square_house18) -}
+461c878956f3a21836d9d8270dac2d72
+  square_house18 :: [Picture.Point]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Picture.Point
+                   Picture.square_house21
+                   Picture.square_house19) -}
+878ba8650d43da386d9b225826410286
+  square_house19 :: [Picture.Point]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Picture.Point
+                   Picture.square_house20
+                   (GHC.Types.[] @ Picture.Point)) -}
+9d27bdade2715451b3e9c0431a922d56
+  square_house2 :: Picture.Picture
+  {- HasNoCafRefs, Strictness: m5,
+     Unfolding: (Picture.Comp
+                   Picture.square_house17
+                   Picture.square_house3) -}
+4eb3985a8e701b45e09d0b9b97352fb0
+  square_house20 :: Vec2.Vec2 GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Vec2.Vec2
+                   @ GHC.Types.Double
+                   Picture.square_house16
+                   Picture.square_house13) -}
+c7359b6648e6a7c980f88a3548a79672
+  square_house21 :: Vec2.Vec2 GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Vec2.Vec2
+                   @ GHC.Types.Double
+                   Picture.square_house14
+                   Picture.square_house14) -}
+673798b9dccb7f9518f8c137eda1cf17
+  square_house22 :: Picture.Picture
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (Picture.Line Picture.square_house23) -}
+c9ef3876439e1435d2afd4ad1a2894c5
+  square_house23 :: [Picture.Point]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Picture.Point
+                   Picture.square_house15
+                   Picture.square_house24) -}
+b4c251ffb438745ae1cd8e9ce9dc826f
+  square_house24 :: [Picture.Point]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Picture.Point
+                   Picture.square_house26
+                   Picture.square_house25) -}
+c6e6733ca514d82df708a1d185472c84
+  square_house25 :: [Picture.Point]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Picture.Point
+                   Picture.square_house21
+                   (GHC.Types.[] @ Picture.Point)) -}
+dd93d4a5d9c3905602f7958e9439f0ee
+  square_house26 :: Vec2.Vec2 GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Vec2.Vec2
+                   @ GHC.Types.Double
+                   Picture.square_house8
+                   Picture.square_house16) -}
+37bc1ad4e14dcef0c26b3e6c670db541
+  square_house27 :: Picture.Picture
+  {- HasNoCafRefs, Strictness: m3,
+     Unfolding: (Picture.Pol Picture.square_house28) -}
+76929d3c1577bcd44e05bb54fb4c76bc
+  square_house28 :: [Picture.Point]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Picture.Point
+                   Picture.square_house15
+                   Picture.square_house29) -}
+66017a8737a7aa6541eb6335b805e8ce
+  square_house29 :: [Picture.Point]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Picture.Point
+                   Picture.square_house21
+                   Picture.square_house30) -}
+3b15c5c3bc87cf98b1109e01eaba0abf
+  square_house3 :: Picture.Picture
+  {- HasNoCafRefs, Strictness: m5,
+     Unfolding: (Picture.Comp
+                   Picture.square_house9
+                   Picture.square_house4) -}
+caee859bf00b94c889124dc0a660158c
+  square_house30 :: [Picture.Point]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Picture.Point
+                   Picture.square_house12
+                   Picture.square_house19) -}
+f2b98efb67a9a26492b739744932eab4
+  square_house4 :: Picture.Picture
+  {- HasNoCafRefs, Strictness: m4,
+     Unfolding: (Picture.Circle
+                   Picture.square_house6
+                   Picture.square_house5) -}
+a6ff751fe8fc63b5975bd1f0d3d6e091
+  square_house5 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 0.25##) -}
+56a1a002c9aea56cc28e3b6164871754
+  square_house6 :: Vec2.Vec2 GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Vec2.Vec2
+                   @ GHC.Types.Double
+                   Picture.square_house8
+                   Picture.square_house7) -}
+1f1e4d7e00bac6d34e0eaedc023e3213
+  square_house7 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 0.7##) -}
+65113fa365e446169c6af44b0b35fa78
+  square_house8 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 0.5##) -}
+a15b9e05b9f3c4ecdd0c330475229c78
+  square_house9 :: Picture.Picture
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (Picture.Line Picture.square_house10) -}
+286f3d858d40818007073e9727f1a802
+  square_tri :: Picture.Picture
+  {- HasNoCafRefs, Strictness: m5,
+     Unfolding: (Picture.Comp
+                   Picture.square_tri1
+                   Picture.square_house22) -}
+bb20c6fca3e67ee2ba4c8c5be2b29876
+  square_tri1 :: Picture.Picture
+  {- HasNoCafRefs, Strictness: m3,
+     Unfolding: (Picture.Pol Picture.square_tri2) -}
+0b1b7351d57bd312f1229c15e96e539e
+  square_tri2 :: [Picture.Point]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Picture.Point
+                   Picture.square_tri7
+                   Picture.square_tri3) -}
+f57c8088962ca063e8b3fc516f2210bf
+  square_tri3 :: [Picture.Point]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Picture.Point
+                   Picture.square_tri6
+                   Picture.square_tri4) -}
+860f5551df7aaec8ce709feca06f4dbd
+  square_tri4 :: [Picture.Point]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Picture.Point
+                   Picture.square_house21
+                   Picture.square_tri5) -}
+048ee2e7b439b2412583625ec905e789
+  square_tri5 :: [Picture.Point]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Picture.Point
+                   Picture.square_house15
+                   (GHC.Types.[] @ Picture.Point)) -}
+070e6d19e6ab171313e87abcbdaae799
+  square_tri6 :: Vec2.Vec2 GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Vec2.Vec2
+                   @ GHC.Types.Double
+                   Picture.square_house14
+                   Picture.square_house16) -}
+a116c8b4d30e98d36ccff53734bde678
+  square_tri7 :: Vec2.Vec2 GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Vec2.Vec2
+                   @ GHC.Types.Double
+                   Picture.square_house16
+                   Picture.square_house16) -}
+instance [safe] GHC.Base.Monoid [Picture.Picture]
+  = Picture.$fMonoidPicture
+instance [safe] GHC.Show.Show [Picture.Picture]
+  = Picture.$fShowPicture
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

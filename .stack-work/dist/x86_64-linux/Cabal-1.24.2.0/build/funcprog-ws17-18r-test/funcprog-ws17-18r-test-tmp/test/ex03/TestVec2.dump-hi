@@ -1,0 +1,479 @@
+
+==================== FINAL INTERFACE ====================
+2017-12-06 15:32:05.780907 UTC
+
+interface main@main:TestVec2 [orphan module] 8002
+  interface hash: a18036e3fc832dd88ce38e7c569e5b39
+  ABI hash: 3a85316565d60f009b9284b160686476
+  export-list hash: 3757bcd31066c7027f01dfc0683d4db7
+  orphan hash: eb4d0b005ef3ee60640b125a5fcb0b6c
+  flag hash: b7ce1eee70244d9fd9a973a5de91ff63
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  TestVec2.prop_Vec2_add
+  TestVec2.prop_Vec2_mul
+  TestVec2.prop_Vec2_signum
+  TestVec2.test_Vec2
+module dependencies:
+package dependencies: QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.1.0*
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0
+                      funcprog-ws17-18r-0.1.0.0@funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x
+                      ghc-boot-th-8.0.2@ghc-boot-th-8.0.2 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1 pretty-1.1.3.3@pretty-1.1.3.3
+                      primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh
+                      random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog
+                      template-haskell-2.11.1.0
+                      tf-random-0.5@tf-random-0.5-CJZw1ZWS5MOJlR60HqKEZL
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         ghc-boot-th-8.0.2@ghc-boot-th-8.0.2:GHC.LanguageExtensions.Type
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh:Control.Monad.Primitive
+                         template-haskell-2.11.1.0:Language.Haskell.TH.Syntax
+import  -/  QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu:Test.QuickCheck 7a1791e2e66f06ce3b95a443f0d4b1ed
+import  -/  QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu:Test.QuickCheck.Arbitrary 3eced3806649dec5bc33bd64f5171465
+import  -/  QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu:Test.QuickCheck.Test 278e44364c047a37baa96fcc59922ae9
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  funcprog-ws17-18r-0.1.0.0@funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x:Vec2 37b490f7ec76ba4ee5550726c13edbdc
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  integer-gmp-1.0.0.1:GHC.Integer.Type 318df275d77dcdb18e0006d8d7870c2a
+b82e8d34628608be0d5fb8a93a7bde73
+  $fArbitraryVec1 ::
+    Test.QuickCheck.Arbitrary.Arbitrary a =>
+    Test.QuickCheck.Random.QCGen -> GHC.Types.Int -> Vec2.Vec2 a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(C1(U)),A)><L,1*U(U,U,U,1*U,A,A)><L,U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   (w :: Test.QuickCheck.Arbitrary.Arbitrary a)
+                   (w1 :: Test.QuickCheck.Random.QCGen)
+                   (w2 :: GHC.Types.Int) ->
+                 case TestVec2.$w$carbitrary @ a w w1 w2 of ww { (#,#) ww1 ww2 ->
+                 Vec2.Vec2 @ a ww1 ww2 }) -}
+ca95b40260fbbf97f60d1dcbb16e1d6e
+  $fArbitraryVec2 ::
+    Test.QuickCheck.Arbitrary.Arbitrary a =>
+    Test.QuickCheck.Arbitrary.Arbitrary (Vec2.Vec2 a)
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(C1(U)),A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a
+                      ($dArbitrary :: Test.QuickCheck.Arbitrary.Arbitrary a).
+                  @ (Vec2.Vec2 a)
+                  (TestVec2.$fArbitraryVec2_$carbitrary @ a $dArbitrary)
+                  (TestVec2.$fArbitraryVec2_$cshrink @ a $dArbitrary) -}
+50e1b1a2fb0140b0a8997b83792b2418
+  $fArbitraryVec2_$carbitrary ::
+    Test.QuickCheck.Arbitrary.Arbitrary a =>
+    Test.QuickCheck.Gen.Gen (Vec2.Vec2 a)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(C1(U)),A)><L,1*U(U,U,U,1*U,A,A)><L,U>m,
+     Unfolding: InlineRule (0, True, True)
+                TestVec2.$fArbitraryVec1
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Test.QuickCheck.Arbitrary.Arbitrary a>_R
+                 ->_R Sym (Test.QuickCheck.Gen.N:Gen[0] <Vec2.Vec2 a>_R)) -}
+647edbe1a373079332b8d6de50745b53
+  $fArbitraryVec2_$cshrink ::
+    Test.QuickCheck.Arbitrary.Arbitrary a =>
+    Vec2.Vec2 a -> [Vec2.Vec2 a]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><L,A>,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ a
+                   ($dArbitrary :: Test.QuickCheck.Arbitrary.Arbitrary a)
+                   (ds1 :: Vec2.Vec2 a) ->
+                 GHC.Types.[] @ (Vec2.Vec2 a)) -}
+fe1743321bd2067efa5314bb3b52e1e9
+  $fArbitraryVec2_$s$cshrink ::
+    Vec2.Vec2 GHC.Integer.Type.Integer
+    -> [Vec2.Vec2 GHC.Integer.Type.Integer]
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ (ds1 :: Vec2.Vec2 GHC.Integer.Type.Integer) ->
+                 GHC.Types.[] @ (Vec2.Vec2 GHC.Integer.Type.Integer)) -}
+6f8a57223945140fe95edc7f0d7b339d
+  $s$fShowVec2 :: GHC.Show.Show (Vec2.Vec2 GHC.Integer.Type.Integer)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (Vec2.Vec2 GHC.Integer.Type.Integer)
+                  (Vec2.$fShowVec2_$cshowsPrec
+                     @ GHC.Integer.Type.Integer
+                     GHC.Show.$fShowInteger)
+                  TestVec2.$s$fShowVec2_$s$fShowVec2_$cshow
+                  TestVec2.$s$fShowVec2_$s$fShowVec2_$cshowList -}
+1bbc1d3285edc55e710efb5b247cb9c0
+  $s$fShowVec2_$s$fShowVec2_$cshow ::
+    Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(U,U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Vec2.Vec2 GHC.Integer.Type.Integer) ->
+                 Vec2.$fShowVec2_$cshowsPrec
+                   @ GHC.Integer.Type.Integer
+                   GHC.Show.$fShowInteger
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+8acd5197dfc70217da7b668ecaea137a
+  $s$fShowVec2_$s$fShowVec2_$cshowList ::
+    [Vec2.Vec2 GHC.Integer.Type.Integer] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta :: [Vec2.Vec2 GHC.Integer.Type.Integer])
+                   (eta1 :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ (Vec2.Vec2 GHC.Integer.Type.Integer)
+                   (Vec2.$fShowVec2_$cshowsPrec
+                      @ GHC.Integer.Type.Integer
+                      GHC.Show.$fShowInteger
+                      Vec2.$fShowVec1)
+                   eta
+                   eta1) -}
+a3caeb4bd2a5107c00fcd8011d97c5c5
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   TestVec2.$trModule2
+                   TestVec2.$trModule1) -}
+f9c5328cf552efbf581a763662a5ab2c
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "TestVec2"#) -}
+2c5ebdd3d9c10a94c4881ee7050732db
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+3cf17f109115a62873d696647201f8d3
+  $w$carbitrary ::
+    Test.QuickCheck.Arbitrary.Arbitrary a =>
+    Test.QuickCheck.Random.QCGen -> GHC.Types.Int -> (# a, a #)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(C1(U)),A)><L,1*U(U,U,U,1*U,A,A)><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   (w :: Test.QuickCheck.Arbitrary.Arbitrary a)
+                   (w1 :: Test.QuickCheck.Random.QCGen)
+                   (w2 :: GHC.Types.Int) ->
+                 let {
+                   ds1 :: (Test.QuickCheck.Random.QCGen, Test.QuickCheck.Random.QCGen)
+                   = case w1
+                            `cast`
+                          (Test.QuickCheck.Random.N:QCGen[0]) of ww { System.Random.TF.Gen.TFGen ww1 ww2 ww3 ww4 ww5 ww6 ->
+                     case System.Random.TF.Gen.$wtfGenSplit
+                            ww1
+                            ww2
+                            ww3
+                            ww4 of ww7 { (#,#) ww8 ww9 ->
+                     (ww8 `cast` (Sym (Test.QuickCheck.Random.N:QCGen[0])),
+                      ww9 `cast` (Sym (Test.QuickCheck.Random.N:QCGen[0]))) } }
+                 } in
+                 (# (Test.QuickCheck.Arbitrary.arbitrary @ a w)
+                      `cast`
+                    (Test.QuickCheck.Gen.N:Gen[0] <a>_R)
+                      (case ds1 of wild { (,) r1 r2 -> r1 })
+                      w2,
+                    (Test.QuickCheck.Arbitrary.arbitrary @ a w)
+                      `cast`
+                    (Test.QuickCheck.Gen.N:Gen[0] <a>_R)
+                      (case ds1 of wild { (,) r1 r2 ->
+                       case r2
+                              `cast`
+                            (Test.QuickCheck.Random.N:QCGen[0]) of ww { System.Random.TF.Gen.TFGen ww1 ww2 ww3 ww4 ww5 ww6 ->
+                       case System.Random.TF.Gen.$wtfGenSplit
+                              ww1
+                              ww2
+                              ww3
+                              ww4 of ww7 { (#,#) ww8 ww9 ->
+                       ww8 `cast` (Sym (Test.QuickCheck.Random.N:QCGen[0])) } } })
+                      w2 #)) -}
+5d0b3c568c20fc9f34a9b820a35fa7f1
+  $wprop_Vec2_add ::
+    GHC.Integer.Type.Integer
+    -> GHC.Integer.Type.Integer
+    -> GHC.Integer.Type.Integer
+    -> GHC.Integer.Type.Integer
+    -> GHC.Types.Bool
+  {- Arity: 4, Strictness: <S,U><L,U><S,U><L,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Integer.Type.Integer)
+                   (ww1 :: GHC.Integer.Type.Integer)
+                   (ww2 :: GHC.Integer.Type.Integer)
+                   (ww3 :: GHC.Integer.Type.Integer) ->
+                 case GHC.Integer.Type.eqInteger#
+                        (GHC.Integer.Type.plusInteger ww ww2)
+                        (GHC.Integer.Type.plusInteger ww ww2) of wild { DEFAULT ->
+                 case GHC.Prim.tagToEnum# @ GHC.Types.Bool wild of wild1 {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> case GHC.Integer.Type.eqInteger#
+                             (GHC.Integer.Type.plusInteger ww1 ww3)
+                             (GHC.Integer.Type.plusInteger ww1 ww3) of wild2 { DEFAULT ->
+                      GHC.Prim.tagToEnum# @ GHC.Types.Bool wild2 } } }) -}
+9dd7c2db4c406d0e6ff6e6b13b5fc3c1
+  $wprop_Vec2_mul ::
+    GHC.Integer.Type.Integer
+    -> GHC.Integer.Type.Integer
+    -> GHC.Integer.Type.Integer
+    -> GHC.Integer.Type.Integer
+    -> GHC.Types.Bool
+  {- Arity: 4, Strictness: <S,U><L,U><S,U><L,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Integer.Type.Integer)
+                   (ww1 :: GHC.Integer.Type.Integer)
+                   (ww2 :: GHC.Integer.Type.Integer)
+                   (ww3 :: GHC.Integer.Type.Integer) ->
+                 case GHC.Integer.Type.eqInteger#
+                        (GHC.Integer.Type.timesInteger ww ww2)
+                        (GHC.Integer.Type.timesInteger ww ww2) of wild { DEFAULT ->
+                 case GHC.Prim.tagToEnum# @ GHC.Types.Bool wild of wild1 {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> case GHC.Integer.Type.eqInteger#
+                             (GHC.Integer.Type.timesInteger ww1 ww3)
+                             (GHC.Integer.Type.timesInteger ww1 ww3) of wild2 { DEFAULT ->
+                      GHC.Prim.tagToEnum# @ GHC.Types.Bool wild2 } } }) -}
+dc3a94b822054f2e54140454db86c630
+  $wprop_Vec2_signum ::
+    GHC.Integer.Type.Integer
+    -> GHC.Integer.Type.Integer -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <S,U><L,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Integer.Type.Integer)
+                   (ww1 :: GHC.Integer.Type.Integer) ->
+                 case GHC.Integer.Type.eqInteger#
+                        (GHC.Integer.Type.timesInteger
+                           (GHC.Integer.Type.absInteger ww)
+                           (GHC.Integer.Type.signumInteger ww))
+                        ww of wild { DEFAULT ->
+                 case GHC.Prim.tagToEnum# @ GHC.Types.Bool wild of wild1 {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> case GHC.Integer.Type.eqInteger#
+                             (GHC.Integer.Type.timesInteger
+                                (GHC.Integer.Type.absInteger ww1)
+                                (GHC.Integer.Type.signumInteger ww1))
+                             ww1 of wild2 { DEFAULT ->
+                      GHC.Prim.tagToEnum# @ GHC.Types.Bool wild2 } } }) -}
+7340454727855d64a1a07b922c1a1da9
+  prop_Vec2_add ::
+    Vec2.Vec2 GHC.Integer.Type.Integer
+    -> Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <S(SL),1*U(U,U)><S(SL),1*U(U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Vec2.Vec2 GHC.Integer.Type.Integer)
+                   (w1 :: Vec2.Vec2 GHC.Integer.Type.Integer) ->
+                 case w of ww { Vec2.Vec2 ww1 ww2 ->
+                 case w1 of ww3 { Vec2.Vec2 ww4 ww5 ->
+                 TestVec2.$wprop_Vec2_add ww1 ww2 ww4 ww5 } }) -}
+7809211e55e8f0c4ff9c26a874be69f3
+  prop_Vec2_mul ::
+    Vec2.Vec2 GHC.Integer.Type.Integer
+    -> Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <S(SL),1*U(U,U)><S(SL),1*U(U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Vec2.Vec2 GHC.Integer.Type.Integer)
+                   (w1 :: Vec2.Vec2 GHC.Integer.Type.Integer) ->
+                 case w of ww { Vec2.Vec2 ww1 ww2 ->
+                 case w1 of ww3 { Vec2.Vec2 ww4 ww5 ->
+                 TestVec2.$wprop_Vec2_mul ww1 ww2 ww4 ww5 } }) -}
+b06aa3dbfbba650d0cf1ed3831fb73ed
+  prop_Vec2_signum ::
+    Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Types.Bool
+  {- Arity: 1, Strictness: <S(SL),1*U(U,U)>, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Vec2.Vec2 GHC.Integer.Type.Integer) ->
+                 case w of ww { Vec2.Vec2 ww1 ww2 ->
+                 TestVec2.$wprop_Vec2_signum ww1 ww2 }) -}
+1e41445db752d54f2f227447a2234dfd
+  test_Vec1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case Test.QuickCheck.Test.$wquickCheckWithResult
+                        @ (Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Types.Bool)
+                        TestVec2.test_Vec4
+                          `cast`
+                        (Trans
+                             (<Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Types.Bool>_R
+                              ->_R Trans
+                                       (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                                                 (Test.QuickCheck.Property.N:Prop[0])))
+                                       (Sym (Test.QuickCheck.Property.N:Property[0])))
+                             (Sym (Test.QuickCheck.Property.N:Testable[0]
+                                       <Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Types.Bool>_N)))
+                        (GHC.Base.Nothing @ (Test.QuickCheck.Random.QCGen, GHC.Types.Int))
+                        Test.QuickCheck.Test.stdArgs2
+                        Test.QuickCheck.Test.stdArgs1
+                        Test.QuickCheck.Test.stdArgs2
+                        GHC.Types.True
+                        TestVec2.prop_Vec2_signum
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case Test.QuickCheck.Test.$wquickCheckWithResult
+                        @ (Vec2.Vec2 GHC.Integer.Type.Integer
+                           -> Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Types.Bool)
+                        TestVec2.test_Vec3
+                          `cast`
+                        (Trans
+                             (<Vec2.Vec2 GHC.Integer.Type.Integer
+                               -> Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Types.Bool>_R
+                              ->_R Trans
+                                       (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                                                 (Test.QuickCheck.Property.N:Prop[0])))
+                                       (Sym (Test.QuickCheck.Property.N:Property[0])))
+                             (Sym (Test.QuickCheck.Property.N:Testable[0]
+                                       <Vec2.Vec2 GHC.Integer.Type.Integer
+                                        -> Vec2.Vec2 GHC.Integer.Type.Integer
+                                        -> GHC.Types.Bool>_N)))
+                        (GHC.Base.Nothing @ (Test.QuickCheck.Random.QCGen, GHC.Types.Int))
+                        Test.QuickCheck.Test.stdArgs2
+                        Test.QuickCheck.Test.stdArgs1
+                        Test.QuickCheck.Test.stdArgs2
+                        GHC.Types.True
+                        TestVec2.prop_Vec2_add
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case Test.QuickCheck.Test.$wquickCheckWithResult
+                        @ (Vec2.Vec2 GHC.Integer.Type.Integer
+                           -> Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Types.Bool)
+                        TestVec2.test_Vec3
+                          `cast`
+                        (Trans
+                             (<Vec2.Vec2 GHC.Integer.Type.Integer
+                               -> Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Types.Bool>_R
+                              ->_R Trans
+                                       (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                                                 (Test.QuickCheck.Property.N:Prop[0])))
+                                       (Sym (Test.QuickCheck.Property.N:Property[0])))
+                             (Sym (Test.QuickCheck.Property.N:Testable[0]
+                                       <Vec2.Vec2 GHC.Integer.Type.Integer
+                                        -> Vec2.Vec2 GHC.Integer.Type.Integer
+                                        -> GHC.Types.Bool>_N)))
+                        (GHC.Base.Nothing @ (Test.QuickCheck.Random.QCGen, GHC.Types.Int))
+                        Test.QuickCheck.Test.stdArgs2
+                        Test.QuickCheck.Test.stdArgs1
+                        Test.QuickCheck.Test.stdArgs2
+                        GHC.Types.True
+                        TestVec2.prop_Vec2_mul
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 (# ipv4, GHC.Tuple.() #) } } }) -}
+b30958442ac323ea39e0c037efc4131f
+  test_Vec2 :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                TestVec2.test_Vec1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+e5f326dd3974f89399425aab7404bb67
+  test_Vec3 ::
+    (Vec2.Vec2 GHC.Integer.Type.Integer
+     -> Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Types.Bool)
+    -> Test.QuickCheck.Random.QCGen
+    -> GHC.Types.Int
+    -> Test.QuickCheck.Property.Rose Test.QuickCheck.Property.Result
+  {- Arity: 3, Strictness: <L,C(U)><L,U(U,U,U,U,A,A)><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (f :: Vec2.Vec2 GHC.Integer.Type.Integer
+                         -> Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Types.Bool)
+                   (eta :: Test.QuickCheck.Random.QCGen)
+                   (eta1 :: GHC.Types.Int) ->
+                 Test.QuickCheck.Property.$fTestable(->)2
+                   @ (Vec2.Vec2 GHC.Integer.Type.Integer)
+                   @ (Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Types.Bool)
+                   TestVec2.$s$fShowVec2
+                   TestVec2.test_Vec4
+                     `cast`
+                   (Trans
+                        (<Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Types.Bool>_R
+                         ->_R Trans
+                                  (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                                            (Test.QuickCheck.Property.N:Prop[0])))
+                                  (Sym (Test.QuickCheck.Property.N:Property[0])))
+                        (Sym (Test.QuickCheck.Property.N:Testable[0]
+                                  <Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Types.Bool>_N)))
+                   (TestVec2.$fArbitraryVec1
+                      @ GHC.Integer.Type.Integer
+                      Test.QuickCheck.Arbitrary.$fArbitraryInteger)
+                     `cast`
+                   (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                             <Vec2.Vec2 GHC.Integer.Type.Integer>_R))
+                   TestVec2.$fArbitraryVec2_$s$cshrink
+                   f
+                   eta
+                   eta1) -}
+d085b23a4e37b9091a9603cbc846a3a5
+  test_Vec4 ::
+    (Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Types.Bool)
+    -> Test.QuickCheck.Random.QCGen
+    -> GHC.Types.Int
+    -> Test.QuickCheck.Property.Rose Test.QuickCheck.Property.Result
+  {- Arity: 3, Strictness: <L,C(U)><L,U(U,U,U,U,A,A)><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (f :: Vec2.Vec2 GHC.Integer.Type.Integer -> GHC.Types.Bool)
+                   (eta :: Test.QuickCheck.Random.QCGen)
+                   (eta1 :: GHC.Types.Int) ->
+                 Test.QuickCheck.Property.$fTestable(->)2
+                   @ (Vec2.Vec2 GHC.Integer.Type.Integer)
+                   @ GHC.Types.Bool
+                   TestVec2.$s$fShowVec2
+                   Test.QuickCheck.Property.$fTestableBool_$cproperty
+                     `cast`
+                   (Sym (Test.QuickCheck.Property.N:Testable[0] <GHC.Types.Bool>_N))
+                   (TestVec2.$fArbitraryVec1
+                      @ GHC.Integer.Type.Integer
+                      Test.QuickCheck.Arbitrary.$fArbitraryInteger)
+                     `cast`
+                   (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                             <Vec2.Vec2 GHC.Integer.Type.Integer>_R))
+                   TestVec2.$fArbitraryVec2_$s$cshrink
+                   f
+                   eta
+                   eta1) -}
+instance [safe] Test.QuickCheck.Arbitrary.Arbitrary [Vec2.Vec2]
+  = TestVec2.$fArbitraryVec2
+"SPEC $cshrink @ Integer" [ALWAYS] forall ($dArbitrary :: Test.QuickCheck.Arbitrary.Arbitrary
+                                                            GHC.Integer.Type.Integer)
+  TestVec2.$fArbitraryVec2_$cshrink @ GHC.Integer.Type.Integer
+                                    $dArbitrary
+  = TestVec2.$fArbitraryVec2_$s$cshrink
+"SPEC/TestVec2 $fShowVec2 @ Integer" [ALWAYS] forall ($dShow :: GHC.Show.Show
+                                                                  GHC.Integer.Type.Integer)
+  Vec2.$fShowVec2 @ GHC.Integer.Type.Integer $dShow
+  = TestVec2.$s$fShowVec2
+"SPEC/TestVec2 $fShowVec2_$cshow @ Integer" [ALWAYS] forall ($dShow :: GHC.Show.Show
+                                                                         GHC.Integer.Type.Integer)
+  Vec2.$fShowVec2_$cshow @ GHC.Integer.Type.Integer $dShow
+  = TestVec2.$s$fShowVec2_$s$fShowVec2_$cshow
+"SPEC/TestVec2 $fShowVec2_$cshowList @ Integer" [ALWAYS] forall ($dShow :: GHC.Show.Show
+                                                                             GHC.Integer.Type.Integer)
+  Vec2.$fShowVec2_$cshowList @ GHC.Integer.Type.Integer $dShow
+  = TestVec2.$s$fShowVec2_$s$fShowVec2_$cshowList
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

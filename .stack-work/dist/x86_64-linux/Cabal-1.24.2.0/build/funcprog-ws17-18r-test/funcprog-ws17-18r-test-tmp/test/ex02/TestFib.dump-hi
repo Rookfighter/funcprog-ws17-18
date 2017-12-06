@@ -1,0 +1,155 @@
+
+==================== FINAL INTERFACE ====================
+2017-12-06 15:32:05.918367 UTC
+
+interface main@main:TestFib 8002
+  interface hash: 10ef9f95444a3a7d6c89d89a520e7758
+  ABI hash: 5d9f02716eaa1ac08ddb9beeb99ef581
+  export-list hash: 74881687160ec9466fc7aafa414d5c78
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 9b04019cd468bf9dddf99e3516d587e7
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  TestFib.prop_Fib
+  TestFib.test_Fib
+module dependencies:
+package dependencies: QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.1.0*
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0
+                      funcprog-ws17-18r-0.1.0.0@funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x
+                      ghc-boot-th-8.0.2@ghc-boot-th-8.0.2 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1 pretty-1.1.3.3@pretty-1.1.3.3
+                      primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh
+                      random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog
+                      template-haskell-2.11.1.0
+                      tf-random-0.5@tf-random-0.5-CJZw1ZWS5MOJlR60HqKEZL
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         ghc-boot-th-8.0.2@ghc-boot-th-8.0.2:GHC.LanguageExtensions.Type
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh:Control.Monad.Primitive
+                         template-haskell-2.11.1.0:Language.Haskell.TH.Syntax
+import  -/  QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu:Test.QuickCheck 7a1791e2e66f06ce3b95a443f0d4b1ed
+import  -/  QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu:Test.QuickCheck.Gen a986eabe5e103a4dc2686a9ffb4cae41
+import  -/  QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu:Test.QuickCheck.Property 1b6f7dd2e4a24dda61f8438fd63dd31a
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  funcprog-ws17-18r-0.1.0.0@funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x:Fib 92965ddfe5a479c19cc72e4a66ea0e0c
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+de3c6794236bd62d1da7c0b1d5adc43c
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   TestFib.$trModule2
+                   TestFib.$trModule1) -}
+e17ea613e4c0b641f28c2e087edcf8f9
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "TestFib"#) -}
+2656d13963408c9ae986880f278615cf
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+d2b502d3f1f7b8195ab762de885f52da
+  $wprop_Fib :: GHC.Prim.Int# -> GHC.Types.Bool
+  {- Arity: 1, Strictness: <S,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#) ->
+                 case GHC.Integer.Type.eqInteger#
+                        (Fib.$wfib ww)
+                        (GHC.List.$w!!
+                           @ GHC.Integer.Type.Integer
+                           Fib.fibs'
+                           ww) of wild { DEFAULT ->
+                 GHC.Prim.tagToEnum# @ GHC.Types.Bool wild }) -}
+a38dba9449bb5fd584bdf316a5c0f51f
+  $wtest_Fib :: Test.QuickCheck.Random.QCGen -> GHC.Types.Int
+  {- Arity: 1, Strictness: <L,U>, Inline: [0],
+     Unfolding: (\ (w :: Test.QuickCheck.Random.QCGen) ->
+                 case System.Random.$wrandomIvalInteger
+                        @ Test.QuickCheck.Random.QCGen
+                        @ GHC.Types.Int
+                        Test.QuickCheck.Random.$fRandomGenQCGen
+                        GHC.Num.$fNumInt
+                        TestFib.test_Fib4
+                        TestFib.test_Fib3
+                        w of ww2 { (#,#) ww3 ww4 ->
+                 ww3 }) -}
+83e0615080a6e1ccf7daf3bcd589ae5a
+  prop_Fib :: GHC.Types.Int -> GHC.Types.Bool
+  {- Arity: 1, Strictness: <S(S),1*U(U)>, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: GHC.Types.Int) ->
+                 case w of ww { GHC.Types.I# ww1 -> TestFib.$wprop_Fib ww1 }) -}
+df98db0b32643d8834cf520dd7cc4c02
+  test_Fib :: Test.QuickCheck.Property.Property
+  {- Arity: 2, Strictness: <L,U(U,U,U,U,A,A)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                TestFib.test_Fib1
+                  `cast`
+                (Trans
+                     (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                               (Test.QuickCheck.Property.N:Prop[0])))
+                     (Sym (Test.QuickCheck.Property.N:Property[0]))) -}
+f623ec2c78a4aa93be45d8534a6f5e2c
+  test_Fib1 ::
+    Test.QuickCheck.Random.QCGen
+    -> GHC.Types.Int
+    -> Test.QuickCheck.Property.Rose Test.QuickCheck.Property.Result
+  {- Arity: 2, Strictness: <L,U(U,U,U,U,A,A)><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta :: Test.QuickCheck.Random.QCGen) (eta1 :: GHC.Types.Int) ->
+                 Test.QuickCheck.Property.$fTestable(->)2
+                   @ GHC.Types.Int
+                   @ GHC.Types.Bool
+                   GHC.Show.$fShowInt
+                   Test.QuickCheck.Property.$fTestableBool_$cproperty
+                     `cast`
+                   (Sym (Test.QuickCheck.Property.N:Testable[0] <GHC.Types.Bool>_N))
+                   TestFib.test_Fib2
+                     `cast`
+                   (Sym (Test.QuickCheck.Gen.N:Gen[0] <GHC.Types.Int>_R))
+                   (Test.QuickCheck.Property.forAll2 @ GHC.Types.Int)
+                   TestFib.prop_Fib
+                   eta
+                   eta1) -}
+e2678032cf9636c5c1f0d7b874362aa7
+  test_Fib2 ::
+    Test.QuickCheck.Random.QCGen -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, Strictness: <L,U><L,A>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, True)
+                (\ (w :: Test.QuickCheck.Random.QCGen) (w1 :: GHC.Types.Int) ->
+                 TestFib.$wtest_Fib w) -}
+320bff0ac43063be270625ed9f3c7470
+  test_Fib3 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (25) -}
+bfd8dd9cc1355edf315692c861ce886f
+  test_Fib4 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (0) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

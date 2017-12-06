@@ -1,0 +1,224 @@
+
+==================== FINAL INTERFACE ====================
+2017-12-06 15:30:28.510409 UTC
+
+interface funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x:StackCalc 8002
+  interface hash: 1026fc93841ec2f31d7c36fb35d570b0
+  ABI hash: 5acea4f48b257511dd7df8de8d24905f
+  export-list hash: 85cfe748e1d1cdaad4b06ee04164c9f2
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 4c5005f272c6ca38e84fc81ad1d714e7
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  StackCalc.add
+  StackCalc.dup
+  StackCalc.mul
+  StackCalc.neg
+  StackCalc.pop
+  StackCalc.push
+  StackCalc.readCommand
+  StackCalc.sub
+module dependencies:
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  base-4.9.1.0:Text.Read 75c59863e882ebaec4532e9465e2ee9b
+e33467a61b34beff4d58205ed3ec2279
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   StackCalc.$trModule2
+                   StackCalc.$trModule1) -}
+2c7890016cc9ea4729d94f11e7fc580c
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "StackCalc"#) -}
+94d9424bf36f6083923cea48461f44d3
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x"#) -}
+4c44a50f02cad394cdf41c0014fb7a3d
+  add :: [GHC.Types.Int] -> [GHC.Types.Int]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [GHC.Types.Int]) ->
+                 case ds of wild {
+                   [] -> StackCalc.add1
+                   : x ds1
+                   -> case ds1 of wild1 {
+                        [] -> GHC.Types.: @ GHC.Types.Int x (GHC.Types.[] @ GHC.Types.Int)
+                        : ipv ipv1
+                        -> let {
+                             arg :: GHC.Types.Int
+                             = case StackCalc.add_go1
+                                      wild
+                                      (GHC.List.lastError
+                                         @ GHC.Types.Int) of wild2 { GHC.Types.I# x1 ->
+                               case StackCalc.add_go
+                                      (GHC.List.init1 @ GHC.Types.Int x wild1)
+                                      (GHC.List.lastError
+                                         @ GHC.Types.Int) of wild3 { GHC.Types.I# y ->
+                               GHC.Types.I# (GHC.Prim.+# x1 y) } }
+                           } in
+                           case GHC.List.init1 @ GHC.Types.Int x wild1 of wild2 {
+                             []
+                             -> GHC.Types.: @ GHC.Types.Int arg (GHC.Types.[] @ GHC.Types.Int)
+                             : ipv2 ipv3
+                             -> GHC.Base.++
+                                  @ GHC.Types.Int
+                                  (GHC.List.init1 @ GHC.Types.Int ipv2 ipv3)
+                                  (GHC.Types.:
+                                     @ GHC.Types.Int
+                                     arg
+                                     (GHC.Types.[] @ GHC.Types.Int)) } } }) -}
+021b338b7b22e6026b3bcc15eebfbdfb
+  add1 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   StackCalc.add2
+                   (GHC.Types.[] @ GHC.Types.Int)) -}
+ce7b3178ed3210092dbeecdd0f251918
+  add2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+ce78fd3b2da5fbf6d9ed58e9aedf270c
+  add_go :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+7cb8db8d89fc9ac25823df0a976aad6e
+  add_go1 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+98a87551d6a777fb92bb5cd417b4411c
+  dup :: [GHC.Types.Int] -> [GHC.Types.Int]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [GHC.Types.Int]) ->
+                 case ds of wild {
+                   [] -> StackCalc.add1
+                   : ipv ipv1
+                   -> GHC.Base.++
+                        @ GHC.Types.Int
+                        wild
+                        (GHC.Types.:
+                           @ GHC.Types.Int
+                           (StackCalc.dup_go wild (GHC.List.lastError @ GHC.Types.Int))
+                           (GHC.Types.[] @ GHC.Types.Int)) }) -}
+ef219806f792c659477c4e8a30d94250
+  dup_go :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+ae61122cfd455e4859f2af852a5de8cf
+  mul :: [GHC.Types.Int] -> [GHC.Types.Int]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [GHC.Types.Int]) ->
+                 case ds of wild {
+                   [] -> StackCalc.add1
+                   : x ds1
+                   -> case ds1 of wild1 {
+                        [] -> StackCalc.add1
+                        : ipv ipv1
+                        -> let {
+                             arg :: GHC.Types.Int
+                             = case StackCalc.mul_go1
+                                      wild
+                                      (GHC.List.lastError
+                                         @ GHC.Types.Int) of wild2 { GHC.Types.I# x1 ->
+                               case StackCalc.mul_go
+                                      (GHC.List.init1 @ GHC.Types.Int x wild1)
+                                      (GHC.List.lastError
+                                         @ GHC.Types.Int) of wild3 { GHC.Types.I# y ->
+                               GHC.Types.I# (GHC.Prim.*# x1 y) } }
+                           } in
+                           case GHC.List.init1 @ GHC.Types.Int x wild1 of wild2 {
+                             []
+                             -> GHC.Types.: @ GHC.Types.Int arg (GHC.Types.[] @ GHC.Types.Int)
+                             : ipv2 ipv3
+                             -> GHC.Base.++
+                                  @ GHC.Types.Int
+                                  (GHC.List.init1 @ GHC.Types.Int ipv2 ipv3)
+                                  (GHC.Types.:
+                                     @ GHC.Types.Int
+                                     arg
+                                     (GHC.Types.[] @ GHC.Types.Int)) } } }) -}
+92c25c2bd41d2aecdf239058e97661d9
+  mul_go :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+02aaaa2591ffccd9d273d50a592f9202
+  mul_go1 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+ed6291a39b3700fc751d1c6d3e45704c
+  neg :: [GHC.Types.Int] -> [GHC.Types.Int]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [GHC.Types.Int]) ->
+                 case ds of wild {
+                   [] -> StackCalc.add1
+                   : ipv ipv1
+                   -> GHC.Base.++
+                        @ GHC.Types.Int
+                        (GHC.List.init1 @ GHC.Types.Int ipv ipv1)
+                        (GHC.Types.:
+                           @ GHC.Types.Int
+                           (case StackCalc.neg_go
+                                   wild
+                                   (GHC.List.lastError @ GHC.Types.Int) of wild1 { GHC.Types.I# x ->
+                            GHC.Types.I# (GHC.Prim.negateInt# x) })
+                           (GHC.Types.[] @ GHC.Types.Int)) }) -}
+2fa2df04dc0a5d6b30413a9819379678
+  neg_go :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+f2964b303e404f2462e4b2a1adeb4632
+  pop :: [GHC.Types.Int] -> [GHC.Types.Int]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: [GHC.Types.Int]) ->
+                 case ds of wild {
+                   [] -> GHC.Types.[] @ GHC.Types.Int
+                   : ipv ipv1 -> GHC.List.init1 @ GHC.Types.Int ipv ipv1 }) -}
+e85f95d1dbb213eb5f037920a11c9c5d
+  push :: [GHC.Types.Int] -> GHC.Types.Int -> [GHC.Types.Int]
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (s :: [GHC.Types.Int]) (x :: GHC.Types.Int) ->
+                 GHC.Base.augment
+                   @ GHC.Types.Int
+                   (\ @ b (c :: GHC.Types.Int -> b -> b)[OneShot] (n :: b)[OneShot] ->
+                    GHC.Base.foldr @ GHC.Types.Int @ b c n s)
+                   (GHC.Types.: @ GHC.Types.Int x (GHC.Types.[] @ GHC.Types.Int))) -}
+61bfbbc37a8bd072b3203565aaace36b
+  readCommand ::
+    GHC.Base.String -> [GHC.Types.Int] -> [GHC.Types.Int]
+  {- Arity: 2, Strictness: <S,U><S,1*U> -}
+f86f0959ee4f899788567db540813aaa
+  sub :: [GHC.Types.Int] -> [GHC.Types.Int]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [GHC.Types.Int]) ->
+                 case ds of wild {
+                   [] -> StackCalc.add1
+                   : ipv ipv1
+                   -> StackCalc.add
+                        (GHC.Base.++
+                           @ GHC.Types.Int
+                           (StackCalc.neg (GHC.List.init1 @ GHC.Types.Int ipv ipv1))
+                           (GHC.Types.:
+                              @ GHC.Types.Int
+                              (StackCalc.sub_go wild (GHC.List.lastError @ GHC.Types.Int))
+                              (GHC.Types.[] @ GHC.Types.Int))) }) -}
+850c40e09aaec84782c886696787d669
+  sub_go :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

@@ -1,0 +1,835 @@
+
+==================== FINAL INTERFACE ====================
+2017-12-06 15:30:29.32477 UTC
+
+interface funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x:MediaTrack 8002
+  interface hash: 257eacac85df55f18b22629d9c313d6a
+  ABI hash: 32d3d8772738dfa19864eca154e9f152
+  export-list hash: edd65b1ff76a75c01801f29e54edb7de
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 9818348ff1ae0de586a67810f347de33
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  MediaTrack.goodRatings
+  MediaTrack.rateTrack
+  MediaTrack.Rating{MediaTrack.Rating user value}
+  MediaTrack.RatingValue{MediaTrack.Bad MediaTrack.Good MediaTrack.Medium MediaTrack.VeryBad MediaTrack.VeryGood}
+  MediaTrack.Track{MediaTrack.Track artist duration ratings title}
+  MediaTrack.User
+module dependencies:
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+021f2b4b2473a535c82db6d34d98b05f
+  $fEqRatingValue :: GHC.Classes.Eq MediaTrack.RatingValue
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ MediaTrack.RatingValue
+                  MediaTrack.$fEqRatingValue_$c==
+                  MediaTrack.$fEqRatingValue_$c/= -}
+021f2b4b2473a535c82db6d34d98b05f
+  $fEqRatingValue_$c/= ::
+    MediaTrack.RatingValue -> MediaTrack.RatingValue -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: MediaTrack.RatingValue)
+                   (b :: MediaTrack.RatingValue) ->
+                 case a of wild {
+                   MediaTrack.VeryBad
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True MediaTrack.VeryBad -> GHC.Types.False }
+                   MediaTrack.Bad
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True MediaTrack.Bad -> GHC.Types.False }
+                   MediaTrack.Medium
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True MediaTrack.Medium -> GHC.Types.False }
+                   MediaTrack.Good
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True MediaTrack.Good -> GHC.Types.False }
+                   MediaTrack.VeryGood
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        MediaTrack.VeryGood -> GHC.Types.False } }) -}
+021f2b4b2473a535c82db6d34d98b05f
+  $fEqRatingValue_$c== ::
+    MediaTrack.RatingValue -> MediaTrack.RatingValue -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (ds :: MediaTrack.RatingValue)
+                   (ds1 :: MediaTrack.RatingValue) ->
+                 case ds of wild {
+                   MediaTrack.VeryBad
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False MediaTrack.VeryBad -> GHC.Types.True }
+                   MediaTrack.Bad
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False MediaTrack.Bad -> GHC.Types.True }
+                   MediaTrack.Medium
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False MediaTrack.Medium -> GHC.Types.True }
+                   MediaTrack.Good
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False MediaTrack.Good -> GHC.Types.True }
+                   MediaTrack.VeryGood
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        MediaTrack.VeryGood -> GHC.Types.True } }) -}
+72247435e5389bb32b3651d70f2501f4
+  $fEqTrack :: GHC.Classes.Eq MediaTrack.Track
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ MediaTrack.Track
+                  MediaTrack.$fEqTrack_$c==
+                  MediaTrack.$fEqTrack_$c/= -}
+72247435e5389bb32b3651d70f2501f4
+  $fEqTrack_$c/= ::
+    MediaTrack.Track -> MediaTrack.Track -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>,
+     Inline: INLINE (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: MediaTrack.Track) (y :: MediaTrack.Track) ->
+                 GHC.Classes.not (MediaTrack.$fEqTrack_$c== x y)) -}
+72247435e5389bb32b3651d70f2501f4
+  $fEqTrack_$c== ::
+    MediaTrack.Track -> MediaTrack.Track -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SLLL),1*U(1*U,A,A,A)><S(SLLL),1*U(1*U,A,A,A)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (t1 :: MediaTrack.Track) (t2 :: MediaTrack.Track) ->
+                 case t1 of wild { MediaTrack.Track ds ds1 ds2 ds3 ->
+                 case t2 of wild1 { MediaTrack.Track ds4 ds5 ds6 ds7 ->
+                 GHC.Base.eqString ds ds4 } }) -}
+021f2b4b2473a535c82db6d34d98b05f
+  $fOrdRatingValue :: GHC.Classes.Ord MediaTrack.RatingValue
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ MediaTrack.RatingValue
+                  MediaTrack.$fEqRatingValue
+                  MediaTrack.$fOrdRatingValue_$ccompare
+                  MediaTrack.$fOrdRatingValue_$c<
+                  MediaTrack.$fOrdRatingValue_$c<=
+                  MediaTrack.$fOrdRatingValue_$c>
+                  MediaTrack.$fOrdRatingValue_$c>=
+                  MediaTrack.$fOrdRatingValue_$cmax
+                  MediaTrack.$fOrdRatingValue_$cmin -}
+021f2b4b2473a535c82db6d34d98b05f
+  $fOrdRatingValue_$c< ::
+    MediaTrack.RatingValue -> MediaTrack.RatingValue -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: MediaTrack.RatingValue)
+                   (b :: MediaTrack.RatingValue) ->
+                 case a of wild {
+                   MediaTrack.VeryBad
+                   -> case b of wild1 {
+                        MediaTrack.VeryBad -> GHC.Types.False
+                        MediaTrack.Bad -> GHC.Types.True
+                        MediaTrack.Medium -> GHC.Types.True
+                        MediaTrack.Good -> GHC.Types.True
+                        MediaTrack.VeryGood -> GHC.Types.True }
+                   MediaTrack.Bad
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        MediaTrack.Medium -> GHC.Types.True
+                        MediaTrack.Good -> GHC.Types.True
+                        MediaTrack.VeryGood -> GHC.Types.True }
+                   MediaTrack.Medium
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        MediaTrack.Good -> GHC.Types.True
+                        MediaTrack.VeryGood -> GHC.Types.True }
+                   MediaTrack.Good
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.False MediaTrack.VeryGood -> GHC.Types.True }
+                   MediaTrack.VeryGood
+                   -> case b of wild1 { DEFAULT -> GHC.Types.False } }) -}
+021f2b4b2473a535c82db6d34d98b05f
+  $fOrdRatingValue_$c<= ::
+    MediaTrack.RatingValue -> MediaTrack.RatingValue -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: MediaTrack.RatingValue)
+                   (b :: MediaTrack.RatingValue) ->
+                 case a of wild {
+                   MediaTrack.VeryBad -> case b of wild1 { DEFAULT -> GHC.Types.True }
+                   MediaTrack.Bad
+                   -> case b of wild1 {
+                        MediaTrack.VeryBad -> GHC.Types.False
+                        MediaTrack.Bad -> GHC.Types.True
+                        MediaTrack.Medium -> GHC.Types.True
+                        MediaTrack.Good -> GHC.Types.True
+                        MediaTrack.VeryGood -> GHC.Types.True }
+                   MediaTrack.Medium
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        MediaTrack.Medium -> GHC.Types.True
+                        MediaTrack.Good -> GHC.Types.True
+                        MediaTrack.VeryGood -> GHC.Types.True }
+                   MediaTrack.Good
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        MediaTrack.Good -> GHC.Types.True
+                        MediaTrack.VeryGood -> GHC.Types.True }
+                   MediaTrack.VeryGood
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        MediaTrack.VeryGood -> GHC.Types.True } }) -}
+021f2b4b2473a535c82db6d34d98b05f
+  $fOrdRatingValue_$c> ::
+    MediaTrack.RatingValue -> MediaTrack.RatingValue -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: MediaTrack.RatingValue)
+                   (b :: MediaTrack.RatingValue) ->
+                 case a of wild {
+                   MediaTrack.VeryBad
+                   -> case b of wild1 { DEFAULT -> GHC.Types.False }
+                   MediaTrack.Bad
+                   -> case b of wild1 {
+                        MediaTrack.VeryBad -> GHC.Types.True
+                        MediaTrack.Bad -> GHC.Types.False
+                        MediaTrack.Medium -> GHC.Types.False
+                        MediaTrack.Good -> GHC.Types.False
+                        MediaTrack.VeryGood -> GHC.Types.False }
+                   MediaTrack.Medium
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        MediaTrack.Medium -> GHC.Types.False
+                        MediaTrack.Good -> GHC.Types.False
+                        MediaTrack.VeryGood -> GHC.Types.False }
+                   MediaTrack.Good
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        MediaTrack.Good -> GHC.Types.False
+                        MediaTrack.VeryGood -> GHC.Types.False }
+                   MediaTrack.VeryGood
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        MediaTrack.VeryGood -> GHC.Types.False } }) -}
+021f2b4b2473a535c82db6d34d98b05f
+  $fOrdRatingValue_$c>= ::
+    MediaTrack.RatingValue -> MediaTrack.RatingValue -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: MediaTrack.RatingValue)
+                   (b :: MediaTrack.RatingValue) ->
+                 case a of wild {
+                   MediaTrack.VeryBad
+                   -> case b of wild1 {
+                        MediaTrack.VeryBad -> GHC.Types.True
+                        MediaTrack.Bad -> GHC.Types.False
+                        MediaTrack.Medium -> GHC.Types.False
+                        MediaTrack.Good -> GHC.Types.False
+                        MediaTrack.VeryGood -> GHC.Types.False }
+                   MediaTrack.Bad
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        MediaTrack.Medium -> GHC.Types.False
+                        MediaTrack.Good -> GHC.Types.False
+                        MediaTrack.VeryGood -> GHC.Types.False }
+                   MediaTrack.Medium
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        MediaTrack.Good -> GHC.Types.False
+                        MediaTrack.VeryGood -> GHC.Types.False }
+                   MediaTrack.Good
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True MediaTrack.VeryGood -> GHC.Types.False }
+                   MediaTrack.VeryGood
+                   -> case b of wild1 { DEFAULT -> GHC.Types.True } }) -}
+021f2b4b2473a535c82db6d34d98b05f
+  $fOrdRatingValue_$ccompare ::
+    MediaTrack.RatingValue
+    -> MediaTrack.RatingValue -> GHC.Types.Ordering
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: MediaTrack.RatingValue)
+                   (b :: MediaTrack.RatingValue) ->
+                 case a of wild {
+                   MediaTrack.VeryBad
+                   -> case b of wild1 {
+                        MediaTrack.VeryBad -> GHC.Types.EQ
+                        MediaTrack.Bad -> GHC.Types.LT
+                        MediaTrack.Medium -> GHC.Types.LT
+                        MediaTrack.Good -> GHC.Types.LT
+                        MediaTrack.VeryGood -> GHC.Types.LT }
+                   MediaTrack.Bad
+                   -> case b of wild1 {
+                        MediaTrack.VeryBad -> GHC.Types.GT
+                        MediaTrack.Bad -> GHC.Types.EQ
+                        MediaTrack.Medium -> GHC.Types.LT
+                        MediaTrack.Good -> GHC.Types.LT
+                        MediaTrack.VeryGood -> GHC.Types.LT }
+                   MediaTrack.Medium
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.GT
+                        MediaTrack.Medium -> GHC.Types.EQ
+                        MediaTrack.Good -> GHC.Types.LT
+                        MediaTrack.VeryGood -> GHC.Types.LT }
+                   MediaTrack.Good
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.GT
+                        MediaTrack.Good -> GHC.Types.EQ
+                        MediaTrack.VeryGood -> GHC.Types.LT }
+                   MediaTrack.VeryGood
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.GT MediaTrack.VeryGood -> GHC.Types.EQ } }) -}
+021f2b4b2473a535c82db6d34d98b05f
+  $fOrdRatingValue_$cmax ::
+    MediaTrack.RatingValue
+    -> MediaTrack.RatingValue -> MediaTrack.RatingValue
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (x :: MediaTrack.RatingValue)
+                   (y :: MediaTrack.RatingValue) ->
+                 case x of wild {
+                   MediaTrack.VeryBad -> y
+                   MediaTrack.Bad
+                   -> case y of wild1 {
+                        DEFAULT -> MediaTrack.Bad
+                        MediaTrack.Medium -> MediaTrack.Medium
+                        MediaTrack.Good -> MediaTrack.Good
+                        MediaTrack.VeryGood -> MediaTrack.VeryGood }
+                   MediaTrack.Medium
+                   -> case y of wild1 {
+                        DEFAULT -> MediaTrack.Medium
+                        MediaTrack.Good -> MediaTrack.Good
+                        MediaTrack.VeryGood -> MediaTrack.VeryGood }
+                   MediaTrack.Good
+                   -> case y of wild1 {
+                        DEFAULT -> MediaTrack.Good
+                        MediaTrack.VeryGood -> MediaTrack.VeryGood }
+                   MediaTrack.VeryGood
+                   -> case y of wild1 { DEFAULT -> MediaTrack.VeryGood } }) -}
+021f2b4b2473a535c82db6d34d98b05f
+  $fOrdRatingValue_$cmin ::
+    MediaTrack.RatingValue
+    -> MediaTrack.RatingValue -> MediaTrack.RatingValue
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (x :: MediaTrack.RatingValue)
+                   (y :: MediaTrack.RatingValue) ->
+                 case x of wild {
+                   MediaTrack.VeryBad
+                   -> case y of wild1 { DEFAULT -> MediaTrack.VeryBad }
+                   MediaTrack.Bad
+                   -> case y of wild1 {
+                        MediaTrack.VeryBad -> MediaTrack.VeryBad
+                        MediaTrack.Bad -> MediaTrack.Bad
+                        MediaTrack.Medium -> MediaTrack.Bad
+                        MediaTrack.Good -> MediaTrack.Bad
+                        MediaTrack.VeryGood -> MediaTrack.Bad }
+                   MediaTrack.Medium
+                   -> case y of wild1 {
+                        DEFAULT -> wild1
+                        MediaTrack.Medium -> MediaTrack.Medium
+                        MediaTrack.Good -> MediaTrack.Medium
+                        MediaTrack.VeryGood -> MediaTrack.Medium }
+                   MediaTrack.Good
+                   -> case y of wild1 {
+                        DEFAULT -> wild1
+                        MediaTrack.Good -> MediaTrack.Good
+                        MediaTrack.VeryGood -> MediaTrack.Good }
+                   MediaTrack.VeryGood -> y }) -}
+f48f1e461ebde6caf9b40828cf1d759e
+  $fShowRating :: GHC.Show.Show MediaTrack.Rating
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ MediaTrack.Rating
+                  MediaTrack.$fShowRating_$cshowsPrec
+                  MediaTrack.$fShowRating_$cshow
+                  MediaTrack.$fShowRating_$cshowList -}
+f48f1e461ebde6caf9b40828cf1d759e
+  $fShowRating1 :: MediaTrack.Rating -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ (w :: MediaTrack.Rating) (w1 :: GHC.Base.String) ->
+                 case w of ww { MediaTrack.Rating ww1 ww2 ->
+                 MediaTrack.$w$cshowsPrec 0# ww1 ww2 w1 }) -}
+80284078bd4e11e2e464fca28e8a93dd
+  $fShowRating10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "user = "#) -}
+ca516fb4089291bba66984c32feb9e16
+  $fShowRating11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Rating {"#) -}
+c4408d673dd7eef19fda9dd246d4b4cf
+  $fShowRating2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "}"#) -}
+be0f852a5aa152a9a62a1825a1f287e5
+  $fShowRating3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "VeryGood"#) -}
+94241ad4f7f83f6f2482d9cfe24cd90a
+  $fShowRating4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Good"#) -}
+7bc8fdedffdf311968604c03dfc3fb6a
+  $fShowRating5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Medium"#) -}
+29b80f90a2818fecee81d320e6d2526f
+  $fShowRating6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Bad"#) -}
+75fb629a1ef827f41f9c66ef6e8b993d
+  $fShowRating7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "VeryBad"#) -}
+847c6f9f9a251e23cbf7a1353e772de1
+  $fShowRating8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "value = "#) -}
+7e8f6c7cb2ddbdbe7a9ea20934b4e01f
+  $fShowRating9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ", "#) -}
+021f2b4b2473a535c82db6d34d98b05f
+  $fShowRatingValue :: GHC.Show.Show MediaTrack.RatingValue
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ MediaTrack.RatingValue
+                  MediaTrack.$fShowRatingValue_$cshowsPrec
+                  MediaTrack.$fShowRatingValue_$cshow
+                  MediaTrack.$fShowRatingValue_$cshowList -}
+021f2b4b2473a535c82db6d34d98b05f
+  $fShowRatingValue_$cshow ::
+    MediaTrack.RatingValue -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: MediaTrack.RatingValue) ->
+                 MediaTrack.$fShowRatingValue_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+021f2b4b2473a535c82db6d34d98b05f
+  $fShowRatingValue_$cshowList ::
+    [MediaTrack.RatingValue] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ MediaTrack.RatingValue
+                   MediaTrack.$w$cshowsPrec1) -}
+021f2b4b2473a535c82db6d34d98b05f
+  $fShowRatingValue_$cshowsPrec ::
+    GHC.Types.Int -> MediaTrack.RatingValue -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: MediaTrack.RatingValue)
+                   (w2 :: GHC.Base.String) ->
+                 MediaTrack.$w$cshowsPrec1 w1 w2) -}
+f48f1e461ebde6caf9b40828cf1d759e
+  $fShowRating_$cshow :: MediaTrack.Rating -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: MediaTrack.Rating) ->
+                 MediaTrack.$fShowRating_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+f48f1e461ebde6caf9b40828cf1d759e
+  $fShowRating_$cshowList :: [MediaTrack.Rating] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ MediaTrack.Rating
+                   MediaTrack.$fShowRating1) -}
+f48f1e461ebde6caf9b40828cf1d759e
+  $fShowRating_$cshowsPrec ::
+    GHC.Types.Int -> MediaTrack.Rating -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S(S),1*U(U)><S,1*U(1*U,1*U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: MediaTrack.Rating)
+                   (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { MediaTrack.Rating ww3 ww4 ->
+                 MediaTrack.$w$cshowsPrec ww1 ww3 ww4 w2 } }) -}
+72247435e5389bb32b3651d70f2501f4
+  $fShowTrack :: GHC.Show.Show MediaTrack.Track
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ MediaTrack.Track
+                  MediaTrack.$fShowTrack_$cshowsPrec
+                  MediaTrack.$fShowTrack_$cshow
+                  MediaTrack.$fShowTrack_$cshowList -}
+72247435e5389bb32b3651d70f2501f4
+  $fShowTrack1 :: MediaTrack.Track -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ (w :: MediaTrack.Track) (w1 :: GHC.Base.String) ->
+                 case w of ww { MediaTrack.Track ww1 ww2 ww3 ww4 ->
+                 MediaTrack.$w$cshowsPrec2 0# ww1 ww2 ww3 ww4 w1 }) -}
+72247435e5389bb32b3651d70f2501f4
+  $fShowTrack_$cshow :: MediaTrack.Track -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,1*U,1*U(U),1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: MediaTrack.Track) ->
+                 MediaTrack.$fShowTrack_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+72247435e5389bb32b3651d70f2501f4
+  $fShowTrack_$cshowList :: [MediaTrack.Track] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ MediaTrack.Track
+                   MediaTrack.$fShowTrack1) -}
+72247435e5389bb32b3651d70f2501f4
+  $fShowTrack_$cshowsPrec ::
+    GHC.Types.Int -> MediaTrack.Track -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <S(S),1*U(U)><S,1*U(1*U,1*U,1*U(U),1*U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: MediaTrack.Track)
+                   (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { MediaTrack.Track ww3 ww4 ww5 ww6 ->
+                 MediaTrack.$w$cshowsPrec2 ww1 ww3 ww4 ww5 ww6 w2 } }) -}
+48828879da5ede0f2733c1252ca01417
+  $tc'Bad :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1285168960592577079##
+                   6798914702461475125##
+                   MediaTrack.$trModule
+                   MediaTrack.$tc'Bad1) -}
+75454ce3d81ef34bcc674c5839737469
+  $tc'Bad1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Bad"#) -}
+7cb140071145eb7a2fd8eb9b3b6b44d8
+  $tc'Good :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15034542494252498357##
+                   1685662053739434139##
+                   MediaTrack.$trModule
+                   MediaTrack.$tc'Good1) -}
+14d05749b679725284fd78acdcc7fba2
+  $tc'Good1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Good"#) -}
+2de0ff662d14ad1b7b8dd0eae58a2d84
+  $tc'Medium :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12107973741421026234##
+                   6615061926969751926##
+                   MediaTrack.$trModule
+                   MediaTrack.$tc'Medium1) -}
+6d888c4e7d3afd945d0b9b6d00351830
+  $tc'Medium1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Medium"#) -}
+b9fd5a79494038ec739c6e527472fede
+  $tc'Rating :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7796620698624147094##
+                   1713951310767707561##
+                   MediaTrack.$trModule
+                   MediaTrack.$tc'Rating1) -}
+6d7e5534779797978034b406786baf41
+  $tc'Rating1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Rating"#) -}
+ef4ca92627e5d12eeabfc4a0e5c78b08
+  $tc'Track :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16392254354012623625##
+                   14328882074743651153##
+                   MediaTrack.$trModule
+                   MediaTrack.$tc'Track1) -}
+420a81696e3c67aa1432ce1478b717d2
+  $tc'Track1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Track"#) -}
+d7b54e35dbf6a39061952e084793bfac
+  $tc'VeryBad :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15916838816379066829##
+                   1751353352465457388##
+                   MediaTrack.$trModule
+                   MediaTrack.$tc'VeryBad1) -}
+15bcb3a4a77dff3e6cdb4c013ca922cc
+  $tc'VeryBad1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'VeryBad"#) -}
+7ac8fa0e037d0133e7db23c54de9e8fb
+  $tc'VeryGood :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6376607976347115789##
+                   13582970287725376295##
+                   MediaTrack.$trModule
+                   MediaTrack.$tc'VeryGood1) -}
+2d4c9fb4fa8aefec43322ecb3b2edb1f
+  $tc'VeryGood1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'VeryGood"#) -}
+52f91757c52567626f378844a43f819b
+  $tcRating :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12502618215337315760##
+                   8620071984519564451##
+                   MediaTrack.$trModule
+                   MediaTrack.$tcRating1) -}
+ba19813b68c738b9080620a54c53ea42
+  $tcRating1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Rating"#) -}
+0ef11a31fc6e2565e49cac38edf454aa
+  $tcRatingValue :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13915258080248203785##
+                   14440297123444063577##
+                   MediaTrack.$trModule
+                   MediaTrack.$tcRatingValue1) -}
+dce3d92c1732c3f7b551210bb027e14c
+  $tcRatingValue1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "RatingValue"#) -}
+d70b7c0d92dc95427e0c5b2e6dff8c23
+  $tcTrack :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12172025295981222935##
+                   7992582111881185282##
+                   MediaTrack.$trModule
+                   MediaTrack.$tcTrack1) -}
+1aa43d1893f554b91a8548a0944a4084
+  $tcTrack1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Track"#) -}
+8b3f4086a52cd634889ad1e24461a974
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   MediaTrack.$trModule2
+                   MediaTrack.$trModule1) -}
+97a24733aa629d74309bf0338eb865b4
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "MediaTrack"#) -}
+52c35b13bcef9dae06b3ce8bb3530c36
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x"#) -}
+84c120124d51c0ba3a799d069604d5bd
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> MediaTrack.User
+    -> MediaTrack.RatingValue
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 4, Strictness: <S,U><L,1*U><L,1*U><L,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: MediaTrack.User)
+                   (ww2 :: MediaTrack.RatingValue)
+                   (w :: GHC.Base.String) ->
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ (x :: GHC.Base.String)[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       MediaTrack.$fShowRating11
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          MediaTrack.$fShowRating10
+                          (GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows6
+                             (GHC.Show.showLitString
+                                ww1
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.shows6
+                                   (GHC.Base.++
+                                      @ GHC.Types.Char
+                                      MediaTrack.$fShowRating9
+                                      (GHC.Base.++
+                                         @ GHC.Types.Char
+                                         MediaTrack.$fShowRating8
+                                         (MediaTrack.$w$cshowsPrec1
+                                            ww2
+                                            (GHC.Base.++
+                                               @ GHC.Types.Char
+                                               MediaTrack.$fShowRating2
+                                               x))))))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False -> p w
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows7
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 w)) }) -}
+021f2b4b2473a535c82db6d34d98b05f
+  $w$cshowsPrec1 ::
+    MediaTrack.RatingValue -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ (w :: MediaTrack.RatingValue)
+                   (w1 :: GHC.Base.String) ->
+                 case w of wild {
+                   MediaTrack.VeryBad
+                   -> GHC.Base.++ @ GHC.Types.Char MediaTrack.$fShowRating7 w1
+                   MediaTrack.Bad
+                   -> GHC.Base.++ @ GHC.Types.Char MediaTrack.$fShowRating6 w1
+                   MediaTrack.Medium
+                   -> GHC.Base.++ @ GHC.Types.Char MediaTrack.$fShowRating5 w1
+                   MediaTrack.Good
+                   -> GHC.Base.++ @ GHC.Types.Char MediaTrack.$fShowRating4 w1
+                   MediaTrack.VeryGood
+                   -> GHC.Base.++ @ GHC.Types.Char MediaTrack.$fShowRating3 w1 }) -}
+457fa1b50302fa6e1beb9e751d7b7929
+  $w$cshowsPrec2 ::
+    GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Types.Int
+    -> [MediaTrack.Rating]
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 6, Strictness: <S,U><L,1*U><L,1*U><L,1*U(U)><L,1*U><L,U>,
+     Inline: [0] -}
+5306bd2da892bd80ba2cc563ff410497
+  $wgoodRatings ::
+    MediaTrack.User -> [MediaTrack.Rating] -> GHC.Prim.Int#
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>, Inline: [0],
+     Unfolding: (\ (w :: MediaTrack.User) (ww :: [MediaTrack.Rating]) ->
+                 letrec {
+                   $wgo :: [MediaTrack.Rating] -> GHC.Prim.Int# -> GHC.Prim.Int#
+                     {- Arity: 2, Strictness: <S,1*U><L,U>, Inline: [0] -}
+                   = \ (w1 :: [MediaTrack.Rating]) (ww1 :: GHC.Prim.Int#) ->
+                     case w1 of wild {
+                       [] -> ww1
+                       : y ys
+                       -> case y of wild1 { MediaTrack.Rating ds ds1 ->
+                          case GHC.Base.eqString w ds of wild2 {
+                            GHC.Types.False -> $wgo ys ww1
+                            GHC.Types.True
+                            -> case ds1 of wild3 {
+                                 DEFAULT -> $wgo ys ww1
+                                 MediaTrack.Good -> $wgo ys (GHC.Prim.+# ww1 1#)
+                                 MediaTrack.VeryGood -> $wgo ys (GHC.Prim.+# ww1 1#) } } } }
+                 } in
+                 $wgo ww 0#) -}
+f48f1e461ebde6caf9b40828cf1d759e
+  data Rating
+    = Rating {user :: MediaTrack.User, value :: MediaTrack.RatingValue}
+021f2b4b2473a535c82db6d34d98b05f
+  data RatingValue = VeryBad | Bad | Medium | Good | VeryGood
+72247435e5389bb32b3651d70f2501f4
+  data Track
+    = Track {title :: GHC.Base.String,
+             artist :: GHC.Base.String,
+             duration :: GHC.Types.Int,
+             ratings :: [MediaTrack.Rating]}
+4e5e44ea7a7abad47d00d28f87f87b0b
+  type User = GHC.Base.String
+bb19d59c282582048502a41fa368c63b
+  artist :: MediaTrack.Track -> GHC.Base.String
+  RecSel Left MediaTrack.Track
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSLL),1*U(A,1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: MediaTrack.Track) ->
+                 case ds of wild { MediaTrack.Track ds1 ds2 ds3 ds4 -> ds2 }) -}
+297215954cfc6a8af10d2618f3b2a67b
+  duration :: MediaTrack.Track -> GHC.Types.Int
+  RecSel Left MediaTrack.Track
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLSL),1*U(A,A,1*U(U),A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: MediaTrack.Track) ->
+                 case ds of wild { MediaTrack.Track ds1 ds2 ds3 ds4 -> ds3 }) -}
+7af263b8ab23e299387f844b3ce4a588
+  goodRatings :: MediaTrack.User -> MediaTrack.Track -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U><S(LLLS),1*U(A,A,A,1*U)>m, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: MediaTrack.User) (w1 :: MediaTrack.Track) ->
+                 case w1 of ww { MediaTrack.Track ww1 ww2 ww3 ww4 ->
+                 case MediaTrack.$wgoodRatings w ww4 of ww5 { DEFAULT ->
+                 GHC.Types.I# ww5 } }) -}
+4002897a782a2823d5aa1a92ba7fd4d7
+  rateTrack ::
+    MediaTrack.Rating -> MediaTrack.Track -> MediaTrack.Track
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U><L,U(1*U,1*U,1*U,1*U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (r :: MediaTrack.Rating) (t :: MediaTrack.Track) ->
+                 MediaTrack.Track
+                   (case t of wild { MediaTrack.Track ds ds1 ds2 ds3 -> ds })
+                   (case t of wild { MediaTrack.Track ds ds1 ds2 ds3 -> ds1 })
+                   (case t of wild { MediaTrack.Track ds ds1 ds2 ds3 -> ds2 })
+                   (case t of wild { MediaTrack.Track ds ds1 ds2 ds3 ->
+                    GHC.Base.augment
+                      @ MediaTrack.Rating
+                      (\ @ b
+                         (c :: MediaTrack.Rating -> b -> b)[OneShot]
+                         (n :: b)[OneShot] ->
+                       GHC.Base.foldr @ MediaTrack.Rating @ b c n ds3)
+                      (GHC.Types.:
+                         @ MediaTrack.Rating
+                         r
+                         (GHC.Types.[] @ MediaTrack.Rating)) })) -}
+d81fc319935fc143df7ed55bc9001eec
+  ratings :: MediaTrack.Track -> [MediaTrack.Rating]
+  RecSel Left MediaTrack.Track
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLLS),1*U(A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: MediaTrack.Track) ->
+                 case ds of wild { MediaTrack.Track ds1 ds2 ds3 ds4 -> ds4 }) -}
+51791d31aec94a49029780bdadf2f489
+  title :: MediaTrack.Track -> GHC.Base.String
+  RecSel Left MediaTrack.Track
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLLL),1*U(1*U,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: MediaTrack.Track) ->
+                 case ds of wild { MediaTrack.Track ds1 ds2 ds3 ds4 -> ds1 }) -}
+20029666007fd822f3e632f7e7e13a37
+  user :: MediaTrack.Rating -> MediaTrack.User
+  RecSel Left MediaTrack.Rating
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: MediaTrack.Rating) ->
+                 case ds of wild { MediaTrack.Rating ds1 ds2 -> ds1 }) -}
+95d0b09c0336de013ba99ee9929dd82f
+  value :: MediaTrack.Rating -> MediaTrack.RatingValue
+  RecSel Left MediaTrack.Rating
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: MediaTrack.Rating) ->
+                 case ds of wild { MediaTrack.Rating ds1 ds2 -> ds2 }) -}
+instance [safe] GHC.Classes.Eq [MediaTrack.RatingValue]
+  = MediaTrack.$fEqRatingValue
+instance [safe] GHC.Classes.Eq [MediaTrack.Track]
+  = MediaTrack.$fEqTrack
+instance [safe] GHC.Classes.Ord [MediaTrack.RatingValue]
+  = MediaTrack.$fOrdRatingValue
+instance [safe] GHC.Show.Show [MediaTrack.Rating]
+  = MediaTrack.$fShowRating
+instance [safe] GHC.Show.Show [MediaTrack.RatingValue]
+  = MediaTrack.$fShowRatingValue
+instance [safe] GHC.Show.Show [MediaTrack.Track]
+  = MediaTrack.$fShowTrack
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

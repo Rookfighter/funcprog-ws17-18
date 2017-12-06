@@ -1,0 +1,738 @@
+
+==================== FINAL INTERFACE ====================
+2017-12-06 15:30:53.700305 UTC
+
+interface main@main:TestStackCalc 8002
+  interface hash: 88ad59c3e59b90fa565f31417c1ccb79
+  ABI hash: debfd07f84973f3d19a7ea405f4415de
+  export-list hash: 718b864e3af6788ba1ece0e719616be5
+  orphan hash: 79ee33a0addae2db6c41a5c332a7bdd3
+  flag hash: b8324d1f7eb7a1f8cf6934750376e3db
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  TestStackCalc.prop_Add
+  TestStackCalc.prop_Dup
+  TestStackCalc.prop_Mul
+  TestStackCalc.prop_Neg
+  TestStackCalc.prop_Pop
+  TestStackCalc.prop_Push
+  TestStackCalc.prop_Sub
+  TestStackCalc.test_StackCalc
+module dependencies:
+package dependencies: QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.1.0*
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0
+                      funcprog-ws17-18r-0.1.0.0@funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x
+                      ghc-boot-th-8.0.2@ghc-boot-th-8.0.2 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1 pretty-1.1.3.3@pretty-1.1.3.3
+                      primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh
+                      random-1.1@random-1.1-9tceXaeYIMZ4JrKq20Egog
+                      template-haskell-2.11.1.0
+                      tf-random-0.5@tf-random-0.5-CJZw1ZWS5MOJlR60HqKEZL
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         ghc-boot-th-8.0.2@ghc-boot-th-8.0.2:GHC.LanguageExtensions.Type
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.2.0@primitive-0.6.2.0-4578caNkWQ54Gt1mxLF2Yh:Control.Monad.Primitive
+                         template-haskell-2.11.1.0:Language.Haskell.TH.Syntax
+import  -/  QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu:Test.QuickCheck 7a1791e2e66f06ce3b95a443f0d4b1ed
+import  -/  QuickCheck-2.9.2@QuickCheck-2.9.2-LvlomhGMxrFBkX1zwiWpQu:Test.QuickCheck.Test 278e44364c047a37baa96fcc59922ae9
+import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  funcprog-ws17-18r-0.1.0.0@funcprog-ws17-18r-0.1.0.0-EbHhfSs1oJTIKgnYUQNi6x:StackCalc 5acea4f48b257511dd7df8de8d24905f
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+ead8c24477e7eddaf6845f3a229bb9f2
+  $s$fArbitrary[]_$s$fArbitrary[]_$cshrink ::
+    [GHC.Types.Int] -> [[GHC.Types.Int]]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (xs :: [GHC.Types.Int]) ->
+                 Test.QuickCheck.Arbitrary.shrinkList
+                   @ GHC.Types.Int
+                   Test.QuickCheck.Arbitrary.$fArbitraryInt_$cshrink
+                   xs) -}
+892f62549ba83dd471d0ef8d52ddd324
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   TestStackCalc.$trModule2
+                   TestStackCalc.$trModule1) -}
+73ac3e351375af542a7c041f86959776
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "TestStackCalc"#) -}
+6dc88069290f32c66571e9f0b05a1381
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+658df8006ec63903b431183d086fc8bd
+  $wgo :: [GHC.Types.Int] -> GHC.Prim.Int# -> GHC.Prim.Int#
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,U>, Inline: [0] -}
+05eea20df603d6259a05c80924d6d23f
+  $wgo1 :: [GHC.Types.Int] -> GHC.Prim.Int# -> GHC.Prim.Int#
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,U>, Inline: [0] -}
+580bebcb5334b39f0634c3890064801b
+  $wprop_Push :: [GHC.Types.Int] -> GHC.Prim.Int# -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,U><S,U>, Inline: [0],
+     Unfolding: (\ (w :: [GHC.Types.Int]) (ww :: GHC.Prim.Int#) ->
+                 letrec {
+                   $wgo2 :: [GHC.Types.Int] -> GHC.Prim.Int#
+                     {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+                   = \ (w1 :: [GHC.Types.Int]) ->
+                     case w1 of wild { [] -> ww : y ys -> $wgo2 ys }
+                 } in
+                 case $wgo2 w of ww1 { DEFAULT ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.==# ww1 ww) of wild {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> case GHC.List.$wlenAcc @ GHC.Types.Int w 0# of ww2 { DEFAULT ->
+                      case TestStackCalc.$wgo1 w 0# of ww3 { DEFAULT ->
+                      GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.==# ww3 (GHC.Prim.+# ww2 1#)) } } } }) -}
+584f92c5f49b41d09d645592680fe2ea
+  prop_Add :: [GHC.Types.Int] -> GHC.Types.Bool
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [GHC.Types.Int]) ->
+                 case ds of wild {
+                   [] -> TestStackCalc.prop_Add1
+                   : x ds1
+                   -> case ds1 of wild1 {
+                        []
+                        -> case TestStackCalc.prop_Add_go3
+                                  (StackCalc.add
+                                     (GHC.Types.: @ GHC.Types.Int x (GHC.Types.[] @ GHC.Types.Int)))
+                                  (GHC.List.lastError @ GHC.Types.Int) of wild2 { GHC.Types.I# x1 ->
+                           case x of wild3 { GHC.Types.I# y ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.==# x1 y) of wild4 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True
+                             -> case GHC.List.$wlenAcc
+                                       @ GHC.Types.Int
+                                       (StackCalc.add
+                                          (GHC.Types.:
+                                             @ GHC.Types.Int
+                                             wild3
+                                             (GHC.Types.[] @ GHC.Types.Int)))
+                                       0# of ww2 {
+                                  DEFAULT -> GHC.Types.False 1# -> GHC.Types.True } } } }
+                        : ipv ipv1
+                        -> case TestStackCalc.prop_Add_go2
+                                  wild
+                                  (GHC.List.lastError @ GHC.Types.Int) of wild2 { GHC.Types.I# x1 ->
+                           case TestStackCalc.prop_Add_go1
+                                  (GHC.List.init1 @ GHC.Types.Int x wild1)
+                                  (GHC.List.lastError @ GHC.Types.Int) of wild3 { GHC.Types.I# y ->
+                           case TestStackCalc.prop_Add_go
+                                  (StackCalc.add wild)
+                                  (GHC.List.lastError @ GHC.Types.Int) of wild4 { GHC.Types.I# x2 ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.==# x2 (GHC.Prim.+# x1 y)) of wild5 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True
+                             -> case GHC.List.$wlenAcc
+                                       @ GHC.Types.Int
+                                       wild
+                                       0# of ww2 { DEFAULT ->
+                                case GHC.List.$wlenAcc
+                                       @ GHC.Types.Int
+                                       (StackCalc.add wild)
+                                       0# of ww1 { DEFAULT ->
+                                GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.==# ww1 (GHC.Prim.-# ww2 1#)) } } } } } } } }) -}
+44aa8c240b3349f43f79e57c3ed9a8bc
+  prop_Add1 :: GHC.Types.Bool
+  {- Unfolding: (case TestStackCalc.prop_Add_go4
+                        TestStackCalc.prop_Add2
+                        (GHC.List.lastError @ GHC.Types.Int) of wild { GHC.Types.I# x ->
+                 case x of wild1 {
+                   DEFAULT -> GHC.Types.False
+                   0#
+                   -> case GHC.List.$wlenAcc
+                             @ GHC.Types.Int
+                             TestStackCalc.prop_Add2
+                             0# of ww2 {
+                        DEFAULT -> GHC.Types.False 1# -> GHC.Types.True } } }) -}
+a2cb96fa175328a7930bedb96852b01a
+  prop_Add2 :: [GHC.Types.Int]
+  {- Unfolding: (StackCalc.add (GHC.Types.[] @ GHC.Types.Int)) -}
+ae9bd72e93a607a8c4b2a1daaa355e53
+  prop_Add_go :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+eb8402b8ece8566209258408d3761e25
+  prop_Add_go1 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+59e04418c438d1d3ad4b2fd5a78427fc
+  prop_Add_go2 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+556a54736249f9c141fb8003c9424c77
+  prop_Add_go3 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+20672e7861cac4d8da121147c5fb16a4
+  prop_Add_go4 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+beb2af16f71b0ff18afd89da539e824d
+  prop_Dup :: [GHC.Types.Int] -> GHC.Types.Bool
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [GHC.Types.Int]) ->
+                 case ds of wild {
+                   [] -> GHC.Types.True
+                   : ipv ipv1
+                   -> let {
+                        lvl :: GHC.Types.Int
+                        = StackCalc.dup_go wild (GHC.List.lastError @ GHC.Types.Int)
+                      } in
+                      letrec {
+                        $wgo2 :: [GHC.Types.Int] -> GHC.Types.Int
+                          {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+                        = \ (w :: [GHC.Types.Int]) ->
+                          case w of wild1 { [] -> lvl : y ys -> $wgo2 ys }
+                      } in
+                      case $wgo2 wild of wild1 { GHC.Types.I# x ->
+                      case TestStackCalc.prop_Dup_go
+                             wild
+                             (GHC.List.lastError @ GHC.Types.Int) of wild2 { GHC.Types.I# y ->
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.==# x y) of wild3 {
+                        GHC.Types.False -> GHC.Types.False
+                        GHC.Types.True
+                        -> case GHC.List.$wlenAcc
+                                  @ GHC.Types.Int
+                                  wild
+                                  0# of ww2 { DEFAULT ->
+                           case TestStackCalc.$wgo wild 0# of ww { DEFAULT ->
+                           GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.==# ww (GHC.Prim.+# ww2 1#)) } } } } } }) -}
+8640702ca1e0e02bcaa3109c52737da1
+  prop_Dup_go :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+7957170cafe1222aca31e8f28bcb21e1
+  prop_Mul :: [GHC.Types.Int] -> GHC.Types.Bool
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [GHC.Types.Int]) ->
+                 case ds of wild {
+                   [] -> TestStackCalc.prop_Mul1
+                   : x ds1
+                   -> case ds1 of wild1 {
+                        []
+                        -> case TestStackCalc.prop_Mul_go3
+                                  (StackCalc.mul
+                                     (GHC.Types.: @ GHC.Types.Int x (GHC.Types.[] @ GHC.Types.Int)))
+                                  (GHC.List.lastError @ GHC.Types.Int) of wild2 { GHC.Types.I# x1 ->
+                           case x1 of wild3 {
+                             DEFAULT -> GHC.Types.False
+                             0#
+                             -> case GHC.List.$wlenAcc
+                                       @ GHC.Types.Int
+                                       (StackCalc.mul
+                                          (GHC.Types.:
+                                             @ GHC.Types.Int
+                                             x
+                                             (GHC.Types.[] @ GHC.Types.Int)))
+                                       0# of ww2 {
+                                  DEFAULT -> GHC.Types.False 1# -> GHC.Types.True } } }
+                        : ipv ipv1
+                        -> case TestStackCalc.prop_Mul_go2
+                                  wild
+                                  (GHC.List.lastError @ GHC.Types.Int) of wild2 { GHC.Types.I# x1 ->
+                           case TestStackCalc.prop_Mul_go1
+                                  (GHC.List.init1 @ GHC.Types.Int x wild1)
+                                  (GHC.List.lastError @ GHC.Types.Int) of wild3 { GHC.Types.I# y ->
+                           case TestStackCalc.prop_Mul_go
+                                  (StackCalc.mul wild)
+                                  (GHC.List.lastError @ GHC.Types.Int) of wild4 { GHC.Types.I# x2 ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.==# x2 (GHC.Prim.*# x1 y)) of wild5 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True
+                             -> case GHC.List.$wlenAcc
+                                       @ GHC.Types.Int
+                                       wild
+                                       0# of ww2 { DEFAULT ->
+                                case GHC.List.$wlenAcc
+                                       @ GHC.Types.Int
+                                       (StackCalc.mul wild)
+                                       0# of ww1 { DEFAULT ->
+                                GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.==# ww1 (GHC.Prim.-# ww2 1#)) } } } } } } } }) -}
+054b7b56293eb861a280f33648b133e9
+  prop_Mul1 :: GHC.Types.Bool
+  {- Unfolding: (case TestStackCalc.prop_Mul_go4
+                        TestStackCalc.prop_Mul2
+                        (GHC.List.lastError @ GHC.Types.Int) of wild { GHC.Types.I# x ->
+                 case x of wild1 {
+                   DEFAULT -> GHC.Types.False
+                   0#
+                   -> case GHC.List.$wlenAcc
+                             @ GHC.Types.Int
+                             TestStackCalc.prop_Mul2
+                             0# of ww2 {
+                        DEFAULT -> GHC.Types.False 1# -> GHC.Types.True } } }) -}
+8cd8f991d916f9541c8856de3ae92a2f
+  prop_Mul2 :: [GHC.Types.Int]
+  {- Unfolding: (StackCalc.mul (GHC.Types.[] @ GHC.Types.Int)) -}
+1bb5c1af93361eb2ff4b670f92ca10b5
+  prop_Mul_go :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+725c919f3f83e0cb55746edb57202ea0
+  prop_Mul_go1 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+45a95f33a48061cd2939de4469862353
+  prop_Mul_go2 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+e01081b20b0352670534389a18a2c2d5
+  prop_Mul_go3 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+a1d0b74526642895d57f081f8a850d06
+  prop_Mul_go4 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+4e880be3abc9a2702feead8da00b403a
+  prop_Neg :: [GHC.Types.Int] -> GHC.Types.Bool
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [GHC.Types.Int]) ->
+                 case ds of wild {
+                   [] -> TestStackCalc.prop_Neg1
+                   : ipv ipv1
+                   -> case TestStackCalc.prop_Neg_go1
+                             wild
+                             (GHC.List.lastError @ GHC.Types.Int) of wild1 { GHC.Types.I# x ->
+                      case TestStackCalc.prop_Neg_go
+                             (StackCalc.neg wild)
+                             (GHC.List.lastError @ GHC.Types.Int) of wild2 { GHC.Types.I# x1 ->
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.==# x1 (GHC.Prim.negateInt# x)) of wild3 {
+                        GHC.Types.False -> GHC.Types.False
+                        GHC.Types.True
+                        -> case GHC.List.$wlenAcc
+                                  @ GHC.Types.Int
+                                  (StackCalc.neg wild)
+                                  0# of ww2 { DEFAULT ->
+                           case GHC.List.$wlenAcc @ GHC.Types.Int wild 0# of ww1 { DEFAULT ->
+                           GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.==# ww2 ww1) } } } } } }) -}
+6ae2e0754ea06cd1642f0552fa6c5b13
+  prop_Neg1 :: GHC.Types.Bool
+  {- Unfolding: (case TestStackCalc.prop_Neg_go2
+                        TestStackCalc.prop_Neg2
+                        (GHC.List.lastError @ GHC.Types.Int) of wild { GHC.Types.I# x ->
+                 case x of wild1 {
+                   DEFAULT -> GHC.Types.False
+                   0#
+                   -> case GHC.List.$wlenAcc
+                             @ GHC.Types.Int
+                             TestStackCalc.prop_Neg2
+                             0# of ww2 {
+                        DEFAULT -> GHC.Types.False 1# -> GHC.Types.True } } }) -}
+6152b8a481a62a7fef95e12785df427d
+  prop_Neg2 :: [GHC.Types.Int]
+  {- Unfolding: (StackCalc.neg (GHC.Types.[] @ GHC.Types.Int)) -}
+1dd23c3d51af567956e252f6648d912e
+  prop_Neg_go :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+cba10572dbdcf1853d84d33bef7105cc
+  prop_Neg_go1 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+2bd474ab2f595cf7c3f093f53a00f228
+  prop_Neg_go2 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+3487e837efb7b7585fb9fbe4c1102ca7
+  prop_Pop :: [GHC.Types.Int] -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [GHC.Types.Int]) ->
+                 case ds of wild {
+                   [] -> GHC.Types.True
+                   : ipv ipv1
+                   -> case GHC.List.$wlenAcc
+                             @ GHC.Types.Int
+                             wild
+                             0# of ww2 { DEFAULT ->
+                      case GHC.List.$wlenAcc
+                             @ GHC.Types.Int
+                             (GHC.List.init1 @ GHC.Types.Int ipv ipv1)
+                             0# of ww1 { DEFAULT ->
+                      GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.==# ww1 (GHC.Prim.-# ww2 1#)) } } }) -}
+59e62cbacea1995ec4547ff4b1343e47
+  prop_Push :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,U><S(S),U(U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: [GHC.Types.Int]) (w1 :: GHC.Types.Int) ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 TestStackCalc.$wprop_Push w ww1 }) -}
+1607eea608680b49dbdb858785a82f05
+  prop_Sub :: [GHC.Types.Int] -> GHC.Types.Bool
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [GHC.Types.Int]) ->
+                 case ds of wild {
+                   [] -> TestStackCalc.prop_Sub1
+                   : x ds1
+                   -> case ds1 of wild1 {
+                        []
+                        -> case TestStackCalc.prop_Sub_go3
+                                  (StackCalc.sub
+                                     (GHC.Types.: @ GHC.Types.Int x (GHC.Types.[] @ GHC.Types.Int)))
+                                  (GHC.List.lastError @ GHC.Types.Int) of wild2 { GHC.Types.I# x1 ->
+                           case x of wild3 { GHC.Types.I# y ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.==# x1 y) of wild4 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True
+                             -> case GHC.List.$wlenAcc
+                                       @ GHC.Types.Int
+                                       (StackCalc.sub
+                                          (GHC.Types.:
+                                             @ GHC.Types.Int
+                                             wild3
+                                             (GHC.Types.[] @ GHC.Types.Int)))
+                                       0# of ww2 {
+                                  DEFAULT -> GHC.Types.False 1# -> GHC.Types.True } } } }
+                        : ipv ipv1
+                        -> case TestStackCalc.prop_Sub_go2
+                                  wild
+                                  (GHC.List.lastError @ GHC.Types.Int) of wild2 { GHC.Types.I# x1 ->
+                           case TestStackCalc.prop_Sub_go1
+                                  (GHC.List.init1 @ GHC.Types.Int x wild1)
+                                  (GHC.List.lastError @ GHC.Types.Int) of wild3 { GHC.Types.I# y ->
+                           case TestStackCalc.prop_Sub_go
+                                  (StackCalc.sub wild)
+                                  (GHC.List.lastError @ GHC.Types.Int) of wild4 { GHC.Types.I# x2 ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.==# x2 (GHC.Prim.-# x1 y)) of wild5 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True
+                             -> case GHC.List.$wlenAcc
+                                       @ GHC.Types.Int
+                                       wild
+                                       0# of ww2 { DEFAULT ->
+                                case GHC.List.$wlenAcc
+                                       @ GHC.Types.Int
+                                       (StackCalc.sub wild)
+                                       0# of ww1 { DEFAULT ->
+                                GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.==# ww1 (GHC.Prim.-# ww2 1#)) } } } } } } } }) -}
+4f0e3004bc8254941476c1b2c1235066
+  prop_Sub1 :: GHC.Types.Bool
+  {- Unfolding: (case TestStackCalc.prop_Sub_go4
+                        TestStackCalc.prop_Sub2
+                        (GHC.List.lastError @ GHC.Types.Int) of wild { GHC.Types.I# x ->
+                 case x of wild1 {
+                   DEFAULT -> GHC.Types.False
+                   0#
+                   -> case GHC.List.$wlenAcc
+                             @ GHC.Types.Int
+                             TestStackCalc.prop_Sub2
+                             0# of ww2 {
+                        DEFAULT -> GHC.Types.False 1# -> GHC.Types.True } } }) -}
+96ac137337263ec2827b137b6695acf0
+  prop_Sub2 :: [GHC.Types.Int]
+  {- Unfolding: (StackCalc.sub (GHC.Types.[] @ GHC.Types.Int)) -}
+d08d2bccfda2fe3519cece1d1c618b19
+  prop_Sub_go :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+78498992cdf28ac5f6ca6c2dbfd55488
+  prop_Sub_go1 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+51adeadd374f769848d295b7859b7fcd
+  prop_Sub_go2 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+8ab758a9878563d3ff6bd25279df768d
+  prop_Sub_go3 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+b1e064c831c0b90c2267078c45cf788d
+  prop_Sub_go4 :: [GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+8ef57a6446efef8e6256690ce8df5c27
+  test_StackCalc :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                TestStackCalc.test_StackCalc1
+                  `cast`
+                (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+57ee9bc6e301113ffd11e56987f90e7f
+  test_StackCalc1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case Test.QuickCheck.Test.$wquickCheckWithResult
+                        @ ([GHC.Types.Int] -> GHC.Types.Bool)
+                        TestStackCalc.test_StackCalc5
+                          `cast`
+                        (Trans
+                             (<[GHC.Types.Int] -> GHC.Types.Bool>_R
+                              ->_R Trans
+                                       (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                                                 (Test.QuickCheck.Property.N:Prop[0])))
+                                       (Sym (Test.QuickCheck.Property.N:Property[0])))
+                             (Sym (Test.QuickCheck.Property.N:Testable[0]
+                                       <[GHC.Types.Int] -> GHC.Types.Bool>_N)))
+                        (GHC.Base.Nothing @ (Test.QuickCheck.Random.QCGen, GHC.Types.Int))
+                        Test.QuickCheck.Test.stdArgs2
+                        Test.QuickCheck.Test.stdArgs1
+                        Test.QuickCheck.Test.stdArgs2
+                        GHC.Types.True
+                        TestStackCalc.prop_Pop
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case Test.QuickCheck.Test.$wquickCheckWithResult
+                        @ ([GHC.Types.Int] -> GHC.Types.Bool)
+                        TestStackCalc.test_StackCalc5
+                          `cast`
+                        (Trans
+                             (<[GHC.Types.Int] -> GHC.Types.Bool>_R
+                              ->_R Trans
+                                       (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                                                 (Test.QuickCheck.Property.N:Prop[0])))
+                                       (Sym (Test.QuickCheck.Property.N:Property[0])))
+                             (Sym (Test.QuickCheck.Property.N:Testable[0]
+                                       <[GHC.Types.Int] -> GHC.Types.Bool>_N)))
+                        (GHC.Base.Nothing @ (Test.QuickCheck.Random.QCGen, GHC.Types.Int))
+                        Test.QuickCheck.Test.stdArgs2
+                        Test.QuickCheck.Test.stdArgs1
+                        Test.QuickCheck.Test.stdArgs2
+                        GHC.Types.True
+                        TestStackCalc.prop_Dup
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case Test.QuickCheck.Test.$wquickCheckWithResult
+                        @ ([GHC.Types.Int] -> GHC.Types.Bool)
+                        TestStackCalc.test_StackCalc5
+                          `cast`
+                        (Trans
+                             (<[GHC.Types.Int] -> GHC.Types.Bool>_R
+                              ->_R Trans
+                                       (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                                                 (Test.QuickCheck.Property.N:Prop[0])))
+                                       (Sym (Test.QuickCheck.Property.N:Property[0])))
+                             (Sym (Test.QuickCheck.Property.N:Testable[0]
+                                       <[GHC.Types.Int] -> GHC.Types.Bool>_N)))
+                        (GHC.Base.Nothing @ (Test.QuickCheck.Random.QCGen, GHC.Types.Int))
+                        Test.QuickCheck.Test.stdArgs2
+                        Test.QuickCheck.Test.stdArgs1
+                        Test.QuickCheck.Test.stdArgs2
+                        GHC.Types.True
+                        TestStackCalc.prop_Add
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 case Test.QuickCheck.Test.$wquickCheckWithResult
+                        @ ([GHC.Types.Int] -> GHC.Types.Bool)
+                        TestStackCalc.test_StackCalc5
+                          `cast`
+                        (Trans
+                             (<[GHC.Types.Int] -> GHC.Types.Bool>_R
+                              ->_R Trans
+                                       (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                                                 (Test.QuickCheck.Property.N:Prop[0])))
+                                       (Sym (Test.QuickCheck.Property.N:Property[0])))
+                             (Sym (Test.QuickCheck.Property.N:Testable[0]
+                                       <[GHC.Types.Int] -> GHC.Types.Bool>_N)))
+                        (GHC.Base.Nothing @ (Test.QuickCheck.Random.QCGen, GHC.Types.Int))
+                        Test.QuickCheck.Test.stdArgs2
+                        Test.QuickCheck.Test.stdArgs1
+                        Test.QuickCheck.Test.stdArgs2
+                        GHC.Types.True
+                        TestStackCalc.prop_Sub
+                        ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                 case Test.QuickCheck.Test.$wquickCheckWithResult
+                        @ ([GHC.Types.Int] -> GHC.Types.Bool)
+                        TestStackCalc.test_StackCalc5
+                          `cast`
+                        (Trans
+                             (<[GHC.Types.Int] -> GHC.Types.Bool>_R
+                              ->_R Trans
+                                       (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                                                 (Test.QuickCheck.Property.N:Prop[0])))
+                                       (Sym (Test.QuickCheck.Property.N:Property[0])))
+                             (Sym (Test.QuickCheck.Property.N:Testable[0]
+                                       <[GHC.Types.Int] -> GHC.Types.Bool>_N)))
+                        (GHC.Base.Nothing @ (Test.QuickCheck.Random.QCGen, GHC.Types.Int))
+                        Test.QuickCheck.Test.stdArgs2
+                        Test.QuickCheck.Test.stdArgs1
+                        Test.QuickCheck.Test.stdArgs2
+                        GHC.Types.True
+                        TestStackCalc.prop_Mul
+                        ipv6 of ds5 { (#,#) ipv8 ipv9 ->
+                 case Test.QuickCheck.Test.$wquickCheckWithResult
+                        @ ([GHC.Types.Int] -> GHC.Types.Bool)
+                        TestStackCalc.test_StackCalc5
+                          `cast`
+                        (Trans
+                             (<[GHC.Types.Int] -> GHC.Types.Bool>_R
+                              ->_R Trans
+                                       (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                                                 (Test.QuickCheck.Property.N:Prop[0])))
+                                       (Sym (Test.QuickCheck.Property.N:Property[0])))
+                             (Sym (Test.QuickCheck.Property.N:Testable[0]
+                                       <[GHC.Types.Int] -> GHC.Types.Bool>_N)))
+                        (GHC.Base.Nothing @ (Test.QuickCheck.Random.QCGen, GHC.Types.Int))
+                        Test.QuickCheck.Test.stdArgs2
+                        Test.QuickCheck.Test.stdArgs1
+                        Test.QuickCheck.Test.stdArgs2
+                        GHC.Types.True
+                        TestStackCalc.prop_Neg
+                        ipv8 of ds6 { (#,#) ipv10 ipv11 ->
+                 case Test.QuickCheck.Test.$wquickCheckWithResult
+                        @ ([GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Bool)
+                        TestStackCalc.test_StackCalc2
+                          `cast`
+                        (Trans
+                             (<[GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Bool>_R
+                              ->_R Trans
+                                       (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                                                 (Test.QuickCheck.Property.N:Prop[0])))
+                                       (Sym (Test.QuickCheck.Property.N:Property[0])))
+                             (Sym (Test.QuickCheck.Property.N:Testable[0]
+                                       <[GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Bool>_N)))
+                        (GHC.Base.Nothing @ (Test.QuickCheck.Random.QCGen, GHC.Types.Int))
+                        Test.QuickCheck.Test.stdArgs2
+                        Test.QuickCheck.Test.stdArgs1
+                        Test.QuickCheck.Test.stdArgs2
+                        GHC.Types.True
+                        TestStackCalc.prop_Push
+                        ipv10 of ds7 { (#,#) ipv12 ipv13 ->
+                 (# ipv12, GHC.Tuple.() #) } } } } } } }) -}
+8ca441b03245d949801edb9e7c9d2637
+  test_StackCalc2 ::
+    ([GHC.Types.Int] -> GHC.Types.Int -> GHC.Types.Bool)
+    -> Test.QuickCheck.Random.QCGen
+    -> GHC.Types.Int
+    -> Test.QuickCheck.Property.Rose Test.QuickCheck.Property.Result
+  {- Arity: 3,
+     Unfolding: (\ (f :: [GHC.Types.Int]
+                         -> GHC.Types.Int -> GHC.Types.Bool)[OneShot]
+                   (eta :: Test.QuickCheck.Random.QCGen)
+                   (eta1 :: GHC.Types.Int) ->
+                 Test.QuickCheck.Property.$fTestable(->)2
+                   @ [GHC.Types.Int]
+                   @ (GHC.Types.Int -> GHC.Types.Bool)
+                   GHC.Show.$fShow[]_$s$fShow[]
+                   TestStackCalc.test_StackCalc4
+                     `cast`
+                   (Trans
+                        (<GHC.Types.Int -> GHC.Types.Bool>_R
+                         ->_R Trans
+                                  (Sym (Test.QuickCheck.Gen.N:Gen[0]
+                                            (Test.QuickCheck.Property.N:Prop[0])))
+                                  (Sym (Test.QuickCheck.Property.N:Property[0])))
+                        (Sym (Test.QuickCheck.Property.N:Testable[0]
+                                  <GHC.Types.Int -> GHC.Types.Bool>_N)))
+                   TestStackCalc.test_StackCalc3
+                     `cast`
+                   (Sym (Test.QuickCheck.Gen.N:Gen[0] <[GHC.Types.Int]>_R))
+                   TestStackCalc.$s$fArbitrary[]_$s$fArbitrary[]_$cshrink
+                   f
+                   eta
+                   eta1) -}
+6cb789a4b9242e90043102ab5c090d59
+  test_StackCalc3 ::
+    Test.QuickCheck.Random.QCGen -> GHC.Types.Int -> [GHC.Types.Int]
+  {- Arity: 2,
+     Unfolding: (\ (eta :: Test.QuickCheck.Random.QCGen)
+                   (eta1 :: GHC.Types.Int)[OneShot] ->
+                 case eta1 of ww { GHC.Types.I# ww1 ->
+                 Test.QuickCheck.Gen.$wlistOf
+                   @ GHC.Types.Int
+                   Test.QuickCheck.Arbitrary.$fArbitraryInt3
+                     `cast`
+                   (Sym (Test.QuickCheck.Gen.N:Gen[0] <GHC.Types.Int>_R))
+                   eta
+                   ww1 }) -}
+6a6c06434c1ea8fa548d76a8b4bd1746
+  test_StackCalc4 ::
+    (GHC.Types.Int -> GHC.Types.Bool)
+    -> Test.QuickCheck.Random.QCGen
+    -> GHC.Types.Int
+    -> Test.QuickCheck.Property.Rose Test.QuickCheck.Property.Result
+  {- Arity: 3, Strictness: <L,C(U)><L,U(U,U,U,U,A,A)><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (f :: GHC.Types.Int -> GHC.Types.Bool)
+                   (eta :: Test.QuickCheck.Random.QCGen)
+                   (eta1 :: GHC.Types.Int) ->
+                 Test.QuickCheck.Property.$fTestable(->)2
+                   @ GHC.Types.Int
+                   @ GHC.Types.Bool
+                   GHC.Show.$fShowInt
+                   Test.QuickCheck.Property.$fTestableBool_$cproperty
+                     `cast`
+                   (Sym (Test.QuickCheck.Property.N:Testable[0] <GHC.Types.Bool>_N))
+                   Test.QuickCheck.Arbitrary.$fArbitraryInt3
+                     `cast`
+                   (Sym (Test.QuickCheck.Gen.N:Gen[0] <GHC.Types.Int>_R))
+                   Test.QuickCheck.Arbitrary.$fArbitraryInt_$sshrinkIntegral
+                   f
+                   eta
+                   eta1) -}
+d5108530caa259a09cdf7c3a10eeae3d
+  test_StackCalc5 ::
+    ([GHC.Types.Int] -> GHC.Types.Bool)
+    -> Test.QuickCheck.Random.QCGen
+    -> GHC.Types.Int
+    -> Test.QuickCheck.Property.Rose Test.QuickCheck.Property.Result
+  {- Arity: 3, Strictness: <L,C(U)><L,U(U,U,U,U,A,A)><L,U>,
+     Unfolding: (\ (f :: [GHC.Types.Int] -> GHC.Types.Bool)
+                   (eta :: Test.QuickCheck.Random.QCGen)
+                   (eta1 :: GHC.Types.Int) ->
+                 Test.QuickCheck.Property.$fTestable(->)2
+                   @ [GHC.Types.Int]
+                   @ GHC.Types.Bool
+                   GHC.Show.$fShow[]_$s$fShow[]
+                   Test.QuickCheck.Property.$fTestableBool_$cproperty
+                     `cast`
+                   (Sym (Test.QuickCheck.Property.N:Testable[0] <GHC.Types.Bool>_N))
+                   TestStackCalc.test_StackCalc3
+                     `cast`
+                   (Sym (Test.QuickCheck.Gen.N:Gen[0] <[GHC.Types.Int]>_R))
+                   TestStackCalc.$s$fArbitrary[]_$s$fArbitrary[]_$cshrink
+                   f
+                   eta
+                   eta1) -}
+"SPEC/TestStackCalc $fArbitrary[]_$cshrink @ Int" [ALWAYS] forall ($dArbitrary :: Test.QuickCheck.Arbitrary.Arbitrary
+                                                                                    GHC.Types.Int)
+  Test.QuickCheck.Arbitrary.$fArbitrary[]_$cshrink @ GHC.Types.Int
+                                                   $dArbitrary
+  = TestStackCalc.$s$fArbitrary[]_$s$fArbitrary[]_$cshrink
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
