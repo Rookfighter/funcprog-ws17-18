@@ -21,7 +21,8 @@ library
   hs-source-dirs:      src,
                        src/ex01,
                        src/ex02,
-                       src/ex03
+                       src/ex03,
+                       src/ex04
   exposed-modules:     Lib,
                        -- ex01
                        MyList,
@@ -40,7 +41,9 @@ library
                        DragonCurve,
                        Picture,
                        PictureSvg,
-                       Vec2
+                       Vec2,
+                       -- ex04
+                       Fold
   build-depends:       base >= 4.7 && < 5,
                        primes,
                        svg-builder,
@@ -61,7 +64,8 @@ test-suite funcprog-ws17-18r-test
   hs-source-dirs:      test,
                        test/ex01,
                        test/ex02,
-                       test/ex03
+                       test/ex03,
+                       test/ex04
   main-is:             Spec.hs
   other-modules:       TestEx01,
                        TestStackCalc,
@@ -74,6 +78,9 @@ test-suite funcprog-ws17-18r-test
                        -- ex03,
                        TestEx03,
                        TestVec2
+                       -- ex04
+                       TestEx04,
+                       TestFold
   build-depends:       base,
                        funcprog-ws17-18r,
                        QuickCheck
