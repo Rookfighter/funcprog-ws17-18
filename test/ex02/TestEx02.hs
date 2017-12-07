@@ -11,6 +11,5 @@ import Test.QuickCheck
 
 testEx02 :: IO ()
 testEx02 = do
-    quickCheck prop_Fib
-    quickCheck prop_UndupNub
-    quickCheck prop_UndupUnEq
+    test_Fib
+    test_Undup

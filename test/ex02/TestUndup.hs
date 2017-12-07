@@ -15,3 +15,7 @@ prop_UndupNub xs = undup xs == nub xs
 prop_UndupUnEq :: [Integer] -> Bool
 prop_UndupUnEq xs = checkdup . undup $ xs
     where checkdup xs = and . map (\x -> (length . filter (==x) $ xs) == 1) $ xs
+
+test_Undup = do
+    quickCheck prop_UndupNub
+    quickCheck prop_UndupUnEq
