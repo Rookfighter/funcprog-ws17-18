@@ -1,6 +1,6 @@
 module Main where
 
-import Lib
+import RunEx03
 
 main :: IO ()
-main = someFunc
+main = mainEx03

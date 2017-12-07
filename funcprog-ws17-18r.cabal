@@ -50,13 +50,18 @@ library
                        random,
                        text
   default-language:    Haskell2010
+  extensions:          GADTs
 
 executable funcprog-ws17-18r-exe
-  hs-source-dirs:      app
+  hs-source-dirs:      app,
+                       app/ex03
   main-is:             Main.hs
+  other-modules:       RunEx03
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base,
-                       funcprog-ws17-18r
+                       funcprog-ws17-18r,
+                       random,
+                       svg-builder
   default-language:    Haskell2010
 
 test-suite funcprog-ws17-18r-test
