@@ -8,7 +8,7 @@ module Fold where
 -- handmade foldr implementation
 foldr' :: (a -> b -> b) -> b -> [a] -> b
 foldr' op x0 [] = x0
-foldr' op x0 (x:xs) = op x0 (foldr op x0 xs)
+foldr' op x0 (x:xs) = op x (foldr op x0 xs)
 
 -- Returns True if at least one element is True in given list, else False.
 -- Using custom foldr'.
@@ -32,5 +32,5 @@ map' f as = foldr' g [] as
 -- Using custom foldr'.
 remdups' :: Eq a => [a] -> [a]
 remdups' xs = foldr' g [] xs
-    where g x xs | head xs == x = xs
-                 | otherwise    = x : xs
+    where g y ys | head ys == y = ys
+                 | otherwise    = y : ys
