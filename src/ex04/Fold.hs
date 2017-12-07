@@ -34,3 +34,8 @@ remdups' :: Eq a => [a] -> [a]
 remdups' xs = foldr' g [] xs
     where g y ys | head ys == y = ys
                  | otherwise    = y : ys
+
+-- handmade foldl implementation
+foldl' :: (b -> a -> b) -> b -> [a] -> b
+foldl' op x0 [] = x0
+foldl' op x0 (x:xs) = op (foldl' op x0 xs) x

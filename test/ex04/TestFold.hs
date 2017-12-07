@@ -21,4 +21,3 @@ test_Fold = do
     quickCheck prop_or
     quickCheck prop_filter
     quickCheck prop_map
-    
