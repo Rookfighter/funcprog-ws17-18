@@ -39,3 +39,20 @@ remdups' xs = foldr' g [] xs
 foldl' :: (b -> a -> b) -> b -> [a] -> b
 foldl' op x0 [] = x0
 foldl' op x0 (x:xs) = op (foldl' op x0 xs) x
+
+-- handmade unfoldr implementation
+unfoldr' :: (b -> Maybe (a, b)) -> b -> [a]
+unfoldr' f b = case f b of
+    Nothing      -> []
+    Just (a, b') -> a : unfoldr' f b'
+
+-- map implementation using unfoldr'
+map'' :: (a -> b) -> [a] -> [b]
+map'' f xs = unfoldr' g xs
+    where g (y:ys) = Just (f y, ys)
+          g []   = Nothing
+
+-- iterate implementation using unfoldr'
+iterate' :: (a -> a) -> a -> [a]
+iterate' f = unfoldr' g
+    where g b = Just(b, f b)
