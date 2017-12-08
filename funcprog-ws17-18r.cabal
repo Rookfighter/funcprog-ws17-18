@@ -43,7 +43,8 @@ library
                        PictureSvg,
                        Vec2,
                        -- ex04
-                       Fold
+                       Fold,
+                       PictureExt
   build-depends:       base >= 4.7 && < 5,
                        primes,
                        svg-builder,
@@ -54,9 +55,11 @@ library
 
 executable funcprog-ws17-18r-exe
   hs-source-dirs:      app,
-                       app/ex03
+                       app/ex03,
+                       app/ex04
   main-is:             Main.hs
-  other-modules:       RunEx03
+  other-modules:       RunEx03,
+                       RunEx04
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base,
                        funcprog-ws17-18r,
