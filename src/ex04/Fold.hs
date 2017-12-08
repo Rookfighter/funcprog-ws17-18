@@ -8,7 +8,7 @@ module Fold where
 -- handmade foldr implementation
 foldr' :: (a -> b -> b) -> b -> [a] -> b
 foldr' op x0 [] = x0
-foldr' op x0 (x:xs) = op x (foldr op x0 xs)
+foldr' op x0 (x:xs) = op x (foldr' op x0 xs)
 
 -- Returns True if at least one element is True in given list, else False.
 -- Using custom foldr'.
