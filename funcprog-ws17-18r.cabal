@@ -44,6 +44,7 @@ library
                        Vec2,
                        -- ex04
                        Fold,
+                       NumbersGame,
                        PictureExt
   build-depends:       base >= 4.7 && < 5,
                        primes,

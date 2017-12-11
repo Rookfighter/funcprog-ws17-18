@@ -8,6 +8,7 @@ import PictureSvg as Ps
 import PictureExt
 import Graphics.Svg
 import DragonCurve
+import NumbersGame
 
 svg :: Element -> Element
 svg content = doctype <>
@@ -16,6 +17,9 @@ svg content = doctype <>
          <> content))
         [Width_ <<- "100", Height_ <<- "100", Fill_ <<- "white"]
 
-mainEx04 :: IO ()
-mainEx04 = do
+mainEx04Pic :: IO ()
+mainEx04Pic = do
     renderToFile "foobar.svg" (svg . Ps.draw_picture . move' (Vec2 40 70) . scale' 2 . dragon $ 15)
+
+mainEx04Num :: IO ()
+mainEx04Num = runGame
