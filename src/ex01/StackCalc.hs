@@ -50,3 +50,4 @@ readCommand "sub" s = sub s
 readCommand "mul" s = mul s
 readCommand "neg" s = neg s
 readCommand ('p':'u':'s':'h':' ':num) s = push s (read num :: Int)
+readCommand _ s = s
