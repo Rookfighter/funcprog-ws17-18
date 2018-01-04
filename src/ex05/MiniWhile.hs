@@ -57,28 +57,16 @@ pIntList =
     <*> pReadIntList
     <*  lit ']'
 
--- pPali :: (Eq r) => Parser t r -> Parser t [r]
-
--- pPaliAB :: Parser Char String
--- pPaliAB = pPali (lit 'a' <|> lit 'b')
+-- accepts any kind of palindromes
+pPali :: (Eq r) => Parser t r -> Parser t [r]
+pPali p =
+    (pmany1 $ p)
+        >>= \r ->
+            if r == reverse r then return r else empty
 
 -- accepts palindromes of 'a' and 'b'
 pPaliAB :: Parser Char String
-pPaliAB =
-    (pmany1 $ lit 'a' <|> lit 'b')
-    >>= \r ->
-        -- prepend the reverse ordered result with previously found result
-        fmap (r++) .
-        -- collapse list of literals to one parser returning a string
-        -- first arg on foldr is literal parser, second is concatenated parser
-        -- which returns a string
-        -- TODO ask:
-        -- (:) <$> p1 <*> p2
-        -- is the same as
-        -- pure (:) <*> p1 <*> p2
-        foldr (\a b -> (:) <$> a <*> b) (pure []) .
-        -- map all result chars to literals in reverse order
-        map lit $ reverse r
+pPaliAB = pPali (lit 'a' <|> lit 'b')
 
 parseString :: String -> Maybe Program
 parseString s = do
