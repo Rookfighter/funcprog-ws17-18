@@ -68,6 +68,9 @@ pPali p =
 pPaliAB :: Parser Char String
 pPaliAB = pPali (lit 'a' <|> lit 'b')
 
+pTwice :: (Eq t) => Parser t [t] -> Parser t [t]
+pTwice p = p >>= \r -> return (r ++ r)
+
 parseString :: String -> Maybe Program
 parseString s = do
     l <- lexer s
