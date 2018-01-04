@@ -31,27 +31,52 @@ parser = undefined
 
 data Token = TSep -- ';'
            | TAsgn -- ':='
-           | TNum Integer
-           | TId Id
-           -- Add more things here
+           | TNum Integer -- numbers
+           | TId Id -- identifieres
+           | TOp String -- operators
+           | TCmp String -- comparison
+           | TKw String -- keywords
     deriving (Eq, Show)
 
+pTSep = TSep <$ lit ';'
+pTAsgn = TAsgn <$ litStr ":="
+pTNum = TNum . read <$> many1 (satisfy isDigit)
+pTId = fmap TId $ (:) <$> satisfy isAlpha <*> many (satisfy isAlphaNum)
+pTOp = TOp
+    <$> (litStr "+"
+    <|> litStr "-"
+    <|> litStr "*"
+    <|> litStr "/")
+pTCmp = TCmp
+    <$> (litStr "<="
+    <|> litStr ">"
+    <|> litStr "=="
+    <|> litStr "!=")
+pTKw = TKw
+    <$> (litStr "while"
+    <|> litStr "done"
+    <|> litStr "do"
+    <|> litStr "if"
+    <|> litStr "then"
+    <|> litStr "else"
+    <|> litStr "fi")
+
+pToken :: Parser Char Token
+pToken =
+    pTKw
+    <|> pTId
+    <|> pTSep
+    <|> pTAsgn
+    <|> pTNum
+    <|> pTCmp
+    <|> pTOp
+
 lexer :: String -> Maybe [Token]
-lexer = parse $ many1 (skipSpace *> p_tok) <* skipSpace
+lexer = parse $ many1 (pSkipSpace *> pToken) <* pSkipSpace
 
-skipSpace = many (satisfy isSpace)
-p_tok =
-    t_alnum
-    <|> t_sep
-    <|> t_asgn
-    <|> t_num
-
-t_num = TNum . read <$> many1 (satisfy isDigit)
-t_sep = TSep <$ lit ';'
-t_asgn = TAsgn <$ string ":="
-t_alnum = fmap mkToken $ (:) <$> satisfy isAlpha <*> many (satisfy isAlphaNum)
-    where mkToken i        = TId i
+pSkipSpace :: Parser Char String
+pSkipSpace = many (satisfy isSpace)
 
 -- ^ Utilities
-string xs = foldr (liftA2 (:)) (pure []) $  map lit xs
+litStr = foldr (\a b -> (:) <$> a <*> b) (pure []) . map lit
 many1 p = (:) <$> p <*> many p
