@@ -50,7 +50,8 @@ library
                        StackCalcCLI,
                        -- ex05
                        MiniWhile,
-                       ParserCon
+                       ParserCon,
+                       Parsing
   build-depends:       base >= 4.7 && < 5,
                        primes,
                        svg-builder,
