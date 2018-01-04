@@ -22,7 +22,8 @@ library
                        src/ex01,
                        src/ex02,
                        src/ex03,
-                       src/ex04
+                       src/ex04,
+                       src/ex05
   exposed-modules:     Lib,
                        -- ex01
                        MyList,
@@ -46,7 +47,10 @@ library
                        Fold,
                        NumbersGame,
                        PictureExt,
-                       StackCalcCLI
+                       StackCalcCLI,
+                       -- ex05
+                       MiniWhile,
+                       ParserCon
   build-depends:       base >= 4.7 && < 5,
                        primes,
                        svg-builder,
