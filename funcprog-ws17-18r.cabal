@@ -23,7 +23,8 @@ library
                        src/ex02,
                        src/ex03,
                        src/ex04,
-                       src/ex05
+                       src/ex05,
+                       src/ex06
   exposed-modules:     Lib,
                        -- ex01
                        MyList,
@@ -51,12 +52,15 @@ library
                        -- ex05
                        MiniWhile,
                        ParserCon,
-                       Parsing
+                       Parsing,
+                       -- ex06
+                       RandGen
   build-depends:       base >= 4.7 && < 5,
                        primes,
                        svg-builder,
                        random,
-                       text
+                       text,
+                       transformers
   default-language:    Haskell2010
   extensions:          GADTs
 
