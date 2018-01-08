@@ -8,8 +8,5 @@ module Memoization where
 import Data.Map.Strict
 import Control.Monad.Trans.State.Lazy
 
-memoize :: (Int -> Int) -> Int -> State Int Int
-memoize f n = put n >> return (f n)
-
--- memof :: (A -> State A B)
--- memof = memoize f
+memoize :: (a -> b) -> a -> State a b
+memoize f a = put a >> return (f a)
