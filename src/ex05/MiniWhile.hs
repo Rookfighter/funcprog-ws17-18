@@ -1,3 +1,8 @@
+-- MiniWhile.hs
+--
+--     Author: Fabian Meyer
+-- Created on: 04 Jan 2018
+
 module MiniWhile where
 
 import Data.Char
