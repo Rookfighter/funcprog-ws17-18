@@ -9,7 +9,92 @@ import Data.Char
 import Data.List
 import ParserCon
 
--- ^ Parsing
+-- ========================================
+--                  Lexer
+-- ========================================
+
+data Token = TSep -- ';'
+           | TAsgn -- ':='
+           | TNum Integer -- numbers
+           | TId Id -- identifieres
+           | TOp Op -- operators
+           | TCmp Cmp -- comparison
+           | TKw String -- keywords
+           | TPar Char
+    deriving (Eq, Show)
+
+-- lex separator
+lTSep :: Parser Char Token
+lTSep = TSep <$ lit ';'
+
+-- lex assign symbol
+lTAsgn :: Parser Char Token
+lTAsgn = TAsgn <$ litStr ":="
+
+-- lex numbers
+lTNum :: Parser Char Token
+lTNum = TNum . read <$> many1 (satisfy isDigit)
+
+-- lex identifiers
+lTId :: Parser Char Token
+lTId = fmap TId $ (:) <$> satisfy isAlpha <*> many (satisfy isAlphaNum)
+
+-- lex arithmetic operators
+lTOp :: Parser Char Token
+lTOp = TOp
+    <$> (litStr "+"
+    <|> litStr "-"
+    <|> litStr "*"
+    <|> litStr "/")
+
+-- lex comparison operators
+lTCmp :: Parser Char Token
+lTCmp = TCmp
+    <$> (litStr "<="
+    <|> litStr ">"
+    <|> litStr "=="
+    <|> litStr "!=")
+
+-- lex keywords
+lTKw :: Parser Char Token
+lTKw = TKw
+    <$> (litStr "while"
+    <|> litStr "done"
+    <|> litStr "do"
+    <|> litStr "if"
+    <|> litStr "then"
+    <|> litStr "else"
+    <|> litStr "fi"
+    <|> litStr "not")
+
+-- lex parethesis
+lTPar :: Parser Char Token
+lTPar = TPar
+    <$> (lit '('
+    <|> lit ')')
+
+-- lex tokens
+lToken :: Parser Char Token
+lToken =
+    lTKw
+    <|> lTId
+    <|> lTSep
+    <|> lTAsgn
+    <|> lTNum
+    <|> lTCmp
+    <|> lTOp
+    <|> lTPar
+
+-- run lexer
+lexer :: String -> Maybe [Token]
+lexer = parse $ many1 (pSkipSpace *> lToken) <* pSkipSpace
+
+pSkipSpace :: Parser Char String
+pSkipSpace = many (satisfy isSpace)
+
+-- ==================================
+--              Parsing
+-- ==================================
 
 data Program = Program [Stmt]
     deriving (Show, Eq)
@@ -131,77 +216,14 @@ pStmts =
     pure return
         <*> pStmt
 
---
+-- run parser
 parser :: Parser Token Program
 parser = Program <$> pStmts
-
-parse' p s =
-    do
-    l <- lexer s
-    parse p l
 
 parseString :: String -> Maybe Program
 parseString s = do
     l <- lexer s
     parse parser l
-
-
--- ^ Lexing
--- Use this lexer to tokenize the input before parsing
-
-data Token = TSep -- ';'
-           | TAsgn -- ':='
-           | TNum Integer -- numbers
-           | TId Id -- identifieres
-           | TOp Op -- operators
-           | TCmp Cmp -- comparison
-           | TKw String -- keywords
-           | TPar Char
-    deriving (Eq, Show)
-
-pTSep = TSep <$ lit ';'
-pTAsgn = TAsgn <$ litStr ":="
-pTNum = TNum . read <$> many1 (satisfy isDigit)
-pTId = fmap TId $ (:) <$> satisfy isAlpha <*> many (satisfy isAlphaNum)
-pTOp = TOp
-    <$> (litStr "+"
-    <|> litStr "-"
-    <|> litStr "*"
-    <|> litStr "/")
-pTCmp = TCmp
-    <$> (litStr "<="
-    <|> litStr ">"
-    <|> litStr "=="
-    <|> litStr "!=")
-pTKw = TKw
-    <$> (litStr "while"
-    <|> litStr "done"
-    <|> litStr "do"
-    <|> litStr "if"
-    <|> litStr "then"
-    <|> litStr "else"
-    <|> litStr "fi"
-    <|> litStr "not")
-pTPar = TPar
-    <$> (lit '('
-    <|> lit ')')
-
-pToken :: Parser Char Token
-pToken =
-    pTKw
-    <|> pTId
-    <|> pTSep
-    <|> pTAsgn
-    <|> pTNum
-    <|> pTCmp
-    <|> pTOp
-    <|> pTPar
-
-lexer :: String -> Maybe [Token]
-lexer = parse $ many1 (pSkipSpace *> pToken) <* pSkipSpace
-
-pSkipSpace :: Parser Char String
-pSkipSpace = many (satisfy isSpace)
 
 -- ^ Utilities
 litStr = foldr (\a b -> (:) <$> a <*> b) (pure []) . map lit
