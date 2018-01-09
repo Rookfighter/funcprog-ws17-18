@@ -50,12 +50,14 @@ library
                        PictureExt,
                        StackCalcCLI,
                        -- ex05
-                       MiniWhile,
                        ParserCon,
                        Parsing,
+                       MWLexer,
+                       MWParser,
                        -- ex06
                        RandGen,
-                       Memoization
+                       Memoization,
+                       MWInterpreter
   build-depends:       base >= 4.7 && < 5,
                        primes,
                        svg-builder,
