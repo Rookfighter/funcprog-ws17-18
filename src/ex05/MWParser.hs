@@ -135,3 +135,8 @@ parseString :: String -> Maybe Program
 parseString s = do
     l <- lexer s
     parse parser l
+
+parseFile :: String -> IO (Maybe Program)
+parseFile f = do
+    s <- readFile f
+    return . parseString $ s
