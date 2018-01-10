@@ -24,7 +24,8 @@ library
                        src/ex03,
                        src/ex04,
                        src/ex05,
-                       src/ex06
+                       src/ex06,
+                       src/ex07
   exposed-modules:     Lib,
                        -- ex01
                        MyList,
@@ -57,7 +58,9 @@ library
                        -- ex06
                        RandGen,
                        Memoization,
-                       MWInterpreter
+                       MWInterpreter,
+                       -- ex07
+                       Protected
   build-depends:       base >= 4.7 && < 5,
                        primes,
                        svg-builder,
