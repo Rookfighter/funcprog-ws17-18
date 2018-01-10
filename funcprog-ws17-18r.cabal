@@ -67,7 +67,8 @@ library
                        random,
                        text,
                        transformers,
-                       containers
+                       containers,
+                       mtl
   default-language:    Haskell2010
   extensions:          GADTs
 
