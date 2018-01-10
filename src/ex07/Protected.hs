@@ -5,6 +5,8 @@
 
 module Protected where
 
+import Control.Monad.Trans.Class
+import Control.Monad.Trans.Class
 import Control.Monad.Trans.Maybe
 import Control.Monad.Trans.Reader
 import Control.Monad.Trans.Writer.Strict
@@ -17,8 +19,21 @@ accessData s (ProtectedData pass v) =
 
 type Protected s a = MaybeT (Reader (ProtectedData s)) a
 
+myPD = ProtectedData "foo" "You are great!"
+myNumPD = ProtectedData "foo" 42
+
+numpd :: String -> Protected Integer Float
+numpd s = do
+    v <- access s
+    return $ fromIntegral v
+
 run :: ProtectedData s -> Protected s a -> Maybe a
-run = undefined
+run pd p =
+    runReader (runMaybeT p) pd
 
 access :: String -> Protected a a
-access = undefined
+access s = do
+    pd <- lift $ ask
+    case accessData s pd of
+        Just v  -> return v
+        Nothing -> fail ""
