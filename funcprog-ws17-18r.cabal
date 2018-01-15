@@ -60,7 +60,8 @@ library
                        Memoization,
                        MWInterpreter,
                        -- ex07
-                       Protected
+                       Protected,
+                       StructuredLogging
   build-depends:       base >= 4.7 && < 5,
                        primes,
                        svg-builder,
