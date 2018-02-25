@@ -20,15 +20,27 @@ type Memory = M.Map Id Value
 -- Ret = State Memory (Maybe Value) = Memory -> (Maybe Value, Memory)
 type Ret = MaybeT (State Memory) Value
 
--- -- evaluate a single statement
--- evalStmt :: Stmt -> Ret -> Ret
--- evalStmt w@(While eB stmts) m =
---     if evalExp eB m /= 0 then
---         evalStmt w (evalStmts stmts m) --eval loop body and start recursion
---     else
---         m -- skip, just return current memory
--- evalStmt (Asgn (Var i) e) m =
---     M.insert i (evalExp e m) m
+-- evaluate a list of statements
+evalStmts :: [Stmt] -> Ret
+evalStmts stmts = foldr (\stmt ret -> (evalStmt stmt) >> ret) skip $ reverse stmts
+
+-- evaluate a single statement
+evalStmt :: Stmt -> Ret
+evalStmt w@(While cond stmts) = do
+    val <- evalExp cond
+    case val of
+        B v ->
+            if v then
+                -- eval body once and start recursion
+                evalStmts stmts >> evalStmt w
+            else
+                -- just skip
+                skip
+        _ -> mfail
+evalStmt (Asgn (Var ident) exp1) = do
+    val <- evalExp exp1
+    modify (\mem -> M.insert ident val mem)
+    skip
 
 -- evaluate expressions
 evalExp :: Exp -> Ret
@@ -80,6 +92,9 @@ evalAExp (Op exp1 op exp2) =
 
 mfail :: Monad m => MaybeT m a
 mfail = MaybeT $ return Nothing
+
+skip :: Ret
+skip = return $ (I 0)
 
 i2b :: Integer -> Bool
 i2b 0 = False
