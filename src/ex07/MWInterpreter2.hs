@@ -21,21 +21,31 @@ type Memory = M.Map Id Value
 type Ret = MaybeT (State Memory) Value
 
 -- evaluate expressions
--- evalExp :: Exp -> Memory -> Value
--- evalExp (If eB e1 e2) m =
---     if evalExp eB m /= 0 then
---         evalExp e1 m
---     else
---         evalExp e2 m
--- evalExp (Cmp ae1 c ae2) m =
---     g (evalAExp ae1 m) c (evalAExp ae2 m)
---     where g v1 "<=" v2 = b2i (v1 <= v2)
---           g v1 ">"  v2 = b2i (v1 >  v2)
---           g v1 "==" v2 = b2i (v1 == v2)
---           g v1 "!=" v2 = b2i (v1 /= v2)
---           g v1 c v2 = error ("Invalid comparison operator " ++ c)
--- evalExp (Inv e) m = b2i (0 == evalExp e m)
--- evalExp (AExp ae) m = evalAExp ae m
+evalExp :: Exp -> Ret -> Ret
+evalExp (If cond exp1 exp2) ret = do
+    val <- evalExp cond ret
+    case val of
+        B val -> if val then evalExp exp1 ret else evalExp exp2 ret
+        _     -> mfail -- if condition is not a boolean fail
+-- Both input expressions are arithmetic expressions!
+evalExp (Cmp exp1 cmp exp2) ret =
+    execCmp (evalAExp exp1 ret) cmp (evalAExp exp2 ret)
+    where execCmp ret1 cmp ret2 = do {
+              val1 <- ret1;
+              val2 <- ret2;
+              matchCmp val1 cmp val2
+              }
+          matchCmp (I i1) "<=" (I i2)  = return $ B (i1 <= i2)
+          matchCmp (I i1) ">" (I i2)   = return $ B (i1 > i2)
+          matchCmp (I i1) "==" (I i2)  = return $ B (i1 == i2)
+          matchCmp (I i1) "!=" (I i2)  = return $ B (i1 /= i2)
+          matchCmp _ _ _               = mfail
+evalExp (Inv exp1) ret = do
+    val <- evalExp exp1 ret
+    case val of
+        B v -> return . B . not $ v
+        _   -> mfail
+evalExp (AExp exp1) ret = evalAExp exp1 ret
 
 -- evaluate arithmetic expressions
 evalAExp :: AExp -> Ret -> Ret
