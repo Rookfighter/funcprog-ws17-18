@@ -20,16 +20,26 @@ type Memory = M.Map Id Value
 -- Ret = State Memory (Maybe Value) = Memory -> (Maybe Value, Memory)
 type Ret = MaybeT (State Memory) Value
 
+-- -- evaluate a single statement
+-- evalStmt :: Stmt -> Ret -> Ret
+-- evalStmt w@(While eB stmts) m =
+--     if evalExp eB m /= 0 then
+--         evalStmt w (evalStmts stmts m) --eval loop body and start recursion
+--     else
+--         m -- skip, just return current memory
+-- evalStmt (Asgn (Var i) e) m =
+--     M.insert i (evalExp e m) m
+
 -- evaluate expressions
-evalExp :: Exp -> Ret -> Ret
-evalExp (If cond exp1 exp2) ret = do
-    val <- evalExp cond ret
+evalExp :: Exp -> Ret
+evalExp (If cond exp1 exp2) = do
+    val <- evalExp cond
     case val of
-        B val -> if val then evalExp exp1 ret else evalExp exp2 ret
+        B val -> if val then evalExp exp1 else evalExp exp2
         _     -> mfail -- if condition is not a boolean fail
 -- Both input expressions are arithmetic expressions!
-evalExp (Cmp exp1 cmp exp2) ret =
-    execCmp (evalAExp exp1 ret) cmp (evalAExp exp2 ret)
+evalExp (Cmp exp1 cmp exp2) =
+    execCmp (evalAExp exp1) cmp (evalAExp exp2)
     where execCmp ret1 cmp ret2 = do {
               val1 <- ret1;
               val2 <- ret2;
@@ -40,23 +50,23 @@ evalExp (Cmp exp1 cmp exp2) ret =
           matchCmp (I i1) "==" (I i2)  = return $ B (i1 == i2)
           matchCmp (I i1) "!=" (I i2)  = return $ B (i1 /= i2)
           matchCmp _ _ _               = mfail
-evalExp (Inv exp1) ret = do
-    val <- evalExp exp1 ret
+evalExp (Inv exp1) = do
+    val <- evalExp exp1
     case val of
         B v -> return . B . not $ v
         _   -> mfail
-evalExp (AExp exp1) ret = evalAExp exp1 ret
+evalExp (AExp exp1) = evalAExp exp1
 
 -- evaluate arithmetic expressions
-evalAExp :: AExp -> Ret -> Ret
-evalAExp (Num num)   ret = fmap (\_ -> I num) ret
-evalAExp (Var ident) _   = do
+evalAExp :: AExp -> Ret
+evalAExp (Num num)   = lift . return $ I num
+evalAExp (Var ident) = do
     mem <- lift $ get
     case M.lookup ident mem of
         Just val -> return val
         Nothing  -> mfail
-evalAExp (Op exp1 op exp2) ret =
-    execOp (evalAExp exp1 ret) op (evalAExp exp2 ret)
+evalAExp (Op exp1 op exp2) =
+    execOp (evalAExp exp1) op (evalAExp exp2)
     where execOp ret1 op ret2 = do {
               val1 <- ret1;
               val2 <- ret2;
