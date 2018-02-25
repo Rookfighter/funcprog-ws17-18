@@ -61,7 +61,8 @@ library
                        MWInterpreter,
                        -- ex07
                        Protected,
-                       StructuredLogging
+                       StructuredLogging,
+                       MWInterpreter2
   build-depends:       base >= 4.7 && < 5,
                        primes,
                        svg-builder,
