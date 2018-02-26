@@ -25,7 +25,8 @@ library
                        src/ex04,
                        src/ex05,
                        src/ex06,
-                       src/ex07
+                       src/ex07,
+                       src/ex08
   exposed-modules:     Lib,
                        -- ex01
                        MyList,
@@ -62,7 +63,9 @@ library
                        -- ex07
                        Protected,
                        StructuredLogging,
-                       MWInterpreter2
+                       MWInterpreter2,
+                       -- ex08
+                       SafeList
   build-depends:       base >= 4.7 && < 5,
                        primes,
                        svg-builder,
