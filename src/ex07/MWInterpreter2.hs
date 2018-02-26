@@ -11,6 +11,7 @@ import qualified Data.Map.Strict as M
 
 import Control.Monad.Trans.Maybe
 import Control.Monad.State.Lazy
+import Control.Monad.Writer.Lazy
 
 data Value = I Integer
            | B Bool
@@ -18,22 +19,24 @@ data Value = I Integer
 
 type Memory = M.Map Id Value
 -- Ret = State Memory (Maybe Value) = Memory -> (Maybe Value, Memory)
-type Ret = MaybeT (State Memory) Value
+type Ret = WriterT (IO ()) (MaybeT (State Memory)) Value
 
 runFile :: String -> IO (Maybe (Maybe Value, Memory))
 runFile f = do
     s <- readFile f
-    return . runString $ s
+    runString $ s
 
-runString :: String -> Maybe (Maybe Value, Memory)
-runString s = do
-    p <- parseString s
-    return $ eval p
-
+runString :: String -> IO (Maybe (Maybe Value, Memory))
+runString s = case parseString s of
+    Nothing  -> return Nothing
+    Just p -> fmap return (eval p)
 
 -- evaluate a full program
-eval :: Program -> (Maybe Value, Memory)
-eval (Program stmts) = runState (runMaybeT (evalStmts stmts)) M.empty
+eval :: Program -> IO (Maybe Value, Memory)
+eval (Program stmts) = let (a, io) = runWriterT (evalStmts stmts) in
+    do
+        io
+        return $ runState (runMaybeT a) M.empty
 
 -- evaluate a list of statements
 evalStmts :: [Stmt] -> Ret
@@ -52,6 +55,7 @@ evalStmt (Asgn (Var ident) exp1) = do
     skip
 evalStmt (Print exp1) = do
     val <- evalExp exp1
+    tell . putStrLn $ show val
     skip
 
 -- evaluate expressions
@@ -83,9 +87,9 @@ evalExp (AExp exp1) = evalAExp exp1
 
 -- evaluate arithmetic expressions
 evalAExp :: AExp -> Ret
-evalAExp (Num num)   = lift . return $ I num
+evalAExp (Num num)   = lift . lift . return $ I num
 evalAExp (Var ident) = do
-    mem <- lift $ get
+    mem <- lift . lift $ get
     case M.lookup ident mem of
         Just val -> return val
         Nothing  -> mfail
