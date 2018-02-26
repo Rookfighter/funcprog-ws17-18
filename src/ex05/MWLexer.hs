@@ -65,7 +65,8 @@ lTKw = TKw
     <|> litStr "then"
     <|> litStr "else"
     <|> litStr "fi"
-    <|> litStr "not")
+    <|> litStr "not"
+    <|> litStr "print")
 
 -- lex parethesis
 lTPar :: Parser Char Token

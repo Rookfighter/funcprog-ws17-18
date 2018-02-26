@@ -14,6 +14,7 @@ data Program = Program [Stmt]
     deriving (Show, Eq)
 data Stmt = While Exp [Stmt]
           | Asgn AExp Exp
+          | Print Exp
     deriving (Show, Eq)
 data Exp = If Exp Exp Exp
          | Cmp AExp Cmp AExp
@@ -109,12 +110,21 @@ pWhile =
         <*> pStmts
         <*  (lit $ TKw "done")
 
+-- parse a print statement
+pPrint :: Parser Token Stmt
+pPrint =
+    pure Print
+        <*  (lit $ TKw "print")
+        <*> pExp
+
 -- parse a statement
 pStmt :: Parser Token Stmt
 pStmt =
     pWhile
     <|>
     pAsgn
+    <|>
+    pPrint
 
 -- parse multiple statements
 pStmts :: Parser Token [Stmt]

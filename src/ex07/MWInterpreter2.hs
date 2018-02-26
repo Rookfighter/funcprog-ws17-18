@@ -50,6 +50,9 @@ evalStmt (Asgn (Var ident) exp1) = do
     val <- evalExp exp1
     modify (\mem -> M.insert ident val mem)
     skip
+evalStmt (Print exp1) = do
+    val <- evalExp exp1
+    skip
 
 -- evaluate expressions
 evalExp :: Exp -> Ret
