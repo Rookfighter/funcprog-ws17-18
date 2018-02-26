@@ -1,3 +1,4 @@
+{-#LANGUAGE GADTs#-}
 -- Vec2.hs
 --
 --     Author: Fabian Meyer

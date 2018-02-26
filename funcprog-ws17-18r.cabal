@@ -73,7 +73,6 @@ library
                        mtl,
                        time
   default-language:    Haskell2010
-  extensions:          GADTs
 
 executable funcprog-ws17-18r-exe
   hs-source-dirs:      app,
