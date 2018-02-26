@@ -20,23 +20,32 @@ type Memory = M.Map Id Value
 -- Ret = State Memory (Maybe Value) = Memory -> (Maybe Value, Memory)
 type Ret = MaybeT (State Memory) Value
 
+runFile :: String -> IO (Maybe (Maybe Value, Memory))
+runFile f = do
+    s <- readFile f
+    return . runString $ s
+
+runString :: String -> Maybe (Maybe Value, Memory)
+runString s = do
+    p <- parseString s
+    return $ eval p
+
+
+-- evaluate a full program
+eval :: Program -> (Maybe Value, Memory)
+eval (Program stmts) = runState (runMaybeT (evalStmts stmts)) M.empty
+
 -- evaluate a list of statements
 evalStmts :: [Stmt] -> Ret
-evalStmts stmts = foldr (\stmt ret -> (evalStmt stmt) >> ret) skip $ reverse stmts
+evalStmts stmts = foldr (\stmt ret -> (evalStmt stmt) >> ret) skip $ stmts
 
 -- evaluate a single statement
 evalStmt :: Stmt -> Ret
-evalStmt w@(While cond stmts) = do
+evalStmt whl@(While cond stmts) = do
     val <- evalExp cond
     case val of
-        B v ->
-            if v then
-                -- eval body once and start recursion
-                evalStmts stmts >> evalStmt w
-            else
-                -- just skip
-                skip
-        _ -> mfail
+        B v -> if v then evalStmts stmts >> evalStmt whl else skip
+        _   -> skip
 evalStmt (Asgn (Var ident) exp1) = do
     val <- evalExp exp1
     modify (\mem -> M.insert ident val mem)
@@ -47,7 +56,7 @@ evalExp :: Exp -> Ret
 evalExp (If cond exp1 exp2) = do
     val <- evalExp cond
     case val of
-        B val -> if val then evalExp exp1 else evalExp exp2
+        B v -> if v then evalExp exp1 else evalExp exp2
         _     -> mfail -- if condition is not a boolean fail
 -- Both input expressions are arithmetic expressions!
 evalExp (Cmp exp1 cmp exp2) =
@@ -58,7 +67,7 @@ evalExp (Cmp exp1 cmp exp2) =
               matchCmp val1 cmp val2
               }
           matchCmp (I i1) "<=" (I i2)  = return $ B (i1 <= i2)
-          matchCmp (I i1) ">" (I i2)   = return $ B (i1 > i2)
+          matchCmp (I i1) ">"  (I i2)  = return $ B (i1 > i2)
           matchCmp (I i1) "==" (I i2)  = return $ B (i1 == i2)
           matchCmp (I i1) "!=" (I i2)  = return $ B (i1 /= i2)
           matchCmp _ _ _               = mfail
