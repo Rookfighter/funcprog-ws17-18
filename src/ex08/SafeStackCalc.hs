@@ -10,6 +10,11 @@ data Empty;
 data NonEmpty;
 data None;
 
+-- TODO these cause runtime errors but should actually not compile
+test1 = eval $ And (Leq (Push 2 (Push 3 Nil)))
+test2 = eval $ Add (Add (Push 2 Nil))
+test3 = eval $ Pop (Pop (Pop (Push 2 Nil)))
+
 data SProg a b c where
     Nil  :: SProg Int None Empty
     Noop :: SProg a b c -> SProg a b c
