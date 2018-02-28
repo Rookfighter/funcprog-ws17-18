@@ -65,7 +65,8 @@ library
                        StructuredLogging,
                        MWInterpreter2,
                        -- ex08
-                       SafeList
+                       SafeList,
+                       SafeStackCalc
   build-depends:       base >= 4.7 && < 5,
                        primes,
                        svg-builder,
