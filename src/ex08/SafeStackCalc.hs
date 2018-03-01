@@ -17,11 +17,12 @@ data SProg a b where
     Pop   :: SProg a (SProg b c) -> SProg b c
     Push  :: Int -> SProg b c -> SProg Int (SProg b c)
     Dup   :: SProg a b -> SProg a (SProg a b)
-    Dup2  :: SProg a b -> SProg a (SProg b (SProg a b))
+    Dup2  :: SProg a (SProg b c) -> SProg a (SProg b (SProg a (SProg b c)))
     Flip  :: SProg a (SProg b c) -> SProg b (SProg a c)
     Add   :: SProg Int (SProg Int a) -> SProg Int a
     Sub   :: SProg Int (SProg Int a) -> SProg Int a
     Mul   :: SProg Int (SProg Int a) -> SProg Int a
+    Div   :: SProg Int (SProg Int a) -> SProg Int a
     Leq   :: SProg Int (SProg Int a) -> SProg Bool a
     Geq   :: SProg Int (SProg Int a) -> SProg Bool a
     Not   :: SProg Bool a -> SProg Bool a
@@ -102,6 +103,7 @@ eval (Flip s) =
 eval (Add s) = evalAritOp (+) s
 eval (Sub s) = evalAritOp (-) s
 eval (Mul s) = evalAritOp (*) s
+eval (Div s) = evalAritOp div s
 eval (Leq s) = evalCompOp (<=) s
 eval (Geq s) = evalCompOp (>=) s
 eval (Not s) =
@@ -119,3 +121,6 @@ eval (While cond body s0) =
     let xs = eval $ cond s0
         (B b) = head xs
     in if b then eval (While cond body $ Seq s0 body) else eval s0
+
+smod :: SProg Int (SProg Int a) -> SProg Int a
+smod s = Sub (Flip (Mul (Div (Flip (Dup2 (Flip s))))))
