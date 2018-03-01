@@ -122,5 +122,15 @@ eval (While cond body s0) =
         (B b) = head xs
     in if b then eval (While cond body $ Seq s0 body) else eval s0
 
+inc :: SProg Int a -> SProg Int a
+inc s = Add (Push 1 s)
+
+dec :: SProg Int a -> SProg Int a
+dec s = Add (Push (-1) s)
+
 smod :: SProg Int (SProg Int a) -> SProg Int a
 smod s = Sub (Flip (Mul (Div (Flip (Dup2 (Flip s))))))
+
+wmod :: SProg Int (SProg Int a) -> SProg Int a
+wmod s = Pop . Flip . modop $ While (\s1 -> Geq (modop s1)) (\s1 -> inc s1) (Push 0 (Pop (Dup2 s)))
+    where modop s1 = Sub (Flip (Mul s1))
