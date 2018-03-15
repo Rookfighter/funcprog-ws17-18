@@ -1,4 +1,4 @@
-{-#LANGUAGE GADTs#-}
+{-#LANGUAGE GADTs, TypeOperators#-}
 -- SafeStackCalc.hs
 --
 --     Author: Fabian Meyer
@@ -6,131 +6,92 @@
 
 module SafeStackCalc where
 
-data None;
+data None = None
+    deriving (Show)
 
-exIf = eval $ If (Geq) (\s -> Add (Push 10 s)) (\s -> Add (Push (-10) s)) (Push 25 (Push 95 Nil))
-exWhile = eval $ While (Leq) (\s -> Add (Push 1 s)) (Push (-10) Nil)
+data a <:> b = Cons a b
 
-data SProg a b where
-    Nil   :: SProg Int None
-    Noop  :: SProg a b -> SProg a b
-    Pop   :: SProg a (SProg b c) -> SProg b c
-    Push  :: Int -> SProg b c -> SProg Int (SProg b c)
-    Dup   :: SProg a b -> SProg a (SProg a b)
-    Dup2  :: SProg a (SProg b c) -> SProg a (SProg b (SProg a (SProg b c)))
-    Flip  :: SProg a (SProg b c) -> SProg b (SProg a c)
-    Add   :: SProg Int (SProg Int a) -> SProg Int a
-    Sub   :: SProg Int (SProg Int a) -> SProg Int a
-    Mul   :: SProg Int (SProg Int a) -> SProg Int a
-    Div   :: SProg Int (SProg Int a) -> SProg Int a
-    Leq   :: SProg Int (SProg Int a) -> SProg Bool a
-    Geq   :: SProg Int (SProg Int a) -> SProg Bool a
-    Not   :: SProg Bool a -> SProg Bool a
-    And   :: SProg Bool (SProg Bool a) -> SProg Bool a
-    Or    :: SProg Bool (SProg Bool a) -> SProg Bool a
-    Seq   :: SProg a b -> (SProg a b -> SProg c d) -> SProg c d
-    If    :: (SProg a b -> SProg Bool c) -> (SProg a b -> SProg d e) -> (SProg a b -> SProg d e) -> SProg a b -> SProg d e
-    While :: (SProg a b -> SProg Bool c) -> (SProg a b -> SProg a b) -> SProg a b -> SProg a b
+instance (Show a, Show b) => Show (a <:> b) where
+    show (Cons a b) = show a ++ "," ++ show b
 
-instance Show (SProg a b) where
-    show Nil          = "Nil"
-    show (Noop s)     = "Noop (" ++ (show s) ++ ")"
-    show (Pop s)      = "Pop ("  ++ (show s) ++ ")"
-    show (Push n s)   = "Push "  ++ (show n) ++ " (" ++ (show s) ++ ")"
-    show (Dup s)      = "Dup ("  ++ (show s) ++ ")"
-    show (Dup2 s)     = "Dup2 (" ++ (show s) ++ ")"
-    show (Flip s)     = "Flip (" ++ (show s) ++ ")"
-    show (Add s)      = "Add ("  ++ (show s) ++ ")"
-    show (Sub s)      = "Sub ("  ++ (show s) ++ ")"
-    show (Mul s)      = "Mul ("  ++ (show s) ++ ")"
-    show (Leq s)      = "Leq ("  ++ (show s) ++ ")"
-    show (Geq s)      = "Geq ("  ++ (show s) ++ ")"
-    show (Not s)      = "Not ("  ++ (show s) ++ ")"
-    show (And s)      = "And ("  ++ (show s) ++ ")"
-    show (Or s)       = "Or ("  ++ (show s) ++ ")"
-    --show (Seq s1 s2)  = undefined -- "Seq (" ++ (show s1) ++ ") (" ++ (show s2) ++ ")"
-    --show (If c s1 s2) = undefined -- "If (" ++ (show c) ++ ") (" ++ (show s1) ++ ") (" ++ (show s2) ++ ")"
-    show _  = undefined -- "While (foo) (" ++ (show s) ++ ")"
+data SProg a where
+    Nil   :: SProg Int
+    Noop  :: SProg a -> SProg a
+    Pop   :: SProg (a <:> b) -> SProg b
+    Push  :: a -> SProg b -> SProg (a <:> b)
+    Dup   :: SProg (a <:> b) -> SProg (a <:> (a <:> b))
+    Dup2  :: SProg (a <:> (b <:> c)) -> SProg (a <:> (b <:> (a <:> (b <:> c))))
+    Flip  :: SProg (a <:> (b <:> c)) -> SProg (b <:> (a <:> c))
+    Add   :: SProg (Int <:> (Int <:> a)) -> SProg (Int <:> a)
+    Sub   :: SProg (Int <:> (Int <:> a)) -> SProg (Int <:> a)
+    Mul   :: SProg (Int <:> (Int <:> a)) -> SProg (Int <:> a)
+    Div   :: SProg (Int <:> (Int <:> a)) -> SProg (Int <:> a)
+    Eq    :: SProg (Int <:> (Int <:> a)) -> SProg (Bool <:> a)
+    Leq   :: SProg (Int <:> (Int <:> a)) -> SProg (Bool <:> a)
+    Geq   :: SProg (Int <:> (Int <:> a)) -> SProg (Bool <:> a)
+    Not   :: SProg (Bool <:> a) -> SProg (Bool <:> a)
+    And   :: SProg (Bool <:> (Bool <:> a)) -> SProg (Bool <:> a)
+    Or    :: SProg (Bool <:> (Bool <:> a)) -> SProg (Bool <:> a)
+    Seq   :: SProg a -> (SProg a -> SProg b) -> SProg b
+    If    :: (SProg a -> SProg b) -> (SProg a -> SProg b) -> SProg (Bool <:> a) -> SProg b
+    While :: (SProg a -> SProg (Bool <:> a)) -> SProg (Bool <:> a) -> SProg a
 
-data Value = I Int
-           | B Bool
+(+>) :: SProg a -> (SProg a -> SProg b) -> SProg b
+(+>) = Seq
 
-instance Show Value where
-    show (I a) = show a
-    show (B b) = show b
+pushify :: SProg a -> SProg a
+pushify Nil              = Nil
+pushify (Noop s)         = s
+pushify (Pop (Push a s)) = s
+pushify (Push a s)       = Push a s
+pushify (Dup (Push a s)) = Push a . Push a $ s
+pushify (Dup2 (Push a (Push b s))) = Push a . Push b . Push a . Push b $ s
+pushify (Flip (Push a (Push b s))) = Push b . Push a $ s
+pushify (Add (Push a (Push b s)))  = Push (a+b) s
+pushify (Sub (Push a (Push b s)))  = Push (a-b) s
+pushify (Mul (Push a (Push b s)))  = Push (a*b) s
+pushify (Div (Push a (Push b s)))  = Push (a `div` b) s
+pushify (Eq  (Push a (Push b s)))  = Push (a == b) s
+pushify (Leq (Push a (Push b s)))  = Push (a <= b) s
+pushify (Geq (Push a (Push b s)))  = Push (a >= b) s
+pushify (Not (Push a s))           = Push (not a) s
+pushify (And (Push a (Push b s)))  = Push (a && b) s
+pushify (Or (Push a (Push b s)))  = Push (a || b) s
+pushify (Seq s f)    = pushify . f . pushify $ s
+pushify (If f1 f2 (Push c s)) | c         = pushify $ s +> f1
+                              | otherwise = pushify $ s +> f2
+pushify (While f (Push c s)) | c         = pushify $ s +> f +> (While f)
+                             | otherwise = s
+pushify _ = undefined
 
-evalAritOp :: (Int -> Int -> Int) -> SProg Int (SProg Int a) -> [Value]
-evalAritOp op s =
-    let xs    = eval s
-        (I a) = head xs
-        (I b) = head $ tail xs
-    in (I $ a `op` b) : (tail $ tail xs)
+eval :: SProg a -> a
+eval s = evalHelp . pushify $ s
 
-evalCompOp :: (Int -> Int -> Bool) -> SProg Int (SProg Int a) -> [Value]
-evalCompOp op s =
-    let xs    = eval s
-        (I a) = head xs
-        (I b) = head $ tail xs
-    in (B $ a `op` b) : (tail $ tail xs)
+evalHelp :: SProg a -> a
+evalHelp Nil = 0
+evalHelp (Push a s) = Cons a $ evalHelp s
 
-evalLogicOp :: (Bool -> Bool -> Bool) -> SProg Bool (SProg Bool a) -> [Value]
-evalLogicOp op s =
-    let xs    = eval s
-        (B a) = head xs
-        (B b) = head $ tail xs
-    in (B $ a `op` b) : (tail $ tail xs)
+-- a b
+-- b a
+-- b a b a
+-- a b b a
+-- a/b b a
+-- a/b*b a
+-- a a/b*b
+-- a-a/b*b
 
-eval :: SProg a b -> [Value]
-eval Nil         = [I 0]
-eval (Noop s)    = eval s
-eval (Pop s)     = tail $ eval s
-eval (Push x s)  = (I x) : (eval s)
-eval (Dup s)     =
-    let xs = eval s
-        x  = head xs
-    in x : xs
-eval (Dup2 s) =
-    let xs = eval s
-        x  = head xs
-        y  = head $ tail xs
-    in x : y : xs
-eval (Flip s) =
-    let xs = eval s
-        x  = head xs
-        y  = head $ tail xs
-        ys = tail $ tail xs
-    in y : x : ys
-eval (Add s) = evalAritOp (+) s
-eval (Sub s) = evalAritOp (-) s
-eval (Mul s) = evalAritOp (*) s
-eval (Div s) = evalAritOp div s
-eval (Leq s) = evalCompOp (<=) s
-eval (Geq s) = evalCompOp (>=) s
-eval (Not s) =
-    let xs = eval s
-        (B x)  = head xs
-    in (B $ not x) : (tail xs)
-eval (And s) = evalLogicOp (&&) s
-eval (Or s)  = evalLogicOp (||) s
-eval (Seq s1 fs2) = eval $ fs2 s1
-eval (If cond branch1 branch2 s0) =
-    let xs    = eval $ cond s0
-        (B b) = head xs
-    in if b then eval (Seq s0 branch1) else eval (Seq s0 branch2)
-eval (While cond body s0) =
-    let xs = eval $ cond s0
-        (B b) = head xs
-    in if b then eval (While cond body $ Seq s0 body) else eval s0
+smod :: SProg (Int <:> (Int <:> a)) -> SProg (Int <:> a)
+smod s = s +> Flip +> Dup2 +> Flip +> Div +> Mul +> Flip +> Sub
 
-inc :: SProg Int a -> SProg Int a
-inc s = Add (Push 1 s)
+-- wmod :: SProg (Int <:> Int <:> a) -> SProg (Int <:> a)
+-- wmod s = s +> Dup2 +> Pop +> (Push 0) +> modwhile
+--     where modwhile s1 = s1 +> modop +> cond +> While (\_ -> s1 +>)
+--           body s1 = s1 +> (Push 1) +> Add +> cond
+--           modop s1 = s1 +> Mul +> Sub
+--           cond s1 = s1 +> Dup2 +> Geq
+--
+--     Pop . Flip . modop $ While (\s1 -> Geq (modop s1)) (\s1 -> inc s1) (Push 0 (Pop (Dup2 s)))
+--     where modop s1 = Sub (Flip (Mul s1))
 
-dec :: SProg Int a -> SProg Int a
-dec s = Add (Push (-1) s)
 
-smod :: SProg Int (SProg Int a) -> SProg Int a
-smod s = Sub (Flip (Mul (Div (Flip (Dup2 (Flip s))))))
-
-wmod :: SProg Int (SProg Int a) -> SProg Int a
-wmod s = Pop . Flip . modop $ While (\s1 -> Geq (modop s1)) (\s1 -> inc s1) (Push 0 (Pop (Dup2 s)))
-    where modop s1 = Sub (Flip (Mul s1))
+myfoo = Nil +> (Push 1) +> (Push 3) +> Add +> (Push 5) +> Leq
