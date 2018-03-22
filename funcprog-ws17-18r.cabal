@@ -26,7 +26,8 @@ library
                        src/ex05,
                        src/ex06,
                        src/ex07,
-                       src/ex08
+                       src/ex08,
+                       src/preparation
   exposed-modules:     Lib,
                        -- ex01
                        MyList,
@@ -66,7 +67,13 @@ library
                        MWInterpreter2,
                        -- ex08
                        SafeList,
-                       SafeStackCalc
+                       SafeStackCalc,
+                       -- preparation
+                       ApplicativeParser,
+                       ScriptLexer,
+                       ScriptParser,
+                       Generic,
+                       DataStructs
   build-depends:       base >= 4.7 && < 5,
                        primes,
                        svg-builder,
